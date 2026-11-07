@@ -1286,7 +1286,8 @@ ee_ritual.06 = { ### plague Option
 		name = ee_ritual.06.winter
 		trigger = {
 			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
-			this = character:lineofnixni
+			exists = character:tfw_lineofnixni_001
+			this = character:tfw_lineofnixni_001
 		}
 		scope:host = {
 			set_variable = {

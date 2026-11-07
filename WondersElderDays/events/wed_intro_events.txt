@@ -94,6 +94,10 @@ wed_intro.03 = {	# Alatar
 wed_intro.04 = {	# nixni
 	content_source = realms_dlc
 	type = character_event
+	trigger = {
+		exists = character:tfw_lineofnixni_001
+		this = character:tfw_lineofnixni_001
+	}
 	title = wed_intro.04.t
 	desc = wed_intro.04.desc
 	theme = vassal

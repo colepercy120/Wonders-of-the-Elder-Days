@@ -69,27 +69,27 @@ d_laamp_tevildo = { # lord of cats
 	}
 }
 
-d_laamp_nixni = { # lord of cats
-	1.1.1 = {
-		liege = 0
-		holder = lineofnixni # Gandalf
-		government = landless_adventurer_government
-		succession_laws = { landless_adventurer_succession_law }
-		effect = {
-			if = {
-				limit = {
-					NOT = { has_dlc_feature = roads_to_power }
-				}
-				holder = { destroy_title = prev }
-			}
-			create_landless_adventurer_title_history_effect = yes
-			set_variable = { name = adventurer_creation_reason value = flag:historical }
-		}
-	}
-	7054.9.29 = { #Gone West
-		holder = 0
-	}
-}
+# d_laamp_nixni = { # lord of cats
+# 	1.1.1 = {
+# 		liege = 0
+# 		holder = lineofnixni # Gandalf
+# 		government = landless_adventurer_government
+# 		succession_laws = { landless_adventurer_succession_law }
+# 		effect = {
+# 			if = {
+# 				limit = {
+# 					NOT = { has_dlc_feature = roads_to_power }
+# 				}
+# 				holder = { destroy_title = prev }
+# 			}
+# 			create_landless_adventurer_title_history_effect = yes
+# 			set_variable = { name = adventurer_creation_reason value = flag:historical }
+# 		}
+# 	}
+# 	7054.9.29 = { #Gone West
+# 		holder = 0
+# 	}
+# }
 
 d_laamp_durins_bane = { # lord of cats
 	1.1.1 = {

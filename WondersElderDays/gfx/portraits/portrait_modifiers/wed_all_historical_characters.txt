@@ -31,68 +31,68 @@
 		}
 	}
 	
-	nixni_portrait = { 
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = cloaks
-				template = barbershop_cloaks_lotr
-				accessory = female_cloaks_elven_generic
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = hairstyles
-				template = barbershop_lotr_hairstyles
-				accessory = female_hair_custom_27
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = legwear
-				template = barbershop_legwear_lotr
-				accessory = female_legwear_elven_war_01
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = clothes
-				template = silvan_high_clothes
-				accessory = f_clothes_silvan_queen_hi_nob_01
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = clothes_hoods
-				template = dunedain_war_headgear
-				accessory = female_hoods
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = headgear
-				template = elven_high_headgear
-				accessory = female_headgear_elven_royalty_03
-				type = female
-			}
-			accessory = {
-				mode = add
-				gene = special_accessories_jewelry
-				template = female_westerosi_necklace_03
-				accessory = female_westerosi_necklace_03
-				type = female
-			}
-		}   
-		weight = {
-			base = 0
-			modifier = {
-				add = 9999
-				exists = this
-				exists = character:lineofnixni
-				this = character:lineofnixni
-			}
-		}
-	}
+# 	nixni_portrait = { 
+# 		dna_modifiers = {
+# 			accessory = {
+# 				mode = add
+# 				gene = cloaks
+# 				template = barbershop_cloaks_lotr
+# 				accessory = female_cloaks_elven_generic
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = hairstyles
+# 				template = barbershop_lotr_hairstyles
+# 				accessory = female_hair_custom_27
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = legwear
+# 				template = barbershop_legwear_lotr
+# 				accessory = female_legwear_elven_war_01
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = clothes
+# 				template = silvan_high_clothes
+# 				accessory = f_clothes_silvan_queen_hi_nob_01
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = clothes_hoods
+# 				template = dunedain_war_headgear
+# 				accessory = female_hoods
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = headgear
+# 				template = elven_high_headgear
+# 				accessory = female_headgear_elven_royalty_03
+# 				type = female
+# 			}
+# 			accessory = {
+# 				mode = add
+# 				gene = special_accessories_jewelry
+# 				template = female_westerosi_necklace_03
+# 				accessory = female_westerosi_necklace_03
+# 				type = female
+# 			}
+# 		}   
+# 		weight = {
+# 			base = 0
+# 			modifier = {
+# 				add = 9999
+# 				exists = this
+# 				exists = character:lineofnixni
+# 				this = character:lineofnixni
+# 			}
+# 		}
+# 	}
 	
 	durins_bane_portrait = { 
 		dna_modifiers = {

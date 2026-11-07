@@ -1189,70 +1189,70 @@ lineoffankil = {
 	}
 }
 
-lineofnixni = {					
-	name = nixni_name
-	female = yes	
+# lineofnixni = {					
+# 	name = nixni_name
+# 	female = yes	
 
-	dynasty = dynasty_nixni
-	religion = faith_angmar_azira				
-	culture = maiar_fallen
-	dna = mab_dna
+# 	dynasty = dynasty_nixni
+# 	religion = faith_angmar_azira				
+# 	culture = maiar_fallen
+# 	dna = mab_dna
 
-	sexuality = bisexual
+# 	sexuality = bisexual
 
 	
-	trait = callous
-	trait = eccentric
-	trait = deceitful
-	trait = diligent
+# 	trait = callous
+# 	trait = eccentric
+# 	trait = deceitful
+# 	trait = diligent
 	
 
-	disallow_random_traits = yes
+# 	disallow_random_traits = yes
 	
-# 	give_nickname = nick_queen_air_dark
+# # 	give_nickname = nick_queen_air_dark
 
-	diplomacy = 12
-	martial = 6
-	stewardship = 10
-	intrigue = 10
-	learning = 12
-	prowess = 9
+# 	diplomacy = 12
+# 	martial = 6
+# 	stewardship = 10
+# 	intrigue = 10
+# 	learning = 12
+# 	prowess = 9
 
-	trait = education_learning_5
-	trait = maiar
-	trait = beauty_good_3
-	trait = intellect_good_3
+# 	trait = education_learning_5
+# 	trait = maiar
+# 	trait = beauty_good_3
+# 	trait = intellect_good_3
 	
 	
-	trait = winter_soldier
-	trait = shrewd
+# 	trait = winter_soldier
+# 	trait = shrewd
 	
 	
 	
-	1.1.1 = { # Enters into Arda	
-		birth = yes	
-		effect = {			
-			add_character_flag = has_scripted_appearance
-			add_character_flag = ai_immune_to_mental_breaks
-			add_character_flag = immune_to_disease
+# 	1.1.1 = { # Enters into Arda	
+# 		birth = yes	
+# 		effect = {			
+# 			add_character_flag = has_scripted_appearance
+# 			add_character_flag = ai_immune_to_mental_breaks
+# 			add_character_flag = immune_to_disease
 			
-            add_character_flag = no_auto_family
+#             add_character_flag = no_auto_family
 		
 			
-			add_trait = lifestyle_mage
-			add_trait_xp = {
-				trait = lifestyle_mage
-				value = 100
-			}
-			add_trait_xp = {
-				trait = winter_soldier
-				value = 100
-			}
-		}
-	}
+# 			add_trait = lifestyle_mage
+# 			add_trait_xp = {
+# 				trait = lifestyle_mage
+# 				value = 100
+# 			}
+# 			add_trait_xp = {
+# 				trait = winter_soldier
+# 				value = 100
+# 			}
+# 		}
+# 	}
 
 	
-}
+# }
 
 lineofdurinsbane= {					
 	name = durins_bane_name	

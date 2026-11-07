@@ -60,19 +60,19 @@ d_laamp_morrana = { # Gandalf
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_laamp_nixni = { # Gandalf
-	color = { 100 100 100 }
-	capital = c_ita_man
+# d_laamp_nixni = { # Gandalf
+# 	color = { 100 100 100 }
+# 	capital = c_ita_man
 
-	definite_form = yes
-	landless = yes
-	require_landless = yes
-	ruler_uses_title_name = no
-	no_automatic_claims = yes
-	destroy_if_invalid_heir = yes
+# 	definite_form = yes
+# 	landless = yes
+# 	require_landless = yes
+# 	ruler_uses_title_name = no
+# 	no_automatic_claims = yes
+# 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
-}
+# 	ai_primary_priority = { add = @never_primary_score }
+# }
 
 d_laamp_durins_bane = { # Gandalf
 	color = { 100 100 100 }

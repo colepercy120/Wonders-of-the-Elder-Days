@@ -162,8 +162,8 @@ l_english:
  d_laamp_pallando_adj: "Blue"
  d_laamp_tevildo: "The Court of Cats"
  d_laamp_tevildo_adj: "Feline"
- d_laamp_nixni: "The Winter Court"
- d_laamp_nixni_adj: "Winter"
+#  d_laamp_nixni: "The Winter Court"
+#  d_laamp_nixni_adj: "Winter"
  
  d_laamp_morrana: "Guild of Elements"
  d_laamp_morrana_adj: "Elemental"
