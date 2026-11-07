@@ -18,7 +18,7 @@
 	nick_the_astronomer = {}
 	nick_daughter_of_darkness = {}
 	nick_black_wanderer = {}
-	nick_queen_air_dark = {}
+# 	nick_queen_air_dark = {}
 	nick_durins_bane = {}
 	
 	

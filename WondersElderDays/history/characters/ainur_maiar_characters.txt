@@ -1209,7 +1209,7 @@ lineofnixni = {
 
 	disallow_random_traits = yes
 	
-	give_nickname = nick_queen_air_dark
+# 	give_nickname = nick_queen_air_dark
 
 	diplomacy = 12
 	martial = 6
