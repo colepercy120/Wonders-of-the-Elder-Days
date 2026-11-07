@@ -91,30 +91,6 @@ wed_intro.03 = {	# Alatar
 	}
 }
 
-wed_intro.04 = {	# nixni
-	content_source = realms_dlc
-	type = character_event
-	trigger = {
-		exists = character:tfw_lineofnixni_001
-		this = character:tfw_lineofnixni_001
-	}
-	title = wed_intro.04.t
-	desc = wed_intro.04.desc
-	theme = vassal
-	override_background = {
-		reference = wilderness_arctic
-	}
-
-	left_portrait = {
-		character = root
-		animation = personality_callous
-	}
-
-	option = {
-		name = wed_intro.04.a
-	}
-}
-
 wed_intro.05 = {	# Tevildo
 	content_source = realms_dlc
 	type = character_event

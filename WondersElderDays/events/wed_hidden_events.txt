@@ -410,12 +410,6 @@ wed.1 = { # integrate the southern provinces
 			}
 		}
 		
-		character:tfw_lineofnixni_001 ?= { 
-			trigger_event = { 
-				id = wed_intro.04
-				days = 1
-			}
-		}
 		
 		character:lineoftevildo =  { 
 			trigger_event = { 
