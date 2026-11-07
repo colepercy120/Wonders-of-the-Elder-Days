@@ -1,0 +1,21 @@
+﻿tfw_make_halls_wastelands = {
+	# If surface dwellers **somehow** manage to get underground terrain, make it wilderness ( and give them a bit of gold in return )
+	if = {
+		limit = {
+			scope:title ?= {
+				tier = tier_county
+				title_province ?= { terrain = halls }
+			}
+			NOR = {
+				is_dwarf = yes
+				is_orc = yes
+				is_nazgul = yes
+				is_maiar_fallen = yes
+				is_elf = yes
+			}
+		}
+		make_settlement_county_wilderness = { COUNTY = scope:title }
+		add_gold = 125
+		debug_log = "Wilderness: Surface Race got Underground - Making Wasteland"
+	}
+}
