@@ -1,0 +1,52 @@
+﻿l_english:
+
+ wed_decay.01.t: "Abandonment of [decaytarget.GetNameNoTier]"
+ wed_decay.01.desc: "[decaytarget.GetNameNoTier] lays abandoned, its people have fled, its feilds left fallow, if nothing is done nature will reclaim the land and all signs of civilization will fade into ruins. if we were to avoid this fate we would need to take drastic actions to preserve civilization in the region"
+ wed_decay.01.a: "Unfortenate"
+ wed_decay.01.b: "Pay people to resettle the area"
+ wed_decay.01.c: "Resettle from across the realm"
+ wed_decay.01.d: "its up to the local lord"
+ abandonedcounty: "[decaytarget.GetNameNoTier] will be returned to [wilderness|E]"
+ locallorddecide: "the choice will be left to [decaytargetholder.GetName]"
+
+
+ rule_wed_decay_rule: "#attacker_color WED:#! Decay Feature"
+ setting_decay_disabled: "Disabled"
+ setting_decay_disabled_desc: "The Decay Feature is Disabled"
+ setting_decay_enabled: "Enabled"
+ setting_decay_enabled_desc: "The Decay Feature is Enabled"
+ setting_decay_enabled_buff: "Reduced Dev Decay"
+ setting_decay_enabled_buff_desc: "Decay is Enabled, but development decline is reduced"
+
+ wed_decay_buff_modifier: "Reduced Decay"
+ wed_decay_buff_modifier_desc: "Reduces the Effect of Decay"
+ 
+ SPREAD_SHADOW_COUNTY_WAR_NAME: "War to Spread Shadow in [TITLE.GetBaseName]"
+ SPREAD_SHADOW_COUNTY_CB_NAME: "Spread Shadow in [county|E]"
+ spread_shadow_county_cb_victory_desc_attacker: "You liberate the contested [title|E] to new [independent|E] rulers of a local [culture|E] of a Evil [faith|E]."
+ spread_shadow_county_cb_victory_desc: "[attacker.GetName] liberates the contested [title|E] to new [independent|E] rulers of a local [culture|E] of a Evil [faith|E]."
+ spread_shadow_war_invalidated_message: "The [war.GetName] has ended: [defender.GetShortUIName] [Select_CString( defender.IsLocalPlayer, 'have', 'has' )] converted [defender.GetHerHis] faith or no longer [Select_CString( defender.IsLocalPlayer, 'control', 'controls' )] the target title."
+ spread_shadow_county_cb: "War to Spread Shadow"
+
+ SPREAD_SHADOW_DUCHY_WAR_NAME: "War to Spread Shadow in [TITLE.GetBaseName]"
+ SPREAD_SHADOW_DUCHY_CB_NAME: "Spread Shadow in [duchy|E]"
+ spread_shadow_duchy_cb: "War to Spread Shadow"
+ SPREAD_SHADOW_DUCHY_DUCHY_NAME: "Dark [target_duchy.GetNameNoTierNoTooltip]"
+
+ SPREAD_SHADOW_KINGDOM_WAR_NAME: "War to Spread Shadow in [TITLE.GetBaseName]"
+ SPREAD_SHADOW_KINGDOM_CB_NAME: "Spread Shadow in [kingdom|E]"
+ spread_shadow_kingdom_cb: "War to Spread Shadow"
+ SPREAD_SHADOW_KINGDOM_KINGDOM_NAME: "Dark [target_kingdom.GetNameNoTierNoTooltip]"
+ declared_kingdom_laamp_vd_flag_tt: "You may only declare one Spread Shadow for a [kingdom|E] every 15 years"
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  
+
+ 
+ 

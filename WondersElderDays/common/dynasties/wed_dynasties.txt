@@ -1,0 +1,39 @@
+﻿#################
+##### MAIAR #####
+#################
+
+
+
+##############
+### Umaiar ###
+##############
+
+dynasty_tevildo = {
+	name = "dynn_tevildo"
+	culture = "maiar"
+	motto = dynn_tevildo_motto
+}
+
+dynasty_fankil = {
+	name = "dynn_fankil"
+	culture = "maiar"
+	motto = dynn_fankil_motto
+}
+
+dynasty_balrog = {
+	name = "dynn_balrog"
+	culture = "maiar"
+	motto = dynn_balrog_motto
+}
+
+dynasty_ardana = {
+	name = "dynn_ardana"
+	culture = "noldor"
+	motto = dynn_ardana_motto
+}
+
+#dynasty_nixni = {
+#	name = "dynn_nixni"
+#	culture = "maiar"
+#	motto = dynn_nixni_motto
+#}

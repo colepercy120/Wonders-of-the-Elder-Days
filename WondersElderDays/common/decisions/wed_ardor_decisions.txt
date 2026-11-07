@@ -1,0 +1,244 @@
+
+
+decision_solidfy_ardor = {
+	title = decision_solidfy_ardor
+	desc = decision_solidfy_ardor_desc
+	confirm_text = decision_solidfy_ardor_confirm
+	selection_tooltip = decision_solidfy_ardor_tooltip
+	picture = {
+		reference = gfx/interface/illustrations/decisions/decision_host_of_the_west.dds
+	}
+
+	# AI
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+
+	# IS SHOWN
+	decision_group_type = realms_in_exile_major
+
+	is_shown = {
+		is_elf = yes
+		has_faith = faith:faith_court_of_ardor
+		NOT = {
+			has_game_rule = ardor_disabled
+		}
+		
+
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_solidfy_ardor
+			}
+		}
+	}
+
+	# IS VALID
+	is_valid = {
+		# No evil rulers nearby
+		
+		completely_controls_region = middleearth_uttersouth_ardor
+		
+		
+
+		legitimacy_level >= 5
+		prestige_level >= 5
+		piety_level >= 5
+		custom_tooltip = { # Hope  or higher
+			text = hope_5_or_higher_tt
+			has_highest_hope = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		prestige = 10000
+		piety = 5000
+	}
+
+	# EFFECT
+	effect = {
+		#Create the title and make it primary
+		
+		custom_tooltip = {
+			text = decision_solidfy_ardor_effect_1
+			every_kingdom = {
+				limit = {
+					any_de_jure_county = {
+						title_province = { geographical_region = middleearth_uttersouth_ardor }
+					}
+				}
+				set_de_jure_liege_title = title:e_ardor 
+				
+			}
+		}
+		custom_tooltip = {
+			text = decision_solidfy_ardor_effect_2
+			every_kingdom = {
+				limit = {
+					any_de_jure_county = {
+						title_province = { geographical_region = middleearth_uttersouth_ardor }
+					}
+				} 
+				every_de_jure_county = {
+					add_county_modifier = elven_homeland_county_modifier
+				}
+			}
+		}
+		
+		
+
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_solidfy_ardor
+		}
+
+		trigger_event = {
+			id = wed_ardor.01	# Ost in Edhil Reborn
+		}
+	}
+}
+
+decision_rebuild_aranore = {
+	title = decision_rebuild_aranore
+	desc = decision_rebuild_aranore_desc
+	confirm_text = decision_rebuild_aranore_confirm
+	selection_tooltip = decision_rebuild_aranore_tooltip
+	picture = {
+		reference = gfx/interface/illustrations/decisions/decision_barrow_04.dds
+	}
+
+
+	# AI
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+
+	# IS SHOWN
+	decision_group_type = realms_in_exile_major
+
+	is_shown = {
+		
+		has_faith = faith:faith_court_of_ardor
+		NOT = {
+			has_game_rule = ardor_disabled
+		}
+		
+		OR = {
+			has_title = title:c_ardinak
+			any_vassal = {
+				has_title = title:c_ardinak
+				is_elf = yes
+			}
+		}
+		is_elf = yes
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_rebuild_aranore
+			}
+		}
+	}
+
+	# IS VALID
+	is_valid = {
+		prestige_level >= high_prestige_level
+		OR = {
+			has_title = title:c_ardinak
+			any_vassal = {
+				has_title = title:c_ardinak
+				is_elf = yes
+			}
+		}
+		title:c_ardinak = {
+			title_province = {
+				NOR = {
+					has_holding_type = settlement_holding
+					has_holding_type = wastelands_holding
+				}
+			}
+		}
+		has_medium_hope_or_higher = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 3000
+	}
+
+	# EFFECT
+	effect = {
+		province:5852 = { 
+			remove_building = wonder_ardinak_01
+			add_special_building = wonder_citadel_of_aranore_01 
+			
+		}
+		title:c_ardinak = {
+			change_development_level = 5
+		}
+
+		custom_tooltip = {
+			text = ardinak_upgrade_holding
+			title:c_ardinak = {
+				title_province = {
+					if = {
+						limit = { has_building = elven_settlement_01 }
+						add_building = elven_settlement_03
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_02 }
+						add_building = elven_settlement_04
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_03 }
+						add_building = elven_settlement_05
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_04 }
+						add_building = elven_settlement_06
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_05 }
+						add_building = elven_settlement_07
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_06 }
+						add_building = elven_settlement_07
+						county = { change_development_level = 10 }
+					}
+					else_if = {
+						limit = { has_building = elven_settlement_07 }
+						county = { change_development_level = 20 }
+					}
+				}
+			}
+		}
+		
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_rebuild_aranore
+		}
+
+		trigger_event = {
+			id = wed_ardor.02	# Ost in Edhil Reborn
+		}
+	}
+}

@@ -1,0 +1,95 @@
+﻿#wotr = {
+#	default = default_wotr
+#
+#	default_wotr = {
+#
+#	}
+#	
+#	random_wotr = {
+#
+#	}
+#}
+
+wed_sourcery_rule = {
+	default = vanilla_sorcery_disabled
+
+	vanilla_sorcery_disabled = {
+
+	}
+	
+	vanilla_sorcery_enabled = {
+
+	}
+}
+
+wed_maia_reproduction_rule = {
+	default = maia_reproduction_disabled
+
+	maia_reproduction_disabled = {
+
+	}
+	
+	maia_reproduction_enabled = {
+
+	}
+}
+
+wed_ardor_rule = {
+	default = ardor_enabled
+
+	ardor_enabled = {
+
+	}
+	
+	ardor_disabled = {
+
+	}
+	
+	#ardor_triumphant = {
+	#
+	#}
+}
+
+wed_decay_rule = {
+	default = decay_enabled
+
+	decay_enabled = {
+
+	}
+	
+	decay_disabled = {
+
+	}
+	
+	decay_enabled_buff = {
+
+	}
+}
+
+wed_balrog_rule = {
+	default = balrog_disabled
+
+	balrog_enabled = {
+
+	}
+	
+	balrog_disabled = {
+
+	}
+	
+	balrog_enabled_ruler = {
+
+	}
+}
+
+#wed_experimental_rule = {
+#	default = experimental_disabled
+#
+#	experimental_disabled = {
+#
+#	}
+#	
+#	experimental_enabled = {
+#
+#	}
+#}

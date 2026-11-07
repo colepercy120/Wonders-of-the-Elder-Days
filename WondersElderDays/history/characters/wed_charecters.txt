@@ -1,0 +1,231 @@
+
+
+lineofardana1 = {
+	name = ardana_name # Half-elven, Lord of Rivendell
+
+	dynasty = dynasty_ardana
+	religion = faith_court_of_ardor
+	culture = ardorhrim
+	dna = ardana_dna
+	
+	female = yes
+	
+	learn_language = language_taliska
+	learn_language = language_quenya
+
+	
+
+	sexuality = heterosexual
+
+	trait = ambitious
+	trait = brave
+	trait = just
+
+	diplomacy = 9
+	martial = 12
+	stewardship = 14
+	intrigue = 6
+	learning = 15 # Wise in all lore is Master Elrond
+	prowess = 10
+
+	trait = education_learning_5
+	trait = reckless_leader
+	trait = beauty_good_2
+	trait = intellect_good_2
+	trait = lifestyle_mage
+	trait = scholar
+	trait = lifestyle_archivist
+	trait = twotreeslight
+	
+	give_nickname = nick_the_astronomer
+	
+	
+
+	2.1.1 = {	#-3170.1.1
+		birth = yes
+		learn_language = language_quenya # Accounting for Noldor culture using Sindarin as primary on account of the Noldor of Middle-earth
+		effect = {
+			add_character_flag = has_scripted_appearance
+			add_character_flag = ai_immune_to_mental_breaks
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 100
+			}
+		}
+	}
+
+	548.1.1 = {
+		learn_language = language_taliska
+		learn_language = language_quenya
+		
+		
+	}
+
+	1192.1.1 = { # Numenorean return to Middle-earth
+		learn_language = language_adunaic
+	}
+
+	
+
+	4142.1.1 = {
+		add_spouse = lifeoffankil
+		set_relation_soulmate = character:lifeoffankil
+		learn_language = language_westron
+	}
+
+	4163.1.1 = {
+		create_character_memory = {
+			type = first_born
+			participants = {
+				child = character:lineofardana3
+			}
+		}
+		create_character_memory = {
+			type = child_born
+			participants = {
+				child = character:lineofardana2
+			}
+		}
+	}
+	
+	
+
+	4274.1.1 = {
+		
+		death = { death_reason = death_duel killer = lineofardana3 }
+	
+	}
+
+	
+}
+
+lineofardana2 = {
+	name = ardana2_name 
+
+	dynasty = dynasty_ardana
+	religion = faith_court_of_ardor
+	culture = ardorhrim
+	dna = morelene_dna
+
+	father = lineoffankil
+	mother = lineofardana1
+	
+	female = yes
+
+	sexuality = heterosexual
+
+	trait = arrogant
+	trait = diligent
+	trait = patient
+
+	diplomacy = 6
+	martial = 10
+	stewardship = 13
+	intrigue = 9
+	learning = 18
+	prowess = 12
+
+	trait = education_learning_4
+	trait = scholar
+	trait = beauty_good_3
+	trait = intellect_good_3
+	trait = lifestyle_mage
+	trait = twin
+	trait = organizer
+	trait = maiarindi
+	
+	give_nickname = nick_daughter_of_darkness
+
+	4163.3.20 = {
+		birth = yes
+		learn_language = language_quenya # Accounting for Noldor culture using Sindarin as primary on account of the Noldor of Middle-earth
+		learn_language = language_westron
+		effect = {
+			add_character_flag = has_scripted_appearance
+			add_character_flag = ai_immune_to_mental_breaks
+			
+		}
+	}
+
+	5000.1.1 = {
+		add_trait_xp = {
+			trait = lifestyle_mage
+			value = 50
+		}
+		add_trait_xp = {
+			trait = organizer
+			value = 100
+		}
+	}
+
+	
+}
+
+lineofardana3 = {
+	name = ardana3_name 
+
+	dynasty = dynasty_ardana
+	religion = faith_kinnlai_martial
+	culture = ardorhrim
+	dna = morrana_dna
+
+	father = lineoffankil
+	mother = lineofardana1
+
+	sexuality = heterosexual
+
+	trait = brave
+	trait = temperate
+	trait = diligent
+
+	diplomacy = 12
+	martial = 14
+	stewardship = 12
+	intrigue = 11
+	learning = 10
+	prowess = 15
+
+	trait = education_martial_5
+	trait = jungle_stalker
+	trait = beauty_good_1
+	trait = physique_good_2
+	trait = intellect_good_2
+	trait = lifestyle_blademaster
+	trait = twin
+	trait = maiarindi
+	
+	give_nickname = nick_black_wanderer
+
+	4163.3.20 = {
+		birth = yes
+		learn_language = language_quenya # Accounting for Noldor culture using Sindarin as primary on account of the Noldor of Middle-earth	
+		learn_language = language_westron
+		effect = {
+			add_character_flag = has_scripted_appearance
+			add_character_flag = ai_immune_to_mental_breaks
+			
+		}
+	
+	
+	}
+	
+	4274.1.1 = {
+		
+		trait = kinslayer_3
+	
+	}
+	
+
+	5000.1.1 = {
+		add_trait_xp = {
+			trait = lifestyle_blademaster
+			value = 100
+		}
+		add_trait_xp = {
+			trait = jungle_stalker
+			value = 100
+		}
+	}
+
+	
+}

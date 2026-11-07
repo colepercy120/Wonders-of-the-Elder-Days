@@ -1,0 +1,35 @@
+﻿
+
+mage_innovation_trigger = {
+	OR = {
+		has_cultural_parameter = is_elven_heritage 
+		
+		has_cultural_pillar = heritage_ainur
+		has_cultural_pillar = heritage_fallen_ainur
+		
+		culture_overlaps_geographical_region = middleearth_west_beleriand
+		culture_overlaps_geographical_region = middleearth_west_eregion
+	}
+	is_orc_culture = no
+}
+
+craft_innovation_trigger = {
+	OR = {
+		
+		has_cultural_pillar = heritage_calaquendi
+		has_cultural_pillar = heritage_dunedain
+		
+		
+		has_cultural_pillar = heritage_ainur
+		has_cultural_pillar = heritage_fallen_ainur
+		
+		culture_overlaps_geographical_region = middleearth_west_eregion
+		culture_overlaps_geographical_region = middleearth_west_beleriand
+		
+		culture_overlaps_geographical_region = middleearth_mountains_misty_khazad_dum
+	}
+	
+		is_orc_culture = no
+	
+}
+

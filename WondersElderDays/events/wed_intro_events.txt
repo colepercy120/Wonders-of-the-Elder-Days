@@ -1,0 +1,155 @@
+﻿namespace = wed_intro
+
+wed_intro.01 = {	# Morelene
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.01.t
+	desc = wed_intro.01.desc
+	theme = death
+	override_background = {
+		reference = barrow
+	}
+
+	right_portrait = {
+		character = root
+		animation = steward
+	}
+	
+	left_portrait = {
+		character = character:lineofardana3
+		animation = steward
+	}
+	
+	lower_left_portrait = {
+		character = character:lineofalatar
+		animation = steward
+	}
+	lower_right_portrait = {
+		character = character:lineofpallando
+		animation = steward
+	}
+	lower_center_portrait = {
+		character = character:lineoftainalann10
+		animation = steward
+	}
+
+	option = {
+		name = wed_intro.01.a
+	}
+}
+
+wed_intro.02 = {	# Morrana
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.02.t
+	desc = wed_intro.02.desc
+	theme = elven
+	
+
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	right_portrait = {
+		character = character:lineofardana2
+		animation = personality_vengeful
+	}
+	
+	immediate = {
+		primary_title = {
+			set_coa = d_laamp_morrana
+		}
+	}
+
+	option = {
+		name = wed_intro.02.a
+	}
+}
+
+wed_intro.03 = {	# Alatar
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.03.t
+	desc = wed_intro.03.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = army_camp
+	}
+
+	left_portrait = {
+		character = character:lineofalatar
+		animation = marshal
+	}
+	
+	right_portrait = {
+		character = character:lineofpallando
+		animation = chaplain
+	}
+
+	option = {
+		name = wed_intro.03.a
+	}
+}
+
+wed_intro.04 = {	# nixni
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.04.t
+	desc = wed_intro.04.desc
+	theme = vassal
+	override_background = {
+		reference = wilderness_arctic
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_callous
+	}
+
+	option = {
+		name = wed_intro.04.a
+	}
+}
+
+wed_intro.05 = {	# Tevildo
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.05.t
+	desc = wed_intro.05.desc
+	theme = intrigue_skulduggery_focus
+	override_background = {
+		reference = wilderness_jungle
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_dishonorable
+	}
+
+	option = {
+		name = wed_intro.05.a
+	}
+}
+
+wed_intro.06 = {	# Balrog
+	content_source = realms_dlc
+	type = character_event
+	title = wed_intro.06.t
+	desc = wed_intro.06.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = durins_bane
+	}
+
+	left_portrait = {
+		character = character:lineofdurinsbane
+		animation = marshal
+	}
+	
+	
+
+	option = {
+		name = wed_intro.06.a
+		struggle:balrog_struggle = { end_struggle = yes }
+	}
+}

@@ -1,0 +1,580 @@
+﻿
+generate_sorcery_list_on_start = {
+	clear_global_variable_list = global_spells_list
+	
+	if = {
+		limit = {
+			has_game_rule = vanilla_sorcery_enabled
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:call_the_horde
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:mark_of_war
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:assemble_the_warchiefs
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:rise_the_dead
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:invoke_watchers
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:summon_being_of_darkness
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:cracks_of_the_earth
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:dark_vitality
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:words_of_power
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:forge_morgul_weapons
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:purse_them_relentlessly
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:black_breath
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:nazgul_restoration
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:ambassador_of_darkness
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:shapeshifting
+		}
+		#add_to_global_variable_list = {
+		#	name = global_spells_list
+		#	target = flag:reveal_the_secrets
+		#}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:cast_the_darkness
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:abnormal_winter
+		}
+		add_to_global_variable_list = {
+			name = global_spells_list
+			target = flag:the_plague
+		}
+	}
+	else = {
+		clear_global_variable_list = global_spells_list
+	}
+}
+
+spellcasting_effect = {
+	scope:activity = { 
+			add_activity_log_entry = {
+				key = host_witch_ritual
+				tags = { completed }
+				# this line below adds the entry to the Effects section of the conclusion UI
+				show_in_conclusion = yes
+				character = scope:host
+				scope:host = {
+					if = {
+						limit = { var:spell = 1 }
+						
+						add_diplomacy_skill = 1
+					}
+					if = {
+						limit = { var:spell = 2 }
+						
+						add_martial_skill = 1
+					}
+					if = {
+						limit = { var:spell = 3 }
+						
+						add_stewardship_skill = 1
+					}
+					if = {
+						limit = { var:spell = 4 }
+						
+						add_intrigue_skill = 1
+					}
+					if = {
+						limit = { var:spell = 5 }
+						
+						add_learning_skill = 1
+					}
+					if = {
+						limit = { var:spell = 6 }
+						
+						add_prowess_skill = 1
+					}
+					if = {
+						limit = { var:spell = 7 }
+						
+						wound_treatment_results_effect = { TREATMENT = safe OUTCOME = success }
+					}
+					if = {
+						limit = { var:spell = 8 }
+						
+						recover_from_disease_effect = { DISEASE = ill } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = pneumonic } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = gout_ridden } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = typhus } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = consumption } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = cancer } #Removes the trait, sends event "health.2202" to those who care
+						recover_from_disease_effect = { DISEASE = great_pox } #Removes the trait, sends event "health.2202" to those who care & sexual partners
+						recover_from_disease_effect = { DISEASE = smallpox } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+						recover_from_disease_effect = { DISEASE = bubonic_plague } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+						recover_from_disease_effect = { DISEASE = measles } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+						recover_from_disease_effect = { DISEASE = dysentery } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+						recover_from_disease_effect = { DISEASE = ergotism } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+					
+					}
+					if = {
+						limit = { var:spell = 9 }
+						
+						add_character_modifier = { modifier = ee_spell_health_modifier years = 10 }
+					}
+					if = {
+						limit = { var:spell = 10 }
+						add_character_modifier = { modifier = ee_spell_scheme_modifier years = 10 }
+						
+					}
+					if = {
+						limit = { var:spell = 11 }
+						add_character_modifier = { modifier = ee_spell_fertility_modifier years = 10 }
+						
+					}
+					if = {
+						limit = { var:spell = 12 }
+						# add_character_modifier = { modifier = ee_spell_lifespan_modifier years = 10 }
+						if = {
+							limit = {
+								NOT = { has_trait = wed_extended_lifespan }
+							}
+							add_trait = wed_extended_lifespan
+						}
+						else = {
+							add_trait_xp = {
+								trait = wed_extended_lifespan
+								value = 1
+							}
+						}
+						
+					}
+					if = {
+						limit = { 
+							var:spell = 13 
+							var:plaguelevel = 1 
+						}
+						if = {
+							limit = { var:plagueoption = 1 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = bubonic_plague
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 2 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = consumption
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 3 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = smallpox
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 4 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = typhus
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 5 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = dysentery
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 6 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = measles
+									intensity = minor
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 7 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = nixni_winter_plague
+									intensity = minor
+								}
+							}
+						}
+						
+					}
+					if = {
+						limit = { 
+							var:spell = 13 
+							var:plaguelevel = 2 
+						}
+						if = {
+							limit = { var:plagueoption = 1 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = bubonic_plague
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 2 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = consumption
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 3 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = smallpox
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 4 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = typhus
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 5 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = dysentery
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 6 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = measles
+									intensity = major
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 7 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = nixni_winter_plague
+									intensity = major
+								}
+							}
+						}
+						
+					}
+					if = {
+						limit = { 
+							var:spell = 13 
+							var:plaguelevel = 3
+							
+						}
+						if = {
+							limit = { var:plagueoption = 1 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = bubonic_plague
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 2 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = consumption
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 3 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = smallpox
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 4 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = typhus
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 5 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = dysentery
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 6 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = measles
+									intensity = apocalyptic
+								}
+							}
+						}
+						if = {
+							limit = { var:plagueoption = 7 }
+							scope:plaguetarget = {
+								create_epidemic_outbreak = {
+									type = nixni_winter_plague
+									intensity = apocalyptic
+								}
+							}
+						}
+					}
+					
+					if = {
+						limit = { 
+							var:spell = 14 
+							NOT = { 
+								has_trait_xp = {
+									trait = lifestyle_mage
+									value >= 100
+								}
+							}
+						}
+						every_sub_realm_county = {
+							every_county_province = {
+								add_province_modifier = { modifier = ee_spell_shroud_modifier years = 10 }
+							}
+						}
+						
+					}
+					if = {
+						limit = { 
+							var:spell = 14 
+							has_trait_xp = {
+								trait = lifestyle_mage
+								value >= 100
+							}
+						}
+						every_sub_realm_county = {
+							every_county_province = {
+								add_province_modifier = { modifier = ee_greater_spell_shroud_modifier years = 10 }
+							}
+						}
+						
+					}
+					if = {
+						limit = { var:spell = 15 }
+						add_character_modifier = { modifier = ee_spell_gold_modifier years = 10 }
+						
+					}
+					if = {
+						limit = { var:spell = 16 }
+						
+						if = {
+							limit = { var:summonoption = 1 }
+							spawn_army = {
+								men_at_arms = {
+									type = unburied_wights
+									stacks = 10
+								}
+								location = root.location
+								name = summonwraiths
+							}
+						}
+						if = {
+							limit = { var:summonoption = 2 }
+							spawn_army = {
+								men_at_arms = {
+									type = werewolves
+									stacks = 10
+								}
+								location = root.location
+								name = summonwerewolves
+							}
+						}
+						if = {
+							limit = { var:summonoption = 3 }
+							spawn_army = {
+								men_at_arms = {
+									type = fellbeasts
+									stacks = 10
+								}
+								location = root.location
+								name = summonfellbeasts
+							}
+						}
+						if = {
+							limit = { var:summonoption = 4 }
+							spawn_army = {
+								men_at_arms = {
+									type = nuinevari
+									stacks = 10
+								}
+								location = root.location
+								name = summonfey
+							}
+						}
+						if = {
+							limit = { var:summonoption = 5 }
+							spawn_army = {
+								men_at_arms = {
+									type = ents
+									stacks = 10
+								}
+								location = root.location
+								name = summonents
+							}
+						}
+						if = {
+							limit = { var:summonoption = 6 }
+							spawn_army = {
+								men_at_arms = {
+									type = eagles_maa
+									stacks = 10
+								}
+								location = root.location
+								name = summoneagles
+							}
+						}
+					}
+					if = {
+						limit = { var:spell = 17 }
+						
+						if = {
+							limit = { var:artifactchoice = 1 }
+							create_artifact_lembas_bread_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 2 }
+							create_artifact_elven_cape_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 5 }
+							create_artifact_elven_brooch_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 6 }
+							create_artifact_elven_rope_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 7 }
+							create_artifact_miruvor_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 8 }
+							create_artifact_eregion_gem_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 12 }
+							create_artifact_noldorin_tools_effect = { OWNER = root }
+						}
+						
+						
+						if = {
+							limit = { var:artifactchoice = 3 }
+							create_artifact_morgul_blade_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 9 }
+							create_artifact_windlance_bolt_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 10 }
+							create_artifact_black_arrow_generic_effect = { OWNER = root }
+						}
+						
+						
+						if = {
+							limit = { var:artifactchoice = 4 }
+							create_artifact_numenorean_steelbow_effect = { OWNER = root }
+						}
+						if = {
+							limit = { var:artifactchoice = 11 }
+							create_artifact_ranger_star_effect = { OWNER = root }
+						}
+					}
+					
+					if = {
+						limit = { var:spell = 18 }
+						add_elven_hope_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_positive_event_choice }
+					}
+					
+					if = {
+						limit = {
+							root = {
+								has_character_flag = unknown_sauron_flag
+							}
+							
+						}
+						change_global_variable = { 
+							name = qfe_sauron_sus 
+							add = var:spelldiff 
+						}
+					}
+				}
+			}
+		}
+}
+

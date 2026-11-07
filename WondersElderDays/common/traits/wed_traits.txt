@@ -1,0 +1,551 @@
+﻿
+#rageagainstlight = {
+#	# This elf beheld the light of the Two Trees before they were felled by Morgoth.
+#	icon = rage_against_the_dying_of_the_light.dds
+#	
+#	ruler_designer_cost = 300
+#	same_culture_opinion = 20
+#	enemy_hostile_scheme_phase_duration_add = 20
+#	
+#	
+#	genetic = no
+#	physical = no
+#	inherit_chance = 0
+#	birth=0	
+#	random_creation = 0
+#	shown_in_ruler_designer = no
+#	
+#	diplomacy = 1
+#	martial = 1
+#	stewardship = 1
+#	intrigue = 1
+#	learning = 1
+#	prowess = 4
+#	
+#	monthly_legitimacy_add = 5
+#	monthly_income = 5
+#	ai_war_chance = -100
+#	ai_war_cooldown = -100
+#	ai_amenity_spending = -0.25
+#	ai_amenity_target_baseline = -0.4
+#	title_creation_cost_mult = -0.75
+#	
+#	holding_build_gold_cost = -0.5
+#	holding_build_speed = -0.5
+#	build_speed = -0.5
+#	build_gold_cost = -0.5
+#	development_growth_factor = 1
+#	
+#}
+
+lifestyle_mage = {
+	category = lifestyle
+	icon = {
+		first_valid = {
+			triggered_desc = { # If no character exists
+				trigger = { NOT = { exists = this } }
+				desc = mage.dds
+			}
+			
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					faith_is_evil = yes 
+				}
+				desc = sorcerer_03.dds
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					faith_is_evil = yes
+				}
+				desc = sorcerer_02.dds
+			}
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					
+					faith_is_evil = yes 
+				}
+				desc = sorcerer_01.dds
+			}
+			
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					faith_is_good = yes 
+				}
+				desc = mage3.dds
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					faith_is_good = yes
+				}
+				desc = mage2.dds
+			}
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					
+					faith_is_good = yes 
+				}
+				desc = mage1.dds
+			}
+			
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					
+				}
+				desc = mage_3.dds
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					
+				}
+				desc = mage_2.dds
+			}
+			#Aspiring mage
+			desc = mage_1.dds
+		}
+	}
+
+	# Modifiers
+	immortal = no
+	health = 1
+	
+	negate_health_penalty_add = 1
+	
+	prowess = 4
+	learning = 4
+	diplomacy = 2
+	intrigue = 2
+	monthly_piety = 0.5
+
+
+	
+
+	
+	shown_in_encyclopedia = no
+	
+	#culture_modifier = {
+	#	parameter = trait_county_opinion_modifiers
+	#	county_opinion_add = 2
+	#}
+	
+
+	track = {
+		0 = {
+		
+		}
+		10 = {
+			immortal = no
+			health = 1
+			negate_health_penalty_add = 1
+			prowess = 4
+			learning = 4
+			diplomacy = 2
+			intrigue = 2
+			monthly_piety = 0.5
+			
+		}
+		100 = {
+			immortal = no
+			health = 2
+			negate_health_penalty_add = 2 
+			prowess = 8
+			learning = 8
+			
+			diplomacy = 4
+			intrigue = 4
+			monthly_piety = 1
+		}
+	}
+
+	ruler_designer_cost = 100
+
+	# Loc
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { 
+					NOT = { exists = this } 
+				}
+				desc = trait_mage
+			}
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					faith_is_evil = yes 
+				}
+				desc = trait_sorcerer_3
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					faith_is_evil = yes
+				}
+				desc = trait_sorcerer_2
+			}
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					
+					faith_is_evil = yes 
+				}
+				desc = trait_sorcerer_1
+			}
+			
+			
+			
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					
+				}
+				desc = trait_mage_3
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					
+				}
+				desc = trait_mage_2
+			}
+			#Aspiring mage
+			desc = trait_mage_1
+		}
+	}
+
+	# Loc
+	desc = {
+		first_valid = {
+			#The trait can never go higher than the first level if it's not assigned to a character
+			triggered_desc = {
+				trigger = { 
+					NOT = { exists = this } 
+				}
+				desc = trait_mage_1_desc
+			}
+			#Legendary mage
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+					faith_is_evil = yes 
+				}
+				desc = trait_sorcerer_3_desc
+			}
+			#mage
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 10
+					}
+					faith_is_evil = yes
+				}
+				desc = trait_sorcerer_2_desc
+			}
+			triggered_desc = {
+				trigger = { 
+					exists = this
+					
+					faith_is_evil = yes 
+				}
+				desc = trait_sorcerer_1_desc
+			}
+			
+			triggered_desc = {
+				trigger = { 
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 100
+					}
+				}
+				desc = trait_mage_3_character_desc
+			}
+			triggered_desc = {
+				trigger = { 
+					has_trait_xp = {
+						trait = lifestyle_mage
+						value >= 50
+					}
+				}
+				desc = trait_mage_2_character_desc
+			}
+			desc = trait_mage_1_character_desc
+		}
+	}
+
+	compatibility = {
+		brave = @pos_compat_low
+		craven = @neg_compat_low
+	}
+}
+
+fey = {
+	icon = fey.dds
+	same_culture_opinion = 25
+	enemy_hostile_scheme_phase_duration_add = 50
+	diplomatic_range_mult = 8
+	inherit_chance = 0
+	
+	genetic = yes
+	physical = yes
+	birth=0
+	random_creation = 0
+	prowess = 10 # Being a Maiar does not guarentee great skill in combat - better represented by high initial stats
+	health = 50
+	negate_health_penalty_add = 50
+	dread_baseline_add = 25
+	dread_gain_mult = 0.25
+	stress_gain_mult = -0.9
+	#flag = can_not_marry
+	#can_have_children = no
+	immortal = yes
+	life_expectancy = 30000
+	
+	same_faith_opinion = 40
+	
+	ruler_designer_cost = 250
+	
+	scheme_discovery_chance_mult = 2.0
+	enemy_personal_scheme_success_chance_add = -500
+
+}
+
+
+
+maiar = {
+	icon = maia.dds
+	same_culture_opinion = 25
+	enemy_hostile_scheme_phase_duration_add = 50
+	diplomatic_range_mult = 8
+
+	genetic = yes
+	physical = yes
+	birth= 0
+	random_creation = 0
+	prowess = 20 # Being a Maia does not guarentee great skill in combat - better represented by high initial stats
+	health = 50
+	negate_health_penalty_add = 50
+	dread_baseline_add = 50
+	dread_gain_mult = 0.5
+	stress_gain_mult = -0.9
+	# flag = can_not_marry
+	# can_have_children = no
+	 immortal = yes
+	life_expectancy = 30000
+
+	same_faith_opinion = 40
+
+	ruler_designer_cost = 500
+
+	scheme_discovery_chance_mult = 2.0
+	enemy_personal_scheme_success_chance_add = -500
+
+}
+
+valar = {
+	icon = valar.dds
+	same_culture_opinion = 25
+	enemy_hostile_scheme_phase_duration_add = 75
+	genetic = yes
+	physical = yes
+	birth=0
+	random_creation = 0
+	inherit_chance = 0
+	
+	prowess = 100 # Being a Maiar does not guarentee great skill in combat - better represented by high initial stats
+	learning = 50
+	martial = 50
+	diplomacy = 50
+	stewardship = 50
+	intrigue = 50
+	
+	health = 50
+	negate_health_penalty_add = 50
+	dread_baseline_add = 100
+	dread_gain_mult = 1
+	stress_gain_mult = -0.9
+	# flag = can_not_marry
+	# can_have_children = no
+	immortal = yes
+	life_expectancy = 30000
+	
+	same_faith_opinion = 40
+	
+	ruler_designer_cost = 1000
+	
+	scheme_discovery_chance_mult = 2.0
+	enemy_personal_scheme_success_chance_add = -500
+}
+
+maiarindi = {
+	icon = maiarindi.dds
+	same_culture_opinion = 25
+	
+	
+	inherit_chance = 0
+	
+	genetic = yes
+	physical = yes
+	birth=0
+	random_creation = 0
+	
+	health = 1
+	negate_health_penalty_add = 1
+	life_expectancy = 40
+	years_of_fertility = 20
+	
+	same_faith_opinion = 40
+	
+	ruler_designer_cost = 50
+	
+	monthly_prestige_gain_mult = 0.05
+
+}
+
+balrog = {
+	icon = balrog.dds
+	same_culture_opinion = 25
+	
+
+	genetic = yes
+	physical = yes
+	birth= 0
+	random_creation = 0
+	prowess = 50 # Being a Maia does not guarentee great skill in combat - better represented by high initial stats
+	
+	negate_health_penalty_add = 50
+	dread_baseline_add = 100
+	dread_gain_mult = 1
+	
+
+	same_faith_opinion = 40
+
+	ruler_designer_cost = 250
+
+	scheme_discovery_chance_mult = 2.0
+	enemy_personal_scheme_success_chance_add = -500
+
+}
+
+wed_pregnant = {
+	icon = pregnant.dds
+	category = health
+	prowess = -2
+
+	flag = no_message
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_pregnant_desc
+			}
+			desc = trait_pregnant_character_desc
+		}
+	}
+
+	ai_energy = -15
+}
+
+wed_extended_lifespan = {
+	icon = lifespan_extended.dds
+	category = health
+	life_expectancy = 10
+	years_of_fertility = 5
+	good = yes
+	
+	
+	shown_in_ruler_designer = no
+	
+	track = {
+		1 = {
+			life_expectancy = 10
+			years_of_fertility = 5
+		}
+		2 = {
+			life_expectancy = 10
+			years_of_fertility = 5
+		}
+		3 = {
+			life_expectancy = 10
+			years_of_fertility = 5
+		}
+		4 = {
+			life_expectancy = 10
+			years_of_fertility = 5
+		}
+		5 = {
+			life_expectancy = 10
+			years_of_fertility = 5
+		}
+	}
+
+	
+
+	ai_energy = -15
+}

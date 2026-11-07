@@ -1,0 +1,16 @@
+﻿
+
+percival_game_start = {
+	
+
+	events = {
+		wed.1
+		
+	}
+	on_actions = {
+		wed_yearly_pulse
+		
+	}
+	
+	
+}

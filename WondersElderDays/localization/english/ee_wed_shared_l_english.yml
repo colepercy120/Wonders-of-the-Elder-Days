@@ -1,0 +1,67 @@
+﻿# LotR: This file needs to be kept in sync with the release version.
+#   Edited the dates
+#	Edited the loading screen text
+
+l_english:
+ 
+ ### Arnor 
+ 
+
+  
+ ee_wed_shared.02.t: "The Recovery of the Palantíri"
+ ee_wed_shared.02.desc: "The salvage team set sail under a pale, weary sun, their course aimed directly into the churning, frigid waters of Forochel’s most desolate reaches. For weeks, their efforts had yielded little beyond the jagged, frozen coastline and the murmur of the wind in the stillness. But this morning, as the crew cast their nets over the waters where the currents grew colder still, the sea offered a grim treasure. Beneath the dark waves, the wreck of the Arvedui, the fabled vessel of the last King of Arthedain, lay entangled in the jagged rocks, its hull shattered, yet still defiantly holding the secrets of its final voyage. For the men aboard, the sight of the wreck was a moment of awe and dread—both a triumph of discovery and a reminder of the perils the sea had claimed. The divers, now wary of the unforgiving depths, braved the icy waters with one mission: to recover the lost Palantír. \n\nHours passed in tense silence, broken only by the creaking of the ship and the crash of distant waves. Then, with an effort that seemed to defy the very ocean, the first stone surfaced—dark, smooth, and ancient, its glass surface gleaming eerily in the pale light. The Palantír of Annúminas was found, its mysteries preserved in the cold embrace of the sea. The second soon followed, a stone of equal age but twisted by time—the Palantír of Amon Sûl. Their recovery was a victory not only for the salvage team but for the realm itself, for the stones now held the promise of restoring the vision of Arnor, if the King dared to use them. As the team returned to shore, the weight of history seemed to shift, and the distant shadow of the past began to stir once again."
+ ee_wed_shared.02.a: "Huzzah!"
+ 
+
+ 
+ ee_wed_shared.04.t: "No Word from the North"
+ ee_wed_shared.04.desc: "We have not yet recived any word on the search for the lost Palantiri of Arnor. Our best adventurers are continuing to search the bay of forochel for any sign of Arvedui's ship. All thats left to do it wait for results."
+ ee_wed_shared.04.a: "We Eagerly await their sucess."
+ ee_wed_shared.04.b: "Recall them, we can't afford this."
+ 
+ ee_wed_shared.05.t: "A Frozen Miracle"
+ ee_wed_shared.05.desc: "We have recived an utterly astonishing report from the adventurers in Forochel. They encountered a [numenorean|e] ship frozen in an iceberg. Getting aboard was problomatic but once inside it was clear the ship was carrying someone importiant. The crew, still eerily preserved by ice, were clad in fine robes and equiped with fine weapons. Our teams pulled the bodies from the ice to give them proper funereals fitting for our ancestors and salvaged as much as they could of the finnery and documents on the vessel. Then continued to search for the lost Palantiri. But then the miracle happened. A child, identified in the logs as Ârûbên the nephew of [pharazon|e], suddenly awoke. He was badly frostbitten and not able to stand but he was, is, alive."
+ ee_wed_shared.05.a: "Bring the Heir of Numenor to the Capital at once!"
+ 
+ ee_wed_shared.03.t: "The Osgiliath-Stone Recovered!"
+ ee_wed_shared.03.desc: "After long months of dredging and several alternate proposals to divert the river for the project, one of our cranes came across a large stone near one of the footings for an ancient bridge. At first, we thought it was just another boulder. But as the massive rock emerged from the water, its shape was clear. After some polishing and cleaning efforts, our suspicions were confirmed: we had found the lost Master Palantír of Osgiliath!"
+ ee_wed_shared.03.a: "The Master-Stone Restored!"
+
+ 
+ 
+ ee_wed_shared.01.t: "Gondolin Restored!"
+ ee_wed_shared.01.desc: "Since the [warofwrath|e] [gondolin|e] has lain abandoned of the coast of Tol Fuin. Two full ages of the world has the city lain abandoned. But no longer! Gondolin, the Hidden City, and the [hope|e] of all [eldar|e] rises again! \n\nAfter years of work dredging the ruins and rebuilding the very land it rests on, Gondolin is again filled with Elven song! While the Encircling Mountians may be gone, now the Great Sea itself serves as the cities protection."
+ ee_wed_shared.01.a: "A Statement of our Endurance in the ever changing world!"
+ 
+ decision_palintir_fishing: "Attempt to Salvage the Palantíri"
+ decision_palintir_fishing_desc: "The frozen shores of Forochel lie beneath our banner at last, and with them, the faintest hope of reclaiming what was thought lost to the depths. Long ago, in the dark days of our kingdom’s decline, the palantíri of Annúminas and Amon Sûl were lost to the icy seas. Treasures beyond price, our birthright swallowed by the cruel northern waters. Yet now, with mastery over these lands, we may dare what none before have dared: to scour the frozen waves and sunken wrecks for our lost seeing-stones. It is a perilous task, one fit only for the desperate or the bold. But if even one of the palantíri is found, it may light a beacon for Arnor’s renewal and bind the sundered North-kingdom whole once more."
+ decision_palintir_fishing_confirm: "Send a salvage team."
+ decision_palintir_fishing_tooltip: "Send a salvage team to find the wreck of Arvedui and reclaim the lost Palantíri."
+ decision_palintir_fishing_effect: "Send a salvage team to find the wreck of Arvedui in the wastes of Forochel and reclaim the lost Palantíri - Warning this will take time!"
+
+ decision_palintir_fishing_gondor: "Dredge the Anduin"
+ decision_palintir_fishing_gondor_desc: "The Master Stone of Osgiliath was the first Palantír to be lost. During the [kinstrife|e] the Tower of the Dome was destroyed and the Osgiliath-Stone was lost in the Anduin. While the stone was spherical, it was also quite heavy. But the Anduin is wide and not noteably fast. Meaning that in all likelyhood the Master Stone is still there in Osgiliath, just buried under millennia of silt. Meaning that with sufficent dredging we should be able to recover it."
+ decision_palintir_fishing_gondor_confirm: "A chance to recover our ancient birthright!"
+ decision_palintir_fishing_gondor_tooltip: "Dredge the Anduin."
+ decision_palintir_fishing_gondor_effect: "Your engineers will dredge the Anduin for the Lost Palantír."
+ 
+ decision_reclaim_gondolin: "Restore Gondolin"
+ decision_reclaim_gondolin_desc: "Since the [warofwrath|e] [gondolin|e] has laid under the sea, off the southwest coast of Tol Fuin. while the encircling mountains have been reduced to sand and the strategic value of Tol Fuin is far less then during the [elderdays|e] Gondolin remains one of the [eldar|e]'s brightest beacons of [hope|e] and restoring it would be a bold statement of our endurance in the face of time."
+ decision_reclaim_gondolin_tooltip: "Restore Gondolin"
+ decision_reclaim_gondolin_confirm: "Restore the Hidden City!"
+ 
+ building_type_wonder_gondolin_01: "Gondolin"
+ building_wonder_gondolin_01: "The Sunken City of Gondolin"
+ building_wonder_gondolin_01_desc: "The Hidden City of [gondolin|e] was one of the largest and most powerful [noldor|E] realms of the [elderdays|e]. Destroyed by [morgothcharacter|e] during the War of The Jewels, its ruins were sunk with most of the rest of [beleriand|e] at the end of the [firstage|e]. Lying just off the south western coast of Tol Fuin."
+ building_wonder_gondolin_02: "Gondolin Resplendent"
+ building_wonder_gondolin_02_desc: "[gondolin|e] has laid under the sea for untold mellenia, but now after vast amounts of dredging and land reclamation the Hidden City has been raised from the depths. While the encircling mountians were smashed in the [warofwrath|e], the citys walls gleeming white walls now overlook the great sea. Gondolin again serves as a center of Elven culture and a statement of the endurance of the Eldar in Middle-earth."
+ 
+ 
+ iceboy_name: "Helcion"
+ iceboy_name_2: "Ârûbên"
+ 
+ nick_iceborn: "Helcion"
+ nick_iceborn_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] was the nephew of [pharazon|e] during the [downfallofnumenor|e]. Considered a failure for taking after Tar-Palantir, his uncle sent him away on an expidition to Forochel, his ship was destoryed but miraculously [CHARACTER.GetShortUINameNoTooltipNoFormat|U] was pulled from the ice by Arnorian salvagers in the late [thirdage|e]."
+
+ GONDOLIN: "Gondolin"
+ TOL_FUIN: "Tol Fuin"

@@ -1,0 +1,3769 @@
+@holding_illustration_underground_elven = "gfx/interface/illustrations/holding_types/underground/delving.dds"
+
+# ============================================================
+# ELVEN UNDERGROUND HALL HOLDINGS
+# ============================================================
+# Underground counterpart to elven_settlement_01 through elven_settlement_07.
+# Gameplay values intentionally match the corresponding elven settlement tier.
+# Underground restriction uses the existing LOTR subterranean terrain requirement.
+# Presentation temporarily reuses the existing underground holding meshes/illustration.
+
+elven_hall_01 = {
+	construction_time = extremely_slow_construction_time
+
+	type_icon = "icon_building_range.dds"
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_01_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+		NOT = { # LotR: Preserve the normal elven colony restriction
+			county = {
+				any_county_province = { has_holding_type = settlement_holding }
+			}
+		}
+	}
+
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = {
+				has_medium_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				has_medium_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+	}
+
+	on_complete = {
+		county.holder = { add_elven_hope_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_elven_refuge_built } }
+	}
+
+	cost_gold = extremely_expensive_building_tier_3_cost
+	next_building = elven_hall_02
+
+	levy = elven_building_levy_tier_1
+	max_garrison = elven_building_max_garrison_tier_1
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	province_modifier = {
+		monthly_income = 0.5
+		fort_level = great_building_fort_level_tier_1
+		hostile_raid_time = 1
+		building_slot_add = -1
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.1
+	}
+
+	flag = elven_hall
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+	}
+}
+
+elven_hall_02 = {
+	construction_time = extremely_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_01_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+	}
+
+	cost_gold = extremely_expensive_building_tier_3_cost
+	next_building = elven_hall_03
+
+	levy = elven_building_levy_tier_2
+	max_garrison = elven_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	province_modifier = {
+		monthly_income = 0.65
+		fort_level = great_building_fort_level_tier_2
+		hostile_raid_time = 2
+		building_slot_add = -1
+		stationed_maa_damage_mult = 0.05
+		stationed_maa_toughness_mult = 0.05
+		travel_danger = -5
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.2
+	}
+
+	flag = elven_hall
+
+	ai_value = {
+		base = 9 # Significantly higher than normal, they're just that good
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+	}
+}
+
+elven_hall_03 = {
+	construction_time = extremely_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_02_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = { has_low_hope_or_higher = yes }
+			scope:holder.top_liege = {
+				has_low_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+	}
+
+	cost_gold = extremely_expensive_building_tier_5_cost
+	next_building = elven_hall_04
+
+	levy = elven_building_levy_tier_3
+	max_garrison = elven_building_max_garrison_tier_3
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_4
+	province_modifier = {
+		monthly_income = 0.85
+		fort_level = great_building_fort_level_tier_3
+		hostile_raid_time = 3
+		stationed_maa_damage_mult = 0.1
+		stationed_maa_toughness_mult = 0.1
+		stationed_siege_weapon_siege_value_mult = 0.05
+		travel_danger = -10
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.4
+	}
+
+	flag = elven_hall
+	# flag = elven_stronghold_upgrade_tier
+
+	ai_value = {
+		base = 8 # Significantly higher than normal, they're just that good
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+		# modifier = {
+			# factor = 0
+			# scope:holder = { # So that Elven vassals don't fill use up the quota of the higher tier	### Elven buildings don't have a quota anymore
+				# is_independent_ruler = no
+			# }
+		# }
+	}
+}
+
+elven_hall_04 = {
+	construction_time = extremely_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_02_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = { has_low_hope_or_higher = yes }
+			scope:holder.top_liege = {
+				has_low_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+		# custom_tooltip = {
+			# text = can_only_contruct_one_elven_stronghold_at_a_time
+			# scope:holder = {
+				# NOT = { any_directly_owned_province = { has_construction_with_flag = elven_stronghold_upgrade_tier } }
+			# }
+		# }
+	}
+
+	cost_gold = extremely_expensive_building_tier_5_cost
+	next_building = elven_hall_05
+
+	levy = elven_building_levy_tier_4
+	max_garrison = elven_building_max_garrison_tier_4
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_4
+	province_modifier = {
+		monthly_income = 1.1
+		fort_level = great_building_fort_level_tier_3
+		hostile_raid_time = 4
+		stationed_maa_damage_mult = 0.2
+		stationed_maa_toughness_mult = 0.2
+		stationed_siege_weapon_siege_value_mult = 0.1
+		travel_danger = -12
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.5
+	}
+
+	flag = elven_hall
+	# flag = elven_stronghold_upgrade_tier
+
+	ai_value = {
+		base = 7 # Significantly higher than normal, they're just that good
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+	}
+}
+
+elven_hall_05 = {
+	construction_time = extremely_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_03_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = { has_medium_hope_or_higher = yes }
+			scope:holder.top_liege = {
+				has_medium_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+		# custom_tooltip = {
+			# text = can_only_contruct_one_elven_stronghold_at_a_time
+			# scope:holder = {
+				# NOT = { any_directly_owned_province = { has_construction_with_flag = elven_stronghold_upgrade_tier } }
+			# }
+		# }
+	}
+
+	cost_gold = extremely_expensive_building_tier_5_cost
+	next_building = elven_hall_06
+
+	levy = elven_building_levy_tier_5
+	max_garrison = elven_building_max_garrison_tier_5
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_4
+	province_modifier = {
+		monthly_income = 1.4
+		fort_level = great_building_fort_level_tier_3
+		hostile_raid_time = 5
+		stationed_maa_damage_mult = 0.3
+		stationed_maa_toughness_mult = 0.3
+		stationed_siege_weapon_siege_value_mult = 0.15
+		travel_danger = -14
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.6
+	}
+
+	flag = elven_hall
+	# flag = elven_stronghold_upgrade_tier
+
+	ai_value = {
+		base = 6
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+	}
+}
+
+elven_hall_06 = {
+	construction_time = elven_slow_construction_time # elven_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_03_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = { has_high_hope_or_higher = yes }
+			scope:holder.top_liege = {
+				has_high_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+		# custom_tooltip = {
+			# text = can_only_contruct_one_elven_city_at_a_time
+			# scope:holder = {
+				# NOT = { any_directly_owned_province = { has_construction_with_flag = elven_city_upgrade_tier } }
+			# }
+		# }
+		# scope:holder.top_liege = {
+		# custom_tooltip = {
+		# text = elven_city_limit_tooltip
+		# has_capacity_for_elven_city = yes
+		# }
+		# }
+	}
+
+	cost_gold = extremely_expensive_building_tier_7_cost
+	next_building = elven_hall_07
+
+	levy = elven_building_levy_tier_6
+	max_garrison = elven_building_max_garrison_tier_6
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_6
+	province_modifier = {
+		monthly_income = 1.75
+		fort_level = great_building_fort_level_tier_4
+		hostile_raid_time = 6
+		building_slot_add = 1
+		stationed_maa_damage_mult = 0.4
+		stationed_maa_toughness_mult = 0.4
+		stationed_siege_weapon_siege_value_mult = 0.2
+		travel_danger = -16
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.8
+	}
+
+	flag = elven_hall
+	# flag = elven_city_upgrade_tier
+
+	ai_value = {
+		base = 5
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+	}
+}
+
+elven_hall_07 = {
+	construction_time = elven_slow_construction_time # elven_slow_construction_time
+
+	# ============================================================
+	# UNDERGROUND ELVEN HALL MODEL
+	# ============================================================
+	asset = {
+		type = pdxmesh
+		name = "dwarven_holding_04_mesh"
+		illustration = @holding_illustration_underground_elven
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Castle/western_castle" soundparameter = { "Tier" = 0 } }
+		graphical_cultures = { elven_building_gfx noldor_building_gfx }
+		graphical_regions = { graphical_underground }
+	}
+	is_enabled = {
+		OR = {
+			building_requirement_elven = yes
+			scope:holder = { is_valinor_maiar_character = yes }
+		}
+	}
+
+	can_construct_potential = {
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		custom_tooltip = {
+			text = is_not_wastelands_trigger_tooltip
+			is_wastelands = no
+		}
+	}
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		OR = {
+			scope:holder = { has_high_hope_or_higher = yes }
+			scope:holder.top_liege = {
+				has_high_hope_or_higher = yes
+			}
+			scope:holder.top_liege = {
+				is_elf = no
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = yes
+		county_is_elven = yes
+		# custom_tooltip = {
+			# text = can_only_contruct_one_elven_city_at_a_time
+			# scope:holder = {
+				# NOT = { any_directly_owned_province = { has_construction_with_flag = elven_city_upgrade_tier } }
+			# }
+		# }
+	}
+
+	cost_gold = extremely_expensive_building_tier_7_cost
+
+	levy = elven_building_levy_tier_7
+	max_garrison = elven_building_max_garrison_tier_7
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_6
+	province_modifier = {
+		monthly_income = 2
+		fort_level = great_building_fort_level_tier_4
+		hostile_raid_time = 7
+		building_slot_add = 1
+		stationed_maa_damage_mult = 0.5
+		stationed_maa_toughness_mult = 0.5
+		stationed_siege_weapon_siege_value_mult = 0.25
+		travel_danger = -18
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_jungle_bonus
+		terrain = jungle
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_deep_forest_bonus
+		terrain = deep_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	province_terrain_modifier = {
+		parameter = elven_holding_fort_level_in_mallorn_forest_bonus
+		terrain = mallorn_forest
+		additional_fort_level = castle_holding_fort_level_in_jungle_bonus_value
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 1
+	}
+
+	flag = elven_hall
+	# flag = elven_city_upgrade_tier
+
+	ai_value = {
+		base = 10
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { is_elf = yes }
+			}
+		}
+		modifier = {
+			add = 10
+			scope:holder.culture = { has_cultural_era_or_later = culture_era_high_medieval }
+		}
+		modifier = {
+			factor = 3
+			scope:holder.capital_province = this
+		}
+		modifier = {
+			factor = 0.1
+			free_building_slots >= 1
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.1
+			combined_building_level <= 10
+			years_from_game_start >= 1
+		}
+		modifier = {
+			factor = 0.3
+			years_from_game_start <= 0.01
+		}
+	}
+}
+
+
+# ============================================================
+# ELVEN UNDERGROUND BUILDINGS
+# ============================================================
+# Seven-tier underground variants following the normal elven building progression.
+# Each tier requires the matching elven_settlement tier and underground terrain.
+
+# ============================================================
+# Cavern Gardens
+# ============================================================
+elven_cavern_gardens_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		monthly_income = 0.3
+		supply_limit = 250
+	}
+
+	next_building = elven_cavern_gardens_02
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_cavern_gardens_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		monthly_income = 0.6
+		supply_limit = 500
+	}
+
+	next_building = elven_cavern_gardens_03
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_gardens_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		monthly_income = 0.9
+		supply_limit = 800
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.03
+	}
+
+	next_building = elven_cavern_gardens_04
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_gardens_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		monthly_income = 1.2
+		supply_limit = 1100
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.05
+	}
+
+	next_building = elven_cavern_gardens_05
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_gardens_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		monthly_income = 1.5
+		supply_limit = 1400
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.05
+	}
+
+	next_building = elven_cavern_gardens_06
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_gardens_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		monthly_income = 1.8
+		supply_limit = 1750
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.08
+	}
+
+	next_building = elven_cavern_gardens_07
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_gardens_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		monthly_income = 2.1
+		supply_limit = 2100
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+
+	type_icon = "icon_building_cereal_fields.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Crystal Delvings
+# ============================================================
+elven_crystal_delvings_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		monthly_income = 0.4
+		tax_mult = 0.02
+	}
+
+	next_building = elven_crystal_delvings_02
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_crystal_delvings_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		monthly_income = 0.8
+		tax_mult = 0.03
+	}
+
+	next_building = elven_crystal_delvings_03
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_crystal_delvings_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		monthly_income = 1.2
+		tax_mult = 0.04
+	}
+
+	next_building = elven_crystal_delvings_04
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_crystal_delvings_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		monthly_income = 1.6
+		tax_mult = 0.05
+	}
+
+	next_building = elven_crystal_delvings_05
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_crystal_delvings_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		monthly_income = 2
+		tax_mult = 0.06
+	}
+
+	next_building = elven_crystal_delvings_06
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_crystal_delvings_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		monthly_income = 2.4
+		tax_mult = 0.08
+	}
+
+	next_building = elven_crystal_delvings_07
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_crystal_delvings_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		monthly_income = 2.8
+		tax_mult = 0.1
+	}
+
+	type_icon = "icon_building_quarries.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Deep Markets
+# ============================================================
+elven_deep_markets_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		monthly_income = 0.3
+	}
+
+	county_modifier = {
+		development_growth = 0.05
+	}
+
+	next_building = elven_deep_markets_02
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_deep_markets_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		monthly_income = 0.6
+	}
+
+	county_modifier = {
+		development_growth = 0.1
+	}
+
+	next_building = elven_deep_markets_03
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_markets_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		monthly_income = 0.9
+	}
+
+	county_modifier = {
+		development_growth = 0.15
+	}
+
+	next_building = elven_deep_markets_04
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_markets_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		monthly_income = 1.2
+	}
+
+	county_modifier = {
+		development_growth = 0.2
+	}
+
+	next_building = elven_deep_markets_05
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_markets_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		monthly_income = 1.5
+	}
+
+	county_modifier = {
+		development_growth = 0.25
+	}
+
+	next_building = elven_deep_markets_06
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_markets_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		monthly_income = 1.8
+	}
+
+	county_modifier = {
+		development_growth = 0.3
+	}
+
+	next_building = elven_deep_markets_07
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_markets_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		monthly_income = 2.1
+	}
+
+	county_modifier = {
+		development_growth = 0.4
+	}
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Deep Forges
+# ============================================================
+elven_deep_forges_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		monthly_income = 0.2
+		stationed_maa_damage_mult = 0.02
+		stationed_maa_toughness_mult = 0.02
+	}
+
+	next_building = elven_deep_forges_02
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_deep_forges_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		monthly_income = 0.4
+		stationed_maa_damage_mult = 0.04
+		stationed_maa_toughness_mult = 0.04
+	}
+
+	next_building = elven_deep_forges_03
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_forges_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		monthly_income = 0.6
+		stationed_maa_damage_mult = 0.06
+		stationed_maa_toughness_mult = 0.06
+	}
+
+	next_building = elven_deep_forges_04
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_forges_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		monthly_income = 0.8
+		stationed_maa_damage_mult = 0.08
+		stationed_maa_toughness_mult = 0.08
+	}
+
+	next_building = elven_deep_forges_05
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_forges_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		monthly_income = 1
+		stationed_maa_damage_mult = 0.1
+		stationed_maa_toughness_mult = 0.1
+	}
+
+	next_building = elven_deep_forges_06
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_forges_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		monthly_income = 1.2
+		stationed_maa_damage_mult = 0.12
+		stationed_maa_toughness_mult = 0.12
+	}
+
+	next_building = elven_deep_forges_07
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_deep_forges_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		monthly_income = 1.4
+		stationed_maa_damage_mult = 0.15
+		stationed_maa_toughness_mult = 0.15
+	}
+
+	type_icon = "icon_building_blacksmiths.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Echoing Halls
+# ============================================================
+elven_echoing_halls_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		monthly_income = 0.15
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.05
+	}
+
+	next_building = elven_echoing_halls_02
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_echoing_halls_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		monthly_income = 0.3
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.1
+	}
+
+	next_building = elven_echoing_halls_03
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_echoing_halls_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		monthly_income = 0.45
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.15
+	}
+
+	next_building = elven_echoing_halls_04
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_echoing_halls_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		monthly_income = 0.6
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.2
+	}
+
+	next_building = elven_echoing_halls_05
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_echoing_halls_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		monthly_income = 0.75
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.25
+	}
+
+	next_building = elven_echoing_halls_06
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_echoing_halls_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		monthly_income = 0.9
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.3
+	}
+
+	next_building = elven_echoing_halls_07
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_echoing_halls_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		monthly_income = 1.05
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.4
+	}
+
+	type_icon = "icon_building_dormitory.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Subterranean Barracks
+# ============================================================
+elven_subterranean_barracks_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		levy_size = 0.05
+		stationed_maa_toughness_mult = 0.02
+	}
+
+	next_building = elven_subterranean_barracks_02
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_subterranean_barracks_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		levy_size = 0.1
+		stationed_maa_toughness_mult = 0.04
+	}
+
+	next_building = elven_subterranean_barracks_03
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_subterranean_barracks_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		levy_size = 0.15
+		stationed_maa_toughness_mult = 0.06
+	}
+
+	next_building = elven_subterranean_barracks_04
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_subterranean_barracks_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		levy_size = 0.2
+		stationed_maa_toughness_mult = 0.08
+	}
+
+	next_building = elven_subterranean_barracks_05
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_subterranean_barracks_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		levy_size = 0.25
+		stationed_maa_toughness_mult = 0.1
+	}
+
+	next_building = elven_subterranean_barracks_06
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_subterranean_barracks_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		levy_size = 0.3
+		stationed_maa_toughness_mult = 0.12
+	}
+
+	next_building = elven_subterranean_barracks_07
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_subterranean_barracks_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		levy_size = 0.35
+		stationed_maa_toughness_mult = 0.15
+	}
+
+	type_icon = "icon_building_barracks.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Warded Passages
+# ============================================================
+elven_warded_passages_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		fort_level = 1
+		defender_holding_advantage = 1
+	}
+
+	next_building = elven_warded_passages_02
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_warded_passages_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		fort_level = 2
+		defender_holding_advantage = 2
+	}
+
+	next_building = elven_warded_passages_03
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_warded_passages_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		fort_level = 3
+		defender_holding_advantage = 3
+	}
+
+	next_building = elven_warded_passages_04
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_warded_passages_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		fort_level = 4
+		defender_holding_advantage = 4
+	}
+
+	next_building = elven_warded_passages_05
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_warded_passages_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		fort_level = 5
+		defender_holding_advantage = 5
+	}
+
+	next_building = elven_warded_passages_06
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_warded_passages_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		fort_level = 6
+		defender_holding_advantage = 6
+	}
+
+	next_building = elven_warded_passages_07
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_warded_passages_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		fort_level = 7
+		defender_holding_advantage = 7
+	}
+
+	type_icon = "icon_building_regimental_grounds.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# Cavern Fletchers
+# ============================================================
+elven_cavern_fletchers_01 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.025
+		stationed_maa_pursuit_mult = 0.02
+	}
+
+	next_building = elven_cavern_fletchers_02
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_farm_estate_improvement_from_culture_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_cavern_fletchers_02 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.05
+		stationed_maa_pursuit_mult = 0.04
+	}
+
+	next_building = elven_cavern_fletchers_03
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_fletchers_03 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.075
+		stationed_maa_pursuit_mult = 0.06
+	}
+
+	next_building = elven_cavern_fletchers_04
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_fletchers_04 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.1
+		stationed_maa_pursuit_mult = 0.08
+	}
+
+	next_building = elven_cavern_fletchers_05
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_fletchers_05 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.125
+		stationed_maa_pursuit_mult = 0.1
+	}
+
+	next_building = elven_cavern_fletchers_06
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_fletchers_06 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.15
+		stationed_maa_pursuit_mult = 0.12
+	}
+
+	next_building = elven_cavern_fletchers_07
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_cavern_fletchers_07 = {
+	construction_time = very_slow_construction_time
+	effect_desc = longhouses_effect_desc
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.18
+		stationed_maa_pursuit_mult = 0.15
+	}
+
+	type_icon = "icon_building_generic_02.dds"
+
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		modifier = {
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+# ============================================================
+# ELVEN UNDERGROUND FORTIFICATIONS
+# ============================================================
+# Seven-level defensive line for elven_hall holdings.
+# Built around guarded passages, sealed gates, warded chambers, and defensible chokepoints.
+
+elven_hall_fortifications_01 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_01
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_1_cost
+	cost_prestige = cheap_building_tier_1_cost
+
+	levy = 50
+	max_garrison = 200
+
+	province_modifier = {
+		fort_level = 2
+		defender_holding_advantage = 2
+		garrison_size = 0.1
+		stationed_maa_toughness_mult = 0.02
+	}
+
+	county_modifier = {
+		hostile_raid_time = 1
+	}
+
+	next_building = elven_hall_fortifications_02
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_02 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_02
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_2_cost
+	cost_prestige = cheap_building_tier_2_cost
+
+	levy = 75
+	max_garrison = 275
+
+	province_modifier = {
+		fort_level = 3
+		defender_holding_advantage = 3
+		garrison_size = 0.2
+		stationed_maa_toughness_mult = 0.04
+	}
+
+	county_modifier = {
+		hostile_raid_time = 2
+	}
+
+	next_building = elven_hall_fortifications_03
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_03 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_03
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_3_cost
+	cost_prestige = cheap_building_tier_3_cost
+
+	levy = 100
+	max_garrison = 350
+
+	province_modifier = {
+		fort_level = 4
+		defender_holding_advantage = 4
+		garrison_size = 0.3
+		stationed_maa_toughness_mult = 0.06
+	}
+
+	county_modifier = {
+		hostile_raid_time = 3
+	}
+
+	next_building = elven_hall_fortifications_04
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_04 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_04
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_4_cost
+	cost_prestige = cheap_building_tier_4_cost
+
+	levy = 125
+	max_garrison = 425
+
+	province_modifier = {
+		fort_level = 5
+		defender_holding_advantage = 5
+		garrison_size = 0.4
+		stationed_maa_toughness_mult = 0.08
+	}
+
+	county_modifier = {
+		hostile_raid_time = 4
+	}
+
+	next_building = elven_hall_fortifications_05
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_05 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_05
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_5_cost
+	cost_prestige = cheap_building_tier_5_cost
+
+	levy = 150
+	max_garrison = 500
+
+	province_modifier = {
+		fort_level = 6
+		defender_holding_advantage = 6
+		garrison_size = 0.5
+		stationed_maa_toughness_mult = 0.1
+	}
+
+	county_modifier = {
+		hostile_raid_time = 5
+	}
+
+	next_building = elven_hall_fortifications_06
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_06 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_06
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_6_cost
+	cost_prestige = cheap_building_tier_6_cost
+
+	levy = 175
+	max_garrison = 600
+
+	province_modifier = {
+		fort_level = 7
+		defender_holding_advantage = 7
+		garrison_size = 0.65
+		stationed_maa_toughness_mult = 0.12
+	}
+
+	county_modifier = {
+		hostile_raid_time = 6
+	}
+
+	next_building = elven_hall_fortifications_07
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_hall_fortifications_07 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = {
+			OR = {
+				is_elf = yes
+				is_valinor_maiar_character = yes
+			}
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_hall_07
+		lotr_dwarven_underground_buildings_requirement_terrain = yes
+	}
+
+	cost_gold = normal_building_tier_7_cost
+	cost_prestige = cheap_building_tier_7_cost
+
+	levy = 200
+	max_garrison = 700
+
+	province_modifier = {
+		fort_level = 8
+		defender_holding_advantage = 8
+		garrison_size = 0.8
+		stationed_maa_toughness_mult = 0.15
+	}
+
+	county_modifier = {
+		hostile_raid_time = 7
+	}
+
+	type_icon = "icon_structure_aurelian_walls.dds"
+
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+	}
+}

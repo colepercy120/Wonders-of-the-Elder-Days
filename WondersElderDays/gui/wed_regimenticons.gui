@@ -1,0 +1,10 @@
+texticon = {
+    icon = fellbeast_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/fell_beast.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+

@@ -1,0 +1,83 @@
+﻿# LotR: This file needs to be kept in sync with the release version.
+#   Edited the dates
+#	Edited the loading screen text
+
+l_english:
+ 
+ building_type_artificers_01: "Engineering Pavilion"
+ building_type_artificers_01_desc: "a collection of scientific and Engineering production and research facilities allowing the replication of the wonders of the [elderdays|e]."
+ building_artificers_01: "Arcane Tinkerers"
+ building_artificers_01_desc: "A small group of tinkers has established itself in the county, peddling wares and assisting with citizens' problems."
+ building_artificers_02: "Concrete manufacturing"
+ building_artificers_02_desc: "Using Lime harvested from nearby hills, we have created a wondrous powder that, when combined with water, hardens into stone, allowing much greater strength of our buildings in the area."
+ building_artificers_03: "Crucible Steel"
+ building_artificers_03_desc: "By soaking wrought iron in molten pig iron, we can create a form of very tough steel, leading to weapons produced here having sharper, longer-lasting edges."
+ building_artificers_04: "Alchemical Lab"
+ building_artificers_04_desc: "There are numerous wondrous substances across Middle-earth. If we can understand and utilize them, we can improve our materials and understanding of science."
+ building_artificers_05: "Engineering School"
+ building_artificers_05_desc: "A campus teaching the ancient ways of mathematics and construction. students here learn how to make structures rivaling those of [numenor|e} at its height."
+ building_artificers_06: "Gunpowder production"
+ building_artificers_06_desc: "By combining sulfur, charcoal, and saltpeter, we can create an explosive powder that can be used for destroying troublesome hills, fortresses, and even mountains."
+ building_artificers_07: "Speaking Chamber"
+ building_artificers_07_desc: "Songs of power are the main ways practitioners use [magic|e], the speaking chamber provides them a safe space to practice the craft."
+ building_artificers_08: "Artificer Guild"
+ building_artificers_08_desc: "A collection of tradesmen using knowledge of [magic|e] and the unseen world to craft wonderous items."
+ 
+ building_type_dwarven_magic_01: "Dwarven Arcana"
+ building_type_dwarven_magic_01_desc: "a collection of manufacturing and research buildings aimed at using ancient knowledge of clockwork, Engineering, and [magic|e] to construct wonders."
+ building_dwarven_magic_01: "Clock Manufacturing"
+ building_dwarven_magic_01_desc: "Timekeeping underground is a very difficult task, but it's long been known that [dwarves|e] prefer a standard 24-hour day-night cycle, so the production of accurate timepieces is a vital industry."
+ building_dwarven_magic_02: "Crystal Lamps"
+ building_dwarven_magic_02_desc: "Similar to the Feanorian Lamps of the [noldorelves|e], the crystal lamps trap sun and moon light in quartz to provide a non-flammable light source for our caverns."
+ building_dwarven_magic_03: "Clockwork Foundaries"
+ building_dwarven_magic_03_desc: "a highly advanced and centralized system to create clockwork at a mass scale."
+ building_dwarven_magic_04: "Torsion Springs"
+ building_dwarven_magic_04_desc: "By adding Torsion Springs to our clocks, we can massively reduce the size and create accurate time pieces of incredibly small size."
+ building_dwarven_magic_05: "Toy Market"
+ building_dwarven_magic_05_desc: "By combining the Torsion springs with dwarven artistry, we can create a huge selection of moving toys."
+ building_dwarven_magic_06: "Hydrolic Engineering"
+ building_dwarven_magic_06_desc: "Water's power is unparalleled; it's a totally incompressible fluid and maintains those properties at ambient temperatures, allowing us to create massive systems to manipulate objects at a distance."
+ building_dwarven_magic_07: "Running Water"
+ building_dwarven_magic_07_desc: "By using a Snow melt reservoir and accessing wells, we can create a permanent hydraulic system to provide running water on demand to the citizens of the holding."
+ building_dwarven_magic_08: "Autonoma"
+ building_dwarven_magic_08_desc: "The highest expression of clockwork and precise hydrolics we can create extremely life-like creatures capable of movement."
+ building_dwarven_magic_09: "Stone Shapers Guild"
+ building_dwarven_magic_09_desc: "While dwarven enchantment is the most well-known [magical|E] art, we also have great skill with transmutation, with dwarven mages reshaping the stone halls to our will."
+ building_dwarven_magic_10: "Sunlit Halls"
+ building_dwarven_magic_10_desc: "By using specially designed concave mirrors and lenses, we have achieved the impossible. Our halls are now lit by sunlight."
+ 
+ building_type_elven_magic_01: "Speaking Halls"
+ building_type_elven_magic_01_desc: "A place for Elves to practice Song and Poetry along with the study of [magic|e]."
+ building_elven_magic_01: "Forest Clearing"
+ building_elven_magic_01_desc: "A small clearing in the woods, still almost entirely natural with only small benches for Elves to practice their craft."
+ building_elven_magic_02: "Song Sung Grove."
+ building_elven_magic_02_desc: "as more songs of [magic|e] are performed and more mages practice, the growth of the forest has been altered with the trees growing stronger and interwelding into a real structure."
+ building_elven_magic_03: "Living Wood Hall"
+ building_elven_magic_03_desc: "The Trees have now melded into a fully living hall, tree branches sprout from the walls, and sunlight slides through a roof made of leaves."
+ building_elven_magic_04: "Fairy lights."
+ building_elven_magic_04_desc: "bioluminescence springs forth from flowers along the walls and ceiling in a pale imitation of the [twotrees|e]
+ building_elven_magic_05: "Library of Song"
+ building_elven_magic_05_desc: "a repository of great works of poetry and music, allowing the works of the [elderdays|e] to be performed without the presence of the original artist."
+ building_elven_magic_06: "Concert Hall"
+ building_elven_magic_06_desc: "A huge open chamber designed for multiple performers at a time, elves from around the region flock here to hear the song."
+ building_elven_magic_07: "Auditorium of Power"
+ building_elven_magic_07_desc: "A vast stage and chamber for poets and musicians to perform for crowds, while also serving as a channel of the incarnate song."
+ 
+ ### Special Biuldings
+ 
+ building_type_wonder_carchmenel_01: "Carchmenel"
+ building_wonder_carchmenel_01: "Observatory of Carchmenel"
+ building_wonder_carchmenel_01_desc: "The Fang of the heavens, the [courtofaranore|e] biult this mix of fortress and observatory in the early [secondage|e], using it as a tool of their dark designs on the region, abandoned after the court's disastrous fall, it now stands empty, waiting for a new master."
+ 
+ building_type_wonder_mirerotto_01: "Mírërotto"
+ building_wonder_mirerotto_01: "Mines of Mírërotto"
+ building_wonder_mirerotto_01_desc: "Built into the caldera of a collasped volcanic island Mírërotto served as one of the primary mines of the [courtofaranore|e], providing them with many of the rare minerals they needed to preform their [sorcery|E], since the courts fall it has fallen under the sway of Koronande and later the [darklord|E], providing great wealth to its new masters"
+ 
+ building_type_wonder_lonlume_01: "Lonlume"
+ building_wonder_lonlume_01: "Citadel of Lonlume"
+ building_wonder_lonlume_01_desc: "One of the greatest fortresses of the [courtofaranore|e], Lonelume was biult into the mouth of a coastal cave system, providing the lord the ability to quietly deploy forces across the local area using its many entrences and providing a natural breeding ground for the creatures of darkness under his command, none have dared enter since the courts fall, sensing the evil that remain even mellenia later"
+ 
+ building_type_wonder_citadel_of_aranore_01: "Ardinak"
+ building_wonder_citadel_of_aranore_01: "The Citadel of Aranórë"
+ building_wonder_citadel_of_aranore_01_desc: "The true source of the curse of [ardinak|e] and the Center of the [courtofaranore|e], the Citadel served as their primary power center, ritual site, and fortress. \n\nbiult in the [elderdays|e] before the fall of [melkorcharacter|e], fortress stood for mellenia until the arrival of [numenor|e], the court abandoned the surface fortification to them while continuing to inhabit the tunnels beneath, the court eventually destroyed the Tanduraki with a great plague in order to make their disastrous attempt to kill the Sun and Moon."
+ 

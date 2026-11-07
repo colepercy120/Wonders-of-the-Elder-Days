@@ -1,0 +1,26 @@
+﻿	##################
+	# TRIGGERED ONLY #
+	##################
+
+
+	
+
+	
+#	nick_last_smith = {}
+#	nick_shadow_slayer = {}
+#	nick_iceborn = {}
+#	
+#	nick_redeemer = {}
+#	nick_faithful = {}
+
+	nick_prince_cat = {}
+	nick_bane_of_palisor = {}
+	nick_the_astronomer = {}
+	nick_daughter_of_darkness = {}
+	nick_black_wanderer = {}
+	nick_queen_air_dark = {}
+	nick_durins_bane = {}
+	
+	
+	
+	

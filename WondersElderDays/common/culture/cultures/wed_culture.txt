@@ -1,0 +1,36 @@
+﻿
+ardorhrim = {
+	color = { 115 34 53 }
+	created = 2.9.1
+	parents = { noldor }
+
+	history_loc_override = ardorhrim_history_loc
+	
+	ethos = ethos_bellicose
+	heritage = heritage_calaquendi
+	language = language_quenya # On account of the overwhelming and vast majority of all the Noldor in our area of concern (Middle-earth since the dawn of the First Age) speaking Sindarin over Quenya
+	martial_custom = martial_custom_equal
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_legendary_artisans
+		tradition_hard_working
+		tradition_metal_craftsmanship
+		tradition_sorcerous_metallurgy
+		tradition_miners
+		tradition_ruling_caste
+		#tradition_noldor_maa
+	}
+	
+	name_list = name_list_quenya
+	
+	coa_gfx = { noldor_coa_gfx elven_group_coa_gfx }
+	building_gfx = { noldor_building_gfx elven_building_gfx western_building_gfx }
+	clothing_gfx = { noldor_clothing_gfx }
+	unit_gfx = { noldor_unit_gfx }
+	house_coa_frame = house_frame_04
+	dynasty_coa_frame = house_frame_04
+	
+	ethnicities = {
+		1 = noldor_ethnicity
+	}
+}

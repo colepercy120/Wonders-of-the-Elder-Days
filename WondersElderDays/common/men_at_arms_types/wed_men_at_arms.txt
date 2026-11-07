@@ -1,0 +1,382 @@
+
+werewolves = { # Basic Wargrider scouts
+    access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+    can_recruit = {
+        always = no
+    }
+
+    type = monster
+
+    buy_cost = { 
+        gold = 56
+        prestige = 112
+    }
+    low_maintenance_cost = { gold = 0.37 }
+    high_maintenance_cost = { gold = 1.12 }
+    provision_cost = @provisions_cost_cavalry_cheap
+
+    stack = 25
+    damage = 350
+    toughness = 100
+    pursuit = 700
+    screen = 100
+
+    counters = {
+        skirmishers = 1
+        archers = 1.5
+    }
+
+	terrain_bonus = {
+		wetlands = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		plains = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		farmlands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		drylands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		mountains = { damage = -6 toughness = -2 pursuit = -6 screen = -1 }
+		desert_mountains = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		hills = { damage = 11 toughness = 4 pursuit = 11 screen = 2 }
+		red_desert = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		desert = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		dune_sea = { damage = -35 toughness = -12 pursuit = -35 screen = -6 }
+		volcanic_plains = { damage = 11 toughness = 4 pursuit = 11 screen = 2 }
+	}
+
+    winter_bonus = {
+        normal_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+        harsh_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+    }
+
+    ai_quality = {
+        value = culture_ai_weight_light_cavalry
+        add = counter_synergy_ai_weight_light_cavalry
+    }
+    allowed_in_hired_troops = no
+    icon = hunter_orcs_on_fell_wargs
+}
+
+fellbeasts = { # Basic Wargrider scouts
+    access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+    can_recruit = {
+        always = no
+    }
+
+    type = heavy_cavalry
+
+    buy_cost = { 
+        gold = 56
+        prestige = 112
+    }
+    low_maintenance_cost = { gold = 0.37 }
+    high_maintenance_cost = { gold = 1.12 }
+    provision_cost = @provisions_cost_cavalry_cheap
+
+    stack = 10
+    damage = 400
+    toughness = 100
+    pursuit = 700
+    screen = 200
+
+    counters = {
+        skirmishers = 1
+        archers = 1.5
+    }
+
+	terrain_bonus = {
+		
+		plains = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		forest = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		farmlands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		drylands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		mountains = { damage = 10 toughness = 2 pursuit = 6 screen = 1 }
+		volcanic_plains = { damage = 11 toughness = 4 pursuit = 11 screen = 2 }
+	}
+
+    winter_bonus = {
+        normal_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+        harsh_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+    }
+
+    ai_quality = {
+        value = culture_ai_weight_light_cavalry
+        add = counter_synergy_ai_weight_light_cavalry
+    }
+    allowed_in_hired_troops = no
+    icon = fellbeasts
+}
+
+eagles_maa = { # Basic Wargrider scouts
+    access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+    can_recruit = {
+       always = no
+    }
+
+    type = monster
+
+    buy_cost = { 
+        gold = 56
+        prestige = 112
+    }
+    low_maintenance_cost = { gold = 0.37 }
+    high_maintenance_cost = { gold = 1.12 }
+    provision_cost = @provisions_cost_cavalry_cheap
+
+    stack = 10
+    damage = 400
+    toughness = 100
+    pursuit = 700
+    screen = 200
+
+    counters = {
+        skirmishers = 1
+        archers = 1.5
+    }
+
+	terrain_bonus = {
+		
+		plains = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		forest = { damage = -16 toughness = -6 pursuit = -16 screen = -3 }
+		farmlands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		drylands = { damage = 16 toughness = 6 pursuit = 16 screen = 3 }
+		mountains = { damage = 10 toughness = 2 pursuit = 6 screen = 1 }
+		volcanic_plains = { damage = 11 toughness = 4 pursuit = 11 screen = 2 }
+	}
+
+    winter_bonus = {
+        normal_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+        harsh_winter = { damage = 5 toughness = 2 pursuit = 5 screen = 5 }
+    }
+
+    ai_quality = {
+        value = culture_ai_weight_light_cavalry
+        add = counter_synergy_ai_weight_light_cavalry
+    }
+    allowed_in_hired_troops = no
+    icon = eagles
+}
+
+ents = {		#Stats based off of Mountain Troll, but more geared towards sieging
+    type = monster
+    buy_cost = {
+        gold = 700
+        piety = 1000
+    }
+    low_maintenance_cost = { gold = 1.33 }
+    high_maintenance_cost = { gold = 4 }
+    provision_cost = @provisions_cost_special_bankrupting
+
+    damage = 1000
+    toughness = 1000
+    pursuit = 0
+    screen = 75
+
+    #siege_tier = 2
+    siege_value = 1
+	
+	
+
+	terrain_bonus = {
+		red_desert = { damage = -500 toughness = -150 screen = -38 }
+		desert = { damage = -500 toughness = -150 screen = -38 }
+		dune_sea = { damage = -5000 toughness = -1500 screen = -375 }
+		taiga = { damage = 225 toughness = 68 screen = 17 }
+		forest = { damage = 225 toughness = 68 screen = 17 }
+		deep_forest = { damage = 300 toughness = 90 screen = 23 }
+	}
+	winter_bonus = {
+		normal_winter = { damage = 75 toughness = 23 screen = 6 }
+		harsh_winter = { damage = 75 toughness = 23 screen = 6 }
+	}
+	holding_bonus = {
+		tribal_holding = { siege_value = 0.3 }
+		elven_holding = { siege_value = 0.3 }
+	}
+
+    counters = {
+        pikemen = 1
+        heavy_infantry = 1
+    }
+
+    access_through_subject = { lotr_orc_can_recruit_from_subject = yes } #For orcs
+    can_recruit = {
+		has_character_flag = ent_alliance
+		#always = yes
+		faith_is_good = yes
+    }
+
+    stack = 15
+    ai_quality = { value = culture_ai_weight_monster }
+    icon = ents
+}
+
+battle_mages_elf = {
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+	can_recruit = { 
+		is_elf = yes
+		OR = {
+			culture = { has_innovation = innovation_mage_general }
+			
+			AND = {
+				
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_mage_general }
+			}
+		}
+	} # Event Troops
+	type = mages
+
+	buy_cost = { gold = 500 }
+	low_maintenance_cost = { gold = 1 }
+	high_maintenance_cost = { gold = 3 }
+
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 5
+ 	damage = 500
+ 	toughness = 500
+ 	pursuit = 10
+ 	screen = 30
+	
+	siege_tier = 5
+	siege_value = 0.7
+
+	counters = {
+		skirmishers = 2
+		pikemen = 2
+		archers = 2
+		monster = 2
+		heavy_infantry = 2
+		heavy_cavalry = 2
+		light_cavalry = 2
+		camel_cavalry = 2
+		elephant_cavalry = 2
+	}
+
+	terrain_bonus = {
+	}
+
+	winter_bonus = {
+	}
+
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		#add = 300
+	}
+	icon = battle_mages
+	allowed_in_hired_troops = no
+}
+
+battle_mages_dwarves = {
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+	can_recruit = { 
+		is_dwarf = yes
+		OR = {
+			culture = { has_innovation = innovation_mage_general }
+			
+			AND = {
+				
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_mage_general }
+			}
+		}
+	} # Event Troops
+	type = mages
+
+	buy_cost = { gold = 300 }
+	low_maintenance_cost = { gold = 1 }
+	high_maintenance_cost = { gold = 3 }
+
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 10
+ 	damage = 300
+ 	toughness = 300
+ 	pursuit = 10
+ 	screen = 30
+	
+	siege_tier = 5
+	siege_value = 0.5
+
+	counters = {
+		skirmishers = 2
+		pikemen = 2
+		archers = 2
+		monster = 2
+		heavy_infantry = 2
+		heavy_cavalry = 2
+		light_cavalry = 2
+		camel_cavalry = 2
+		elephant_cavalry = 2
+	}
+
+	terrain_bonus = {
+	}
+
+	winter_bonus = {
+	}
+
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		#add = 300
+	}
+	icon = battle_mages
+	allowed_in_hired_troops = no
+}
+
+battle_mages_men = {
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+	can_recruit = { 
+		is_human = yes
+		OR = {
+			culture = { has_innovation = innovation_mage_general }
+			
+			AND = {
+				
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_mage_general }
+			}
+		}
+	} # Event Troops
+	type = mages
+
+	buy_cost = { gold = 250 }
+	low_maintenance_cost = { gold = 1 }
+	high_maintenance_cost = { gold = 3 }
+
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 10
+ 	damage = 150
+ 	toughness = 150
+ 	pursuit = 10
+ 	screen = 30
+	
+	siege_tier = 5
+	siege_value = 0.3
+
+	counters = {
+		skirmishers = 2
+		pikemen = 2
+		archers = 2
+		monster = 2
+		heavy_infantry = 2
+		heavy_cavalry = 2
+		light_cavalry = 2
+		camel_cavalry = 2
+		elephant_cavalry = 2
+	}
+
+	terrain_bonus = {
+	}
+
+	winter_bonus = {
+	}
+
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+		#add = 300
+	}
+	icon = battle_mages
+	allowed_in_hired_troops = no
+}

@@ -1,0 +1,100 @@
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+@never_primary_score = -1000
+
+
+d_laamp_alatar = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_mispir
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_pallando = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_korlan
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_tevildo = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_sarul
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_morrana = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_taullonn
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_nixni = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_ita_man
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_durins_bane = { # Gandalf
+	color = { 100 100 100 }
+	capital = c_durins_hall
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+e_ardor = { # Ardor Empire Title
+	color = { 156 23 87 }
+	capital = c_ardinak
+
+	
+	
+	
+
+	ai_primary_priority = { add = 1000 }
+}

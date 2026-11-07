@@ -1,0 +1,108 @@
+﻿namespace = wed_decay
+
+wed_decay.01 = { # integrate the southern provinces
+	hidden = no	`
+ 	type = character_event
+	title = wed_decay.01.t
+	desc = wed_decay.01.desc
+	theme = death
+	left_portrait = {
+		character = root
+		animation = crying
+	}
+	lower_right_portrait = {
+		character = scope:decaytarget.holder
+		animation = crying
+	}
+	override_background = {
+		reference = battlefield
+	}
+	
+	immediate = {
+		scope:decaytarget.holder = {
+			save_scope_as = decaytargetholder
+		}
+	}
+	
+	option = {
+		name = wed_decay.01.a
+		hidden_effect = {
+			scope:decaytarget = {
+				make_settlement_county_wilderness = { COUNTY = scope:decaytarget }
+			}
+		}
+		custom_tooltip = abandonedcounty
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			
+		}
+	}
+	option = {
+		name = wed_decay.01.b
+		trigger = {
+			gold > 200
+		}
+		scope:decaytarget = {
+			change_development_level = 1
+		}
+		remove_short_term_gold = 200
+		ai_chance = {
+			base = 100 # LotR: This should be tied to WotR mode.
+			
+		}
+	}
+	option = {
+		name = wed_decay.01.c
+		trigger = {
+			any_sub_realm_county = {
+				development_level > 0
+			}
+		}
+		scope:decaytarget = {
+			change_development_level = 1
+		}
+		random_sub_realm_county = {
+			limit = {
+				development_level > 1
+			}
+			change_development_level = -1
+		}
+		ai_chance = {
+			base = 100 # LotR: This should be tied to WotR mode.
+			
+		}
+	}
+	option = {
+		name = wed_decay.01.d
+		trigger = {
+			scope:decaytarget = {
+				holder != root
+			}
+		}
+		custom_tooltip = locallorddecide
+		scope:decaytarget.holder = {
+			trigger_event = {
+                    id = wed_decay.1
+                    days = 0
+				}
+		}
+		ai_chance = {
+			base = 1000 # LotR: This should be tied to WotR mode.
+			
+		}
+	}
+}
+wed_decay.2 = { # integrate the southern provinces
+	hidden = yes
+ 	type = character_event
+	
+	
+	immediate = {
+		name = wed_decay.2.a
+		trigger_event = { 
+			on_action = wed_decay_pulse
+			
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+﻿### Shared Activity Intents
+
+spellcasting_intent = {
+	icon = spellcasting_intent
+
+	auto_complete = yes
+
+	on_invalidated = { trigger_event = activity_system.0090 }
+
+	ai_will_do = {
+		value = 100
+	}
+
+	scripted_animation = {
+		animation = scheme
+	}
+}
+

@@ -1,0 +1,401 @@
+﻿@default_tile_multiplier = 0.009702
+
+
+# dwarven prototype
+
+
+long_winter_plague = {
+	trait = long_winter_plague
+	color = { 250 250 250 }
+	priority = 100
+
+	shader_data = {
+		strength = 0
+		edge_fade = 0.05
+		tile_multiplier = 0.1
+		texture_index = 0
+		channel = alpha
+	}
+
+	name = {
+		desc = epidemic_long_winter_plague
+	}
+	
+	on_start = {
+		if = {
+			limit = { NOT = { has_global_variable = long_winter_plague_happened } }
+			set_global_variable = {
+				name = long_winter_plague_happened
+				value = 1
+			}
+		}
+		else = {
+			change_global_variable = {
+				name = long_winter_plague_happened
+				add = 1
+			}
+		}
+	}
+
+	character_infection_chance = { value = 0 }
+	can_infect_character = {
+		immune_to_epidemic = { EPIDEMIC = scope:epidemic }
+	}
+	on_character_infected = { }
+
+	infection_levels = {
+		10 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.05
+				supply_limit_mult = -0.4
+				county_opinion_add = -5
+				development_decline = -0.5
+				levy_size = -0.4
+			}	
+		}
+		50 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.1
+				supply_limit_mult = -0.6
+				county_opinion_add = -8
+				development_decline = -1
+				levy_size = -0.6
+			}	
+		}
+		80 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.15
+				supply_limit_mult = -0.8
+				county_opinion_add = -10
+				development_decline = -1.5
+				levy_size = -0.8
+			}
+		}
+	}
+
+	outbreak_intensities = {
+		minor = {
+			outbreak_chance = { value = 0 }
+			spread_chance = { value = 0 }
+			max_provinces = 500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		major = {
+			outbreak_chance = { value = 0 }
+			spread_chance = { value = 0 }
+			max_provinces = 500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		apocalyptic = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = lotr_long_winter_infection_spread_chance_value
+			}
+			max_provinces = 3000
+			infection_duration = { 
+				months = lotr_long_winter_infection_duration_value
+				# months = 12
+			}
+			infection_progress_duration = { days = 1 }
+			infection_recovery_duration = {  days = { 30 60 } }
+		}
+	}
+	
+	on_province_infected = {
+		county = { 
+			if = {
+				limit = {
+					NOT = { any_county_province = { has_holding_type = elven_holding } }
+				}
+				apply_infection_development_loss = { BASE = 1 } 
+			}
+		}
+		county = { ### Tharbad LW trigger
+			holder = {
+				if = {
+					limit = {
+						has_character_flag = tharbad_leader_lw_trigger
+					}
+					remove_character_flag = tharbad_leader_lw_trigger
+					trigger_event = { id = tharbad_story.0002 days = 1 }
+				}
+			}
+		}
+	}
+	
+	on_province_recovered = {
+		lotr_recovering_from_long_winter_effects = yes
+		set_variable = {
+			name = recovered_from_winter
+			years = 2
+		}
+	}
+}
+
+nixni_winter_plague = {
+	trait = long_winter_plague
+	color = { 250 250 250 }
+	priority = 100
+
+	shader_data = {
+		strength = 0.8
+		edge_fade = 0.4
+		tile_multiplier = 0.005
+		texture_index = 0
+		channel = red
+	}
+
+	name = {
+	random_valid = {
+				desc = epidemic_rulers_winter
+				desc = epidemic_titled_rulers_winter
+				desc = epidemic_realm_winter
+				desc = epidemic_holder_winter
+				desc = epidemic_culture_winter
+				desc = epidemic_location_winter
+			}
+		
+		
+	}
+	
+	on_start = {
+		
+	}
+
+	character_infection_chance = { value = character_infection_chance_default_value }
+	can_infect_character = {
+		immune_to_epidemic = { EPIDEMIC = scope:epidemic }
+	}
+	on_character_infected = { }
+
+	infection_levels = {
+		10 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.05
+				supply_limit_mult = -0.4
+				county_opinion_add = -5
+				development_decline = -0.5
+				levy_size = -0.4
+			}	
+		}
+		50 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.1
+				supply_limit_mult = -0.6
+				county_opinion_add = -8
+				development_decline = -1
+				levy_size = -0.6
+			}	
+		}
+		80 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.15
+				supply_limit_mult = -0.8
+				county_opinion_add = -10
+				development_decline = -1.5
+				levy_size = -0.8
+			}
+		}
+	}
+
+	outbreak_intensities = {
+		minor = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		major = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 1500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		apocalyptic = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 3000
+			infection_duration = { 
+				months = lotr_long_winter_infection_duration_value
+				# months = 12
+			}
+			infection_progress_duration = { days = 1 }
+			infection_recovery_duration = {  days = { 30 60 } }
+		}
+	}
+	
+	on_province_infected = {
+		county = { 
+			if = {
+				limit = {
+					NOT = { any_county_province = { has_holding_type = elven_holding } }
+				}
+				apply_infection_development_loss = { BASE = 1 } 
+			}
+		}
+		
+	}
+	
+	on_province_recovered = {
+		lotr_recovering_from_long_winter_effects = yes
+		set_variable = {
+			name = recovered_from_winter
+			years = 2
+		}
+	}
+}
+
+shadow_plague = {
+	trait = long_winter_plague
+	color = { 250 250 250 }
+	priority = 100
+
+	shader_data = {
+		strength = 0
+		edge_fade = 0.05
+		tile_multiplier = 0.1
+		texture_index = 0
+		channel = alpha
+	}
+
+	name = {
+	random_valid = {
+				desc = epidemic_rulers_winter
+				desc = epidemic_titled_rulers_winter
+				desc = epidemic_realm_winter
+				desc = epidemic_holder_winter
+				desc = epidemic_culture_winter
+				desc = epidemic_location_winter
+			}
+		
+		
+	}
+	
+	on_start = {
+		
+	}
+
+	character_infection_chance = { value = character_infection_chance_default_value }
+	can_infect_character = {
+		immune_to_epidemic = { EPIDEMIC = scope:epidemic }
+	}
+	on_character_infected = { }
+
+	infection_levels = {
+		10 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.05
+				supply_limit_mult = -0.4
+				county_opinion_add = -5
+				development_decline = -0.5
+				levy_size = -0.4
+			}	
+		}
+		50 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.1
+				supply_limit_mult = -0.6
+				county_opinion_add = -8
+				development_decline = -1
+				levy_size = -0.6
+			}	
+		}
+		80 = {
+			province_modifier = {
+				monthly_county_control_decline_add = -0.15
+				supply_limit_mult = -0.8
+				county_opinion_add = -10
+				development_decline = -1.5
+				levy_size = -0.8
+			}
+		}
+	}
+
+	outbreak_intensities = {
+		minor = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		major = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 1500
+			infection_duration = { months = { 6 8 } }
+			infection_progress_duration = { days = { 80 120 } }
+			infection_recovery_duration = { days = { 15 22 } }
+		}
+
+		apocalyptic = {
+			outbreak_chance = { value = 0 }
+			spread_chance = {
+				value = spread_chance_epidemics_default_value
+				multiply = spread_chance_epidemics_mult_value
+				multiply = lotr_race_spread_chance_epidemics_mult_value # lotr_epidemics_values.txt
+			}
+			max_provinces = 3000
+			infection_duration = { 
+				months = lotr_long_winter_infection_duration_value
+				# months = 12
+			}
+			infection_progress_duration = { days = 1 }
+			infection_recovery_duration = {  days = { 30 60 } }
+		}
+	}
+	
+	on_province_infected = {
+		county = { 
+			if = {
+				limit = {
+					NOT = { any_county_province = { has_holding_type = elven_holding } }
+				}
+				apply_infection_development_loss = { BASE = 1 } 
+			}
+		}
+		
+	}
+	
+	on_province_recovered = {
+		lotr_recovering_from_long_winter_effects = yes
+		set_variable = {
+			name = recovered_from_winter
+			years = 2
+		}
+	}
+}

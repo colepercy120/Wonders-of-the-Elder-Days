@@ -1,0 +1,1702 @@
+﻿namespace = ee_ritual
+
+ee_ritual.01 = { 
+	type = activity_event
+	title = ee_ritual.01.t
+	desc = ee_ritual.01.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	override_background = {
+		reference = wilderness_scope
+	}
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		hidden_effect = {
+			capital_province = { save_scope_as = capital }
+			
+		}
+		remove_variable = spell
+		remove_variable = spelldiff
+	}
+	
+	
+### Spell casting Variable storage
+### 1 diplomacy
+### 2 martial
+### 3 stewardship
+### 4 intrigue
+### 5 learning
+### 6 prowess
+### 7 wound removal
+### 8 disease removal
+### 9 health boost
+### 10 scheming
+### 11 fertility
+### 12 lifespan
+### 
+### 13 plague
+### 14 shroud
+### 15 greed
+### 16 summon
+### 17 crafting
+### 18 hope
+	
+	option = {
+		name = ee_ritual.01.diplomacy
+		skill = diplomacy
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 1
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_diplomacy_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.martial
+		skill = martial
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 2
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_martial_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.stewardship
+		skill = stewardship
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 3
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_stewardship_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.intrigue
+		skill = intrigue
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 4
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_intrigue_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.learning
+		skill = learning
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 5
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_learning_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.prowess
+		skill = prowess
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 6
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			scope:host = { add_prowess_skill = 1 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	# health
+	
+	option = {
+		name = ee_ritual.01.wound_removal
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			or = {
+				has_wounds_trigger = yes
+				has_trait = wounded
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 7
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			wound_treatment_results_effect = { TREATMENT = safe OUTCOME = success }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.disease_removal
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			has_any_illness = yes
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 8
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			recover_from_disease_effect = { DISEASE = ill } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = pneumonic } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = gout_ridden } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = typhus } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = consumption } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = cancer } #Removes the trait, sends event "health.2202" to those who care
+			recover_from_disease_effect = { DISEASE = great_pox } #Removes the trait, sends event "health.2202" to those who care & sexual partners
+			recover_from_disease_effect = { DISEASE = smallpox } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+			recover_from_disease_effect = { DISEASE = bubonic_plague } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+			recover_from_disease_effect = { DISEASE = measles } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+			recover_from_disease_effect = { DISEASE = dysentery } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+			recover_from_disease_effect = { DISEASE = ergotism } #Removes the trait, sends event "health.2202" to those who care & liege/host/imprisoner, adds immunity flag
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.health_boost
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 9
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			add_character_modifier = { modifier = ee_spell_health_modifier years = 10 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	### Alignment specific
+	
+	option = {
+		name = ee_ritual.01.scheme
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } } 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 10
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			add_character_modifier = { modifier = ee_spell_scheme_modifier years = 10 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	
+	option = {
+		name = ee_ritual.01.fertility
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } } 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 11
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			add_character_modifier = { modifier = ee_spell_fertility_modifier years = 10 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.lifespan
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } } 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 12
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 15
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			if = {
+				limit = {
+					NOT = { has_trait = wed_extended_lifespan }
+				}
+				add_trait = wed_extended_lifespan
+			}
+			else = {
+				add_trait_xp = {
+					trait = wed_extended_lifespan
+					value = 1
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.hope
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = minor_ritual } }
+			is_elf = yes 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 18
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 10
+			}
+			set_variable = {
+				name = spellcost
+				value = 50
+			}
+		}
+		show_as_tooltip = {
+			add_elven_hope_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_positive_event_choice }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	
+	### Major Rituals
+	
+	option = {
+		name = ee_ritual.01.plague
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } } 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 13
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 20
+			}
+			set_variable = {
+				name = spellcost
+				value = 100
+			}
+		}
+		show_as_tooltip = {
+			custom_tooltip = {
+				text = ee_ritual.01.plague.tt
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = ee_ritual.01.shroud
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } } 
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 14
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 20
+			}
+			set_variable = {
+				name = spellcost
+				value = 100
+			}
+		}
+		show_as_tooltip = {
+			custom_tooltip = {
+				text = ee_ritual.01.shroud.tt
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = ee_ritual.01.greed
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 15
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 20
+			}
+			set_variable = {
+				name = spellcost
+				value = 100
+			}
+		}
+		show_as_tooltip = {
+			add_character_modifier = { modifier = ee_spell_gold_modifier years = 10 }
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = ee_ritual.01.summon
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			NOT = { scope:activity = { has_activity_option = { category = option_intent option = no_intent } } }
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 16
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 20
+			}
+			set_variable = {
+				name = spellcost
+				value = 100
+			}
+		}
+		show_as_tooltip = {
+			custom_tooltip = {
+				text = ee_ritual.01.summon.tt
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ee_ritual.01.craft
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			OR = {
+				has_trait = lifestyle_artifact_crafting
+				has_trait = artificer
+				has_trait = enchanter
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spell
+				value = 17
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = spelldiff
+				value = 20
+			}
+			set_variable = {
+				name = spellcost
+				value = 100
+			}
+		}
+		show_as_tooltip = {
+			custom_tooltip = {
+				text = ee_ritual.01.craft.tt
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	after = {
+		if = {
+			limit = { var:spell = 16 }
+			
+			trigger_event = {
+				id = ee_ritual.03
+				days = 1
+			}
+		}
+		else_if = {
+			limit = { var:spell = 13 }
+			
+			trigger_event = {
+				id = ee_ritual.06
+				days = 1
+			}
+		}
+		else_if = {
+			limit = { var:spell = 17 }
+			
+			trigger_event = {
+				id = ee_ritual.08
+				days = 1
+			}
+		}
+		else = {
+			trigger_event = {
+				id = ee_ritual.02
+				days = 1
+			}
+		}
+	}
+}
+
+ee_ritual.02 = { ### Spell Difficulty
+	type = activity_event
+	title = ee_ritual.02.t
+	desc = ee_ritual.02.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = ee_ritual.02.a
+		
+		
+		change_variable = {
+			name = spelldiff
+			multiply = 1.5
+		}
+		change_variable = {
+			name = spellcost
+			multiply = 2
+		}
+		custom_tooltip = {
+			text = ee_ritual.02.harder
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = ee_ritual.02.b
+		
+		
+		change_variable = {
+			name = spelldiff
+			multiply = 1
+		}
+		custom_tooltip = {
+			text = ee_ritual.02.unchanged
+		}
+		
+		
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = ee_ritual.02.c
+		
+		
+		change_variable = {
+			name = spelldiff
+			divide = 1.5
+		}
+		change_variable = {
+			name = spellcost
+			divide = 2
+		}
+		custom_tooltip = {
+			text = ee_ritual.02.eaiser
+		}
+		
+		
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	### Major Ritual Options
+	
+	
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.04
+			days = 1
+		}
+	}
+	
+}
+
+ee_ritual.03 = { ### Summon Option
+	type = activity_event
+	title = ee_ritual.03.t
+	desc = ee_ritual.03.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = ee_ritual.03.wraiths
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.03.werewolves
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 2
+			}
+		
+			change_variable = {
+				name = spelldiff
+				add = 10
+			}
+			change_variable = {
+				name = spellcost
+				add = 20
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.03.fellbeasts
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 3
+			}
+		}
+		change_variable = {
+				name = spelldiff
+				add = 20
+			}
+			change_variable = {
+				name = spellcost
+				add = 40
+			}
+	}
+	option = {
+		name = ee_ritual.03.fey
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 4
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.03.ents
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 5
+			}
+		}
+		change_variable = {
+				name = spelldiff
+				add = 10
+			}
+			change_variable = {
+				name = spellcost
+				add = 20
+			}
+	}
+	option = {
+		name = ee_ritual.03.eagles
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = summonoption
+				value = 6
+			}
+		}
+		change_variable = {
+				name = spelldiff
+				add = 20
+			}
+			change_variable = {
+				name = spellcost
+				add = 40
+			}
+	}
+	
+	
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.02
+			days = 1
+		}
+	}
+	
+}
+
+ee_ritual.04 = { ### Attempt the Spell
+	type = activity_event
+	title = ee_ritual.04.t
+	desc = ee_ritual.04.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				scope:activity = { has_activity_option = { category = option_level option = major_ritual } }
+			}
+			change_variable = {
+				name = spellcost
+				multiply = 10
+			}
+		}
+		if = {
+			limit = {
+				has_trait_xp = {
+					trait = lifestyle_mage
+					value >= 100
+				}
+			}
+			change_variable = {
+				name = spelldiff
+				divide = 4
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait_xp = {
+					trait = lifestyle_mage
+					value >= 10
+				}
+			}
+			change_variable = {
+				name = spelldiff
+				divide = 2
+			}
+		}
+	}
+	
+	option = {
+		name = ee_ritual.04.a
+		remove_short_term_gold = var:spellcost
+		
+		add_piety = { 
+			value = var:spellcost
+			multiply = -2
+		}
+		duel = {
+			skill = learning
+			value = root.var:spelldiff
+			25 = {
+				desc = ee_ritual.04.a.great
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				scope:host = {
+					set_variable = {
+						name = spelloutcome
+						value = 1
+					}
+				}
+				custom_tooltip = {
+					text = ee_ritual.04.spellsucess
+				}
+				show_as_tooltip = {
+					spellcasting_effect = yes
+				}
+				send_interface_toast = {	
+					title = ee_ritual.04.spellsucess
+					show_as_tooltip = {
+						spellcasting_effect = yes
+					}
+				}
+				
+				
+			}
+			50 = {	
+				desc = ee_ritual.04.a.poor
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.5
+				}
+				min = 10
+				scope:host = {
+					set_variable = {
+						name = spelloutcome
+						value = 2
+					}
+				}
+				
+				custom_tooltip = {
+					text = ee_ritual.04.spellfailure
+				}
+				
+				show_as_tooltip = {
+					if = {
+						limit = {
+							cannot_be_killed = yes
+						}
+						add_character_modifier = { modifier = wed_spell_backlash_modifier years = 10 }
+					}
+					else = {
+						increase_wounds_effect = { REASON = accident }
+					}
+				}
+				
+				send_interface_toast = {	
+					title = ee_ritual.04.spellfailure
+					show_as_tooltip = {
+						if = {
+							limit = {
+								cannot_be_killed = yes
+							}
+							add_character_modifier = { modifier = wed_spell_backlash_modifier years = 10 }
+						}
+						else = {
+							increase_wounds_effect = { REASON = accident }
+						}
+					}
+				}
+			}
+			25 = {	
+				desc = ee_ritual.04.terrible
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -5
+				}
+				min = 1
+				scope:host = {
+					set_variable = {
+						name = spelloutcome
+						value = 3
+					}
+				}
+				
+				custom_tooltip = {
+					text = ee_ritual.04.spellmassivefail
+				}
+				
+				show_as_tooltip = {
+					if = {
+						limit = {
+							cannot_be_killed = yes
+						}
+						add_character_modifier = { modifier = wed_spell_backlash_modifier years = 20 }
+					}
+					else = {
+						increase_wounds_effect = { REASON = accident }
+						increase_wounds_effect = { REASON = accident }
+					}
+				}
+				
+				
+				send_interface_toast = {	
+					title = ee_ritual.04.spellmassivefail
+					show_as_tooltip = {
+						if = {
+							limit = {
+								cannot_be_killed = yes
+							}
+							add_character_modifier = { modifier = wed_spell_backlash_modifier years = 20 }
+						}
+						else = {
+							increase_wounds_effect = { REASON = accident }
+							increase_wounds_effect = { REASON = accident }
+						}
+					}
+				}
+			}
+		}
+		trigger_event = {
+			id = ee_ritual.05
+			
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	option = {
+		name = ee_ritual.04.b
+		ai_chance = {
+			base = 0
+		}
+	}
+	
+	after = {
+		
+	}
+	
+}
+
+ee_ritual.05 = { ### results
+	type = activity_event
+	title = ee_ritual.05.t
+	desc = ee_ritual.05.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = ee_ritual.05.a
+		trigger = {
+			var:spelloutcome = 1
+		}
+		spellcasting_effect = yes
+	}
+	option = {
+		name = ee_ritual.05.b
+		trigger = {
+			var:spelloutcome = 2
+		}
+		if = {
+			limit = {
+				cannot_be_killed = yes
+			}
+			add_character_modifier = { modifier = wed_spell_backlash_modifier years = 10 }
+		}
+		else = {
+			increase_wounds_effect = { REASON = accident }
+		}
+	}
+	option = {
+		name = ee_ritual.05.c
+		trigger = {
+			var:spelloutcome = 3
+		}
+		if = {
+			limit = {
+				cannot_be_killed = yes
+			}
+			add_character_modifier = { modifier = wed_spell_backlash_modifier years = 20 }
+		}
+		else = {
+			increase_wounds_effect = { REASON = accident }
+			increase_wounds_effect = { REASON = accident }
+		}
+	}
+	
+	after = {
+		
+		scope:activity = { skip_activity_phase = yes }
+	}
+	
+}
+
+ee_ritual.06 = { ### plague Option
+	type = activity_event
+	title = ee_ritual.06.t
+	desc = ee_ritual.06.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	
+	
+	option = {
+		name = ee_ritual.06.bubonic_plague
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 1
+			}
+			change_variable = {
+				name = spelldiff
+				add = 30
+			}
+			change_variable = {
+				name = spellcost
+				add = 60
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.06.consumption
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.06.smallpox
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 3
+			}
+			change_variable = {
+				name = spelldiff
+				add = 10
+			}
+			change_variable = {
+				name = spellcost
+				add = 20
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.06.typhus
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 4
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.06.flux
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.06.measles
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 6
+			}
+		}
+	}
+	option = { 
+		name = ee_ritual.06.winter
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+			this = character:lineofnixni
+		}
+		scope:host = {
+			set_variable = {
+				name = plagueoption
+				value = 7
+			}
+		}
+	}
+	
+	
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.07
+			days = 1
+		}
+	}
+	
+}
+
+ee_ritual.07 = { ### plague spawn Option
+	type = activity_event
+	title = ee_ritual.07.t
+	desc = ee_ritual.07.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	
+	
+	option = {
+		name = ee_ritual.07.gondor
+		
+		random_county_in_region = {
+			region = middleearth_west_gondor
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.arnor
+		
+		random_county_in_region = {
+			region = middleearth_west_arnor
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.rhovanion
+		
+		random_county_in_region = {
+			region = middleearth_west_rhovanion
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.umbar
+		
+		random_county_in_region = {
+			region = middleearth_harad_near
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.bellakar
+		
+		random_county_in_region = {
+			region = middleearth_harad_far
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.khy
+		
+		random_county_in_region = {
+			region = middleearth_harad_bayoformal
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.thanihazad
+		
+		random_county_in_region = {
+			region = middleearth_uttersouth_thanihazad
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.07.mumakan
+		
+		random_county_in_region = {
+			region = middleearth_uttersouth_mumakan
+			random_county_province = {
+				save_scope_as = plaguetarget
+				custom_tooltip = {
+					text = plaguetarget
+				}
+			}
+		}
+	}
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.09
+			days = 1
+		}
+	}
+	
+}
+
+ee_ritual.08 = { ### Artifact choice
+	type = activity_event
+	title = ee_ritual.08.t
+	desc = ee_ritual.08.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	
+	
+	option = {
+		name = ee_ritual.08.lembas
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = good_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.elven_cloak
+		trigger = {
+			is_elf = yes
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.morgulblade
+		trigger = {
+			scope:activity = { has_activity_option = { category = option_intent option = evil_intent } }
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 3
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.steelbow
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 4
+			}
+		}
+	}
+	
+	option = {
+		name = ee_ritual.08.elven_broach
+		trigger = {
+			is_elf = yes
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.elven_rope
+		trigger = {
+			is_elf = yes
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 6
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.miruvor
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 7
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.gem
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 8
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.windlance
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 9
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.black_arrow
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 10
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.ranger_star
+		
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 11
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.08.tools
+		trigger = {
+			is_elf = yes
+		}
+		scope:host = {
+			set_variable = {
+				name = artifactchoice
+				value = 12
+			}
+		}
+	}
+	
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.02
+			days = 1
+		}
+	}
+	
+}
+
+ee_ritual.09 = { ### plague level
+	type = activity_event
+	title = ee_ritual.09.t
+	desc = ee_ritual.09.desc
+	theme = witchcraft
+	
+	left_portrait = root
+	 override_background = {
+	 	reference = wilderness_scope
+	 }
+	
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+	
+	
+	
+	option = {
+		name = ee_ritual.09.minor
+		trigger = {
+			
+		}
+		scope:host = {
+			set_variable = {
+				name = plaguelevel
+				value = 1
+			}
+			
+		}
+	}
+	option = {
+		name = ee_ritual.09.major
+		trigger = {
+			has_trait_xp = {
+				trait = lifestyle_mage
+				value >= 10
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = plaguelevel
+				value = 2
+			}
+			change_variable = {
+				name = spelldiff
+				multiply = 2
+			}
+			change_variable = {
+				name = spellcost
+				multiply = 2
+			}
+		}
+	}
+	option = {
+		name = ee_ritual.09.apoc
+		trigger = {
+			has_trait_xp = {
+				trait = lifestyle_mage
+				value >= 100
+			}
+		}
+		scope:host = {
+			set_variable = {
+				name = plaguelevel
+				value = 3
+			}
+			change_variable = {
+				name = spelldiff
+				multiply = 4
+			}
+			change_variable = {
+				name = spellcost
+				multiply = 4
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	after = {
+		trigger_event = {
+			id = ee_ritual.02
+			days = 1
+		}
+	}
+	
+}

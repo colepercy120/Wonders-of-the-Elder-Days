@@ -1,0 +1,349 @@
+﻿
+d_laamp_alatar = {
+	pattern="pattern_solid.dds"
+	color1=rgb { 61 60 58 }
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=white
+		texture="ce_khuzdul_g.dds"
+		instance={
+			scale={ 0.920000 0.920000 }
+		}
+
+	}
+
+}
+d_laamp_pallando = {
+	pattern="pattern_solid.dds"
+	color1=rgb { 61 60 58 }
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=white
+		texture="ce_khuzdul_g.dds"
+		instance={
+			scale={ 0.920000 0.920000 }
+		}
+
+	}
+
+}
+d_laamp_tevildo = {
+	
+	pattern="pattern_shield_02.dds"
+	color1=black
+	color2=red
+	color3=red
+	colored_emblem={
+		color1=yellow_light
+		texture="ce_lion_rampant.dds"
+		instance={
+			scale={ 0.700000 0.700000 }
+		}
+
+	}
+
+}
+
+
+dynasty_tevildo = {
+	
+	pattern="pattern_shield_02.dds"
+	color1=black
+	color2=red
+	color3=red
+	colored_emblem={
+		color1=yellow_light
+		texture="ce_lion_rampant.dds"
+		instance={
+			scale={ 0.700000 0.700000 }
+		}
+
+	}
+
+}
+
+dynasty_ardana = {
+	
+	pattern="pattern_solid.dds"
+	color1=black
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=purple
+		color2=white
+		texture="ce_elwe_01.dds"
+		instance={
+			depth=2.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=blue_light
+		texture="ce_elven_star_of_feanor_02.dds"
+		instance={
+			scale={ 0.300000 0.300000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=red
+		color2=purple
+		texture="ce_elwe_01.dds"
+		instance={
+			scale={ -0.800000 0.800000 }
+			depth=1.010000
+		}
+
+	}
+
+}
+
+dynasty_fankil = {
+	
+	pattern="pattern__solid_designer.dds"
+	color1=black
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=red
+		texture="ce_cc_gurzyul_17.dds"
+		instance={
+			depth=1.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=yellow
+		texture="ce_haleth_04.dds"
+		instance={
+			position={ 0.500000 0.170000 }
+			scale={ 0.110000 0.110000 }
+		}
+
+	}
+
+}
+
+
+e_ardor = {
+	pattern="pattern__solid_designer.dds"
+	color1=rgb { 60 80 60 }
+	color2=rgb { 186 166 133 }
+	color3=red
+	color4=rgb { 250 180 80 }
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		color2=red
+		texture="ce_frame_circle_borre_doted.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.590000 0.590000 }
+			depth=1.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 186 166 133 }
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.490000 0.490000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=black
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.460000 0.460000 }
+			depth=2.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=purple
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.500000 0.530000 }
+			depth=6.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=red
+		color2=grey
+		texture="ce_african_pattern_10.dds"
+		instance={
+			depth=7.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 186 166 133 }
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			position={ 0.500000 0.580000 }
+			depth=4.010000
+		}
+
+		instance={
+			depth=5.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=blue_light
+		color3=rgb { 250 180 80 }
+		texture="ce_elven_star_of_feanor_02.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.480000 0.480000 }
+		}
+
+	}
+
+}
+
+d_laamp_morrana = {
+	
+	pattern="pattern__solid_designer.dds"
+	color1=black
+	color2=white
+	color3=black
+	colored_emblem={
+		color1=white
+		texture="ce_cc_edain_stars_07.dds"
+		instance={
+			position={ 0.500000 0.350000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=green
+		color2=blue_light
+		color3=blue
+		texture="ans_scrimshaw_01.dds"
+		instance={
+			depth=1.010000
+		}
+
+	}
+
+}
+
+
+dynasty_nixni ={
+	pattern="pattern_solid.dds"
+	color1=white
+	color2=white
+	color3=blue
+	colored_emblem={
+		color1=blue
+		texture="ce_rwby_weiss.dds"
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_border_stars_05.dds"
+		instance={
+			scale={ 0.900000 0.900000 }
+			depth=2.010000
+			rotation=182
+		}
+
+		instance={
+			scale={ 0.900000 0.900000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_cross_voided.dds"
+		instance={
+			depth=1.010000
+		}
+
+	}
+
+}
+
+d_laamp_nixni ={
+	pattern="pattern_solid.dds"
+	color1=white
+	color2=white
+	color3=blue
+	colored_emblem={
+		color1=blue
+		texture="ce_rwby_weiss.dds"
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_border_stars_05.dds"
+		instance={
+			scale={ 0.900000 0.900000 }
+			depth=2.010000
+			rotation=182
+		}
+
+		instance={
+			scale={ 0.900000 0.900000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_cross_voided.dds"
+		instance={
+			depth=1.010000
+		}
+
+	}
+
+}
+
+dynasty_balrog ={
+	
+	pattern="pattern_solid.dds"
+	color1=black
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=red
+		texture="ce_uruk_marauder.dds"
+	}
+
+}
+
+d_laamp_durins_bane ={
+	
+	pattern="pattern_solid.dds"
+	color1=black
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=red
+		texture="ce_uruk_marauder.dds"
+	}
+
+}

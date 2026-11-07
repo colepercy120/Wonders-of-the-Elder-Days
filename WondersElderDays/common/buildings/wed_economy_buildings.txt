@@ -1,0 +1,1259 @@
+﻿
+
+### artificers
+
+artificers_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		lotr_normal_building_trigger = yes #LotR
+		culture = { # Standard unlock from inovation (High medieval)
+				has_innovation = innovation_mage_crafting
+			}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	is_enabled = {
+		scope:holder = { lotr_normal_building_trigger = yes } #LotR
+		is_county_capital = yes
+			
+	}
+	show_disabled = yes
+	
+	can_construct = {
+		
+		trigger_if = {
+			limit = {
+				OR = {
+					has_holding_type = castle_holding
+					has_holding_type = church_holding
+					has_holding_type = temple_citadel_holding
+				}
+			}
+			is_county_capital = yes
+		}
+		trigger_else = {
+			always = no
+		}
+		OR = {
+			culture = { # Standard unlock from inovation (High medieval)
+				has_innovation = innovation_mage_crafting
+			}
+			
+		}
+	}
+
+	cost_gold = expensive_building_tier_1_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_1
+		tax_mult = good_building_tax_mult_tier_1
+		supply_limit_mult = 0.1
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_1
+		development_growth = good_building_development_growth_tier_1
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.15
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_02
+
+	type_icon = "icon_building_artificer.dds"
+	
+	ai_value = {
+		base = 20
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+
+		modifier = {
+			factor = 10
+			has_building_or_higher = watermills_01
+		}
+		modifier = {
+			factor = 2
+			is_coastal = yes
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				building_watermills_requirement_terrain = yes
+				building_artificers_requirement_terrain = yes
+			}
+		}
+	}
+}
+
+artificers_02 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		lotr_normal_building_trigger = yes #LotR
+	}
+	
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+					has_innovation = innovation_mage_crafting
+				}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_2_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_2
+		tax_mult = good_building_tax_mult_tier_2
+		supply_limit_mult = 0.2
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_2
+		development_growth = good_building_development_growth_tier_2
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.3
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_03
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+artificers_03 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		lotr_normal_building_trigger = yes #LotR
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 02 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_3_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_3
+		tax_mult = good_building_tax_mult_tier_3
+		supply_limit_mult = 0.3
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_3
+		development_growth = good_building_development_growth_tier_3
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.4
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_04
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+artificers_04 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		lotr_normal_building_trigger = yes #LotR
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 02 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_4_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_4
+		tax_mult = good_building_tax_mult_tier_4
+		supply_limit_mult = 0.4
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_4
+		development_growth = good_building_development_growth_tier_4
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.5
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_05
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+artificers_05 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		
+		lotr_normal_building_trigger = yes #LotR
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 03 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_5_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_5
+		tax_mult = good_building_tax_mult_tier_5
+		supply_limit_mult = 0.5
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_5
+		development_growth = good_building_development_growth_tier_5
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.65
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_06
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+artificers_06 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 03 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_6_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_6
+		tax_mult = good_building_tax_mult_tier_6
+		supply_limit_mult = 0.6
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_6
+		development_growth = good_building_development_growth_tier_6
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.8
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_07
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+artificers_07 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 04 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_7
+		tax_mult = good_building_tax_mult_tier_7
+		supply_limit_mult = 0.7
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_7
+		development_growth = good_building_development_growth_tier_7
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.9
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = artificers_08
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+artificers_08 = {
+	construction_time = slow_construction_time
+
+	is_enabled = { scope:holder = { lotr_normal_building_trigger = yes } } #LotR
+
+	can_construct_potential = {
+		
+	}
+	can_construct = {
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+		building_requirement_castle_city_church = { LEVEL = 04 }
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = expensive_building_tier_8_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_8
+		tax_mult = good_building_tax_mult_tier_8
+		supply_limit_mult = 0.8
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_8
+		development_growth = good_building_development_growth_tier_8
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 1
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	ai_value = {
+		base = 3
+		ai_general_building_modifier = yes
+		directive_to_build_economy_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+####
+
+#dwarven magic
+dwarven_magic_01 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_01
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 150
+
+	province_modifier = {
+		monthly_income = 0.3
+		tax_mult = 0.01
+	}
+
+	county_modifier = {
+		development_growth = 0.01
+	}
+
+	next_building = dwarven_magic_02
+
+	type_icon = "icon_building_artificer_dwarves.dds"
+
+	ai_value = {
+		base = 15
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+	}
+}
+
+dwarven_magic_02 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_01
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 275
+
+	province_modifier = {
+		monthly_income = 0.6
+		tax_mult = 0.02
+	}
+
+	county_modifier = {
+		development_growth = 0.02
+	}
+
+	next_building = dwarven_magic_03
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 9
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_03 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_02
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 400
+
+	province_modifier = {
+		monthly_income = 0.9
+		tax_mult = 0.03
+	}
+
+	county_modifier = {
+		development_growth = 0.03
+	}
+
+	next_building = dwarven_magic_04
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 8
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_04 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_03
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 525
+
+	province_modifier = {
+		monthly_income = 1.2
+		tax_mult = 0.04
+	}
+
+	county_modifier = {
+		development_growth = 0.04
+	}
+
+	next_building = dwarven_magic_05
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 7
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_05 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_04
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 750
+
+	province_modifier = {
+		monthly_income = 1.5
+		tax_mult = 0.05
+	}
+
+	county_modifier = {
+		development_growth = 0.05
+	}
+
+	next_building = dwarven_magic_06
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 6
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_06 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_05
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 1200
+
+	province_modifier = {
+		monthly_income = 2.0
+		tax_mult = 0.07
+	}
+
+	county_modifier = {
+		development_growth = 0.06
+	}
+
+	next_building = dwarven_magic_07
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 5
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_07 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_06
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 1800
+
+	province_modifier = {
+		monthly_income = 2.5
+		tax_mult = 0.09
+	}
+
+	county_modifier = {
+		development_growth = 0.07
+	}
+
+	next_building = dwarven_magic_08
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 4
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_08 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_07
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 2500
+
+	province_modifier = {
+		monthly_income = 3.0
+		tax_mult = 0.11
+	}
+
+	county_modifier = {
+		development_growth = 0.08
+	}
+
+	next_building = dwarven_magic_09
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 3
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_09 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_08
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 3250
+
+	province_modifier = {
+		monthly_income = 3.5
+		tax_mult = 0.13
+	}
+
+	county_modifier = {
+		development_growth = 0.09
+	}
+
+	next_building = dwarven_magic_10
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 2
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+dwarven_magic_10 = {
+	construction_time = slow_construction_time
+
+	is_enabled = {
+		scope:holder = { is_dwarf = yes }
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	can_construct_potential = {
+		scope:holder = { is_dwarf = yes }
+		has_building_or_higher = dwarven_depths_09
+	    lotr_dwarven_underground_buildings_requirement_terrain = yes
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+
+	cost_gold = 5000
+
+	province_modifier = {
+		monthly_income = 4
+		tax_mult = 0.15
+	}
+
+	county_modifier = {
+		development_growth = 0.10
+	}
+
+	#next_building = dwarven_magic_10
+
+	type_icon = "icon_building_artificer.dds"
+
+	ai_value = {
+		base = 1
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_general_building_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0 years_from_game_start > 0.01
+		}
+	}
+}
+
+# Elven Forge
+
+elven_magic_01 = {
+	construction_time = slow_construction_time
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_01
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_2
+		tax_mult = good_building_tax_mult_tier_2
+		supply_limit_mult = 0.2
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_2
+		development_growth = good_building_development_growth_tier_2
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.3
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+
+	next_building = elven_magic_02
+
+	type_icon = "icon_building_artificer_elves.dds"
+	
+	ai_value = {
+		base = 10
+		ai_tier_1_building_modifier = yes
+		ai_tier_1_economical_building_preference_modifier = yes
+		ai_pasture_improvement_from_culture_modifier = yes # Only on the level 1 to secure having pasture when the AI is from an appropriate culture
+		ai_general_building_modifier = yes
+	}
+}
+
+elven_magic_02 = {
+	construction_time = slow_construction_time
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_02
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	cost_gold = expensive_building_tier_3_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_3
+		tax_mult = good_building_tax_mult_tier_3
+		supply_limit_mult = 0.3
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_3
+		development_growth = good_building_development_growth_tier_3
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.4
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = elven_magic_03
+	
+	ai_value = {
+		base = 9
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+		modifier = { # Fill all building slots before going for upgrades
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+elven_magic_03 = {
+	construction_time = slow_construction_time
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_03
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = expensive_building_tier_4_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_4
+		tax_mult = good_building_tax_mult_tier_4
+		supply_limit_mult = 0.4
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_4
+		development_growth = good_building_development_growth_tier_4
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.5
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = elven_magic_04
+	
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+elven_magic_04 = {
+	construction_time = slow_construction_time
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_04
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = expensive_building_tier_5_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_5
+		tax_mult = good_building_tax_mult_tier_5
+		supply_limit_mult = 0.5
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_5
+		development_growth = good_building_development_growth_tier_5
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.65
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = elven_magic_05
+	
+	ai_value = {
+		base = 7
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+elven_magic_05 = {
+	construction_time = slow_construction_time
+	
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_05
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = expensive_building_tier_6_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_6
+		tax_mult = good_building_tax_mult_tier_6
+		supply_limit_mult = 0.6
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_6
+		development_growth = good_building_development_growth_tier_6
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.8
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = elven_magic_06
+	
+	ai_value = {
+		base = 6
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+elven_magic_06 = {
+	construction_time = slow_construction_time
+	
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_06
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_7_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_7
+		tax_mult = good_building_tax_mult_tier_7
+		supply_limit_mult = 0.7
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_7
+		development_growth = good_building_development_growth_tier_7
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 0.9
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	next_building = elven_magic_07
+	
+	ai_value = {
+		base = 5
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
+
+elven_magic_07 = {
+	construction_time = slow_construction_time
+	
+
+	can_construct = {
+		scope:holder = { is_elf = yes }
+		has_building_or_higher = elven_settlement_07
+		culture = { # Standard unlock from inovation (High medieval)
+			has_innovation = innovation_mage_crafting
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = expensive_building_tier_8_cost
+	
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_8
+		tax_mult = good_building_tax_mult_tier_8
+		supply_limit_mult = 0.8
+	}
+	
+	county_modifier = {
+		development_growth_factor = good_building_development_growth_factor_tier_8
+		development_growth = good_building_development_growth_tier_8
+	}
+
+	province_government_modifier = { # LotR
+		parameter = lotr_government_uses_barter
+		monthly_barter_goods = 1
+	}
+
+	on_complete = {
+		#Mandala Creator Aspect
+		creator_mandala_built_regular_building_piety_effect = yes
+	}
+	
+	ai_value = {
+		base = 4
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}

@@ -1,0 +1,83 @@
+﻿empire_feudal_steward_arnor = {
+	type = title
+	 
+	titles = {  k_arnor_steward }
+	priority = 800
+}
+
+emperor_feudal_male_steward_arnor = { 
+	type = character
+	gender = male
+	 
+	special = holder
+	priority = 800
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	heritages = { heritage_dunedain }
+	titles = {  k_arnor_steward }
+}
+emperor_feudal_female_steward_arnor = { 
+	type = character
+	gender = female
+	 
+	special = holder
+	priority = 800
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	heritages = { heritage_dunedain }
+	titles = {  k_arnor_steward }
+}
+
+emperor_feudal_female_steward_nonholder_arnor = { 
+	type = character
+	gender = female
+	 
+	special = holder
+	priority = 800
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	heritages = { heritage_dunedain }
+	titles = {  k_arnor_steward }
+}
+
+empress_mother_steward_arnor = {
+	type = character
+	gender = female
+	 
+	special = queen_mother
+	titles = {  k_arnor_steward k_gondor_steward }
+	priority = 80
+	flavourization_rules = { 
+		top_liege = no
+	}
+}
+
+prince_male_steward_arnor = { 
+	type = character
+	gender = male
+	special = ruler_child
+	priority = 100
+	heritages = { heritage_dunedain }
+	titles = {  k_arnor_steward k_gondor_steward }
+	flavourization_rules = { 
+		top_liege = no
+	}
+}
+
+prince_female_steward_arnor = { 
+	type = character
+	gender = female
+	special = ruler_child
+	priority = 100
+	heritages = { heritage_dunedain }
+	titles = {  k_arnor_steward k_gondor_steward }
+	flavourization_rules = { 
+		top_liege = no
+	}
+}

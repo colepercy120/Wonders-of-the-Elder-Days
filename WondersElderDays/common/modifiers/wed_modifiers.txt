@@ -1,0 +1,72 @@
+﻿#ratdotl_modifier = {
+#	icon = magic_positive
+#	
+#	domain_limit = 3
+#	
+#	diplomacy = 1
+#	martial = 1
+#	stewardship = 1
+#	intrigue = 1
+#	learning = 1
+#	prowess = 1
+#}
+
+
+
+ee_spell_health_modifier = {
+	icon = health_positive
+	health = 10
+}
+ee_spell_fertility_modifier = {
+	icon = health_positive
+	fertility = 1
+}
+ee_spell_lifespan_modifier = {
+	icon = health_positive
+	life_expectancy = 10
+}
+ee_spell_shroud_modifier = {
+	icon = magic_positive
+	supply_limit_mult = 2
+	fort_level = 5
+	defender_holding_advantage = 10
+	garrison_size = 1
+	travel_danger = -50
+}
+ee_greater_spell_shroud_modifier = {
+	icon = magic_positive
+	supply_limit_mult = 2
+	fort_level = 25
+	defender_holding_advantage = 50
+	garrison_size = 5
+	travel_danger = -100
+}
+ee_spell_gold_modifier = {
+	icon = economy_positive
+	monthly_income_mult = 1
+}
+ee_spell_scheme_modifier = {
+	icon = magic_positive
+	scheme_power = 0.2
+	scheme_secrecy = 0.5
+	scheme_success_chance = 0.5
+}
+
+wed_spell_backlash_modifier = {
+	icon = magic_negative
+	scheme_power = -0.2
+	scheme_secrecy = -0.5
+	scheme_success_chance = -0.5
+	
+	diplomacy = -10
+	martial = -10
+	stewardship = -10
+	intrigue = -10
+	learning = -10
+	prowess = -10
+}
+
+wed_decay_buff_modifier = {
+	icon = county_modifier_development_positive
+	development_decline_factor = -0.5
+}

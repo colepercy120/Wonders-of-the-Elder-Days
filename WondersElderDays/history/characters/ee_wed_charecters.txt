@@ -1,0 +1,139 @@
+#
+#
+#lineofinzilloniee1 = {
+#	name = Imrazîr
+#	dynasty_house = house_kastaphel
+#	religion = faith_edain
+#	culture = kharadunaim
+#	
+#	father = lineofinzilloni36
+#    mother = lineofinzilloni36conc
+#	
+#    trait = blood_of_numenor_2
+#    trait = child_of_concubine_male
+#	trait = intellect_good_1
+#	
+#	diplomacy = 10
+#    martial = 10
+#    stewardship = 10
+#    intrigue = 10
+#    learning = 10
+#    prowess = 10
+#	
+#	trait = brave
+#    trait = zealous 
+#    trait = ambitious
+#	
+#	trait = education_learning_4
+#	trait = holy_warrior
+#	trait = populist_leader
+#	
+#	6754.3.2 = {
+#		birth = yes
+#	}
+#    6780.3.14 = {
+#        add_matrilineal_spouse = southern_faithful_adventurer
+#		change_first_name = Anorion
+#    }
+#	6860.1.1 = {
+#		death = { death_reason = death_natural_causes }
+#	}
+#}
+#
+#southern_faithful_adventurer = {
+#    name = Nimloth
+#    female = yes
+#
+#    dynasty = dynasty_eruthimar
+#    religion = faith_edain
+#    culture = dunedain_ranger
+#	dna = southern_faithful_adventurer_dna
+#
+#    
+#
+#    sexuality = heterosexual
+#
+#    trait = brave
+#    trait = shy
+#    trait = ambitious
+#
+#    trait = intellect_good_3
+#	trait = fecund
+#	trait = military_engineer
+#	trait = holy_warrior
+#	trait = logistician
+#	trait = populist_leader
+#	
+#	
+#
+#    diplomacy = 15
+#    martial = 15
+#    stewardship = 15
+#    intrigue = 15
+#    learning = 15
+#    prowess = 15
+#
+#    trait = education_martial_5
+#
+#    trait = blood_of_numenor_4
+#
+#    6750.5.2 = {
+#        birth = yes
+#        	effect = {
+#			learn_language = language_sindarin
+#			learn_language = language_quenya
+#		}
+#    }
+#    6910 = {
+#        death = { death_reason = death_natural_causes }
+#    }
+#}
+
+ice_boy_dummy = {
+    name = Nimloth
+   
+
+    
+    religion = faith_edain
+    culture = dunedain_ranger
+	dna = ice_boy_dna
+
+    
+
+    sexuality = heterosexual
+
+    trait = brave
+    trait = shy
+    trait = ambitious
+
+    trait = intellect_good_3
+	trait = fecund
+	trait = military_engineer
+	trait = holy_warrior
+	trait = logistician
+	trait = populist_leader
+	
+	
+
+    diplomacy = 15
+    martial = 15
+    stewardship = 15
+    intrigue = 15
+    learning = 15
+    prowess = 15
+
+    trait = education_martial_5
+
+    trait = blood_of_numenor_4
+
+    1.1.1 = {
+        birth = yes
+        	effect = {
+			learn_language = language_sindarin
+			learn_language = language_quenya
+			}
+    }
+    2.1.1 = {
+       death = { death_reason = death_natural_causes }
+    }
+}

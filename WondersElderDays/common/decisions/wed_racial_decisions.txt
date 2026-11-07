@@ -1,0 +1,147 @@
+﻿
+decision_try_for_maiar_child = {
+	title = decision_try_for_elven_child
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_elf_love.dds"
+	}
+
+	ai_check_interval = 24
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 0
+	}
+	selection_tooltip = decision_try_for_elven_child_tooltip
+	desc = decision_try_for_maiar_child_desc
+	confirm_text = decision_try_for_elven_child_confirm
+
+	decision_group_type = realms_in_exile_minor
+
+	is_shown = {
+		is_maiar = yes
+		primary_spouse ?= { exists = yes }
+		sex_opposite_of = primary_spouse
+		NOR = {
+			has_character_flag = elf_childbirth_ongoing
+			has_character_modifier = elf_child_limit_modifier
+			primary_spouse = { has_character_modifier = elf_child_limit_modifier }
+		}
+		trigger_if = { #Don't steal the decision from the player
+			limit = { is_ai = yes }
+			primary_spouse = { is_ai = yes }
+		}
+		#Make sure both spouses are on the same side of the Sundering Seas
+		trigger_if = {
+			limit = { is_in_valinor = yes }
+			primary_spouse = { is_in_valinor = yes }
+		}
+		trigger_else = { 
+			primary_spouse = { is_in_valinor = no }
+		}
+	}
+
+	is_valid = {
+		NOT = {
+			has_trait = wed_pregnant
+			primary_spouse = {
+				has_trait = wed_pregnant
+			}
+		}
+		trigger_if = {
+			limit = {
+				primary_spouse ?= { is_elf = yes }
+			}
+			has_medium_hope_or_higher = yes
+		}
+		is_at_war = no
+		NOR = {
+			has_character_modifier = elf_childraising_modifier
+			primary_spouse = { has_character_modifier = elf_childraising_modifier }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+	}
+	
+	cooldown = { years = 5 }
+
+	effect = {
+		if = {
+			limit = {
+				is_female = yes
+			}
+			add_trait = wed_pregnant
+			
+		}
+		else = {
+			primary_spouse = {
+				add_trait = wed_pregnant
+			}
+		}
+		trigger_event = { 
+			id = wed_pregnancy.01
+			months = 9
+		}
+		custom_tooltip = decision_try_for_maiar_child_effect
+	}
+}
+
+decision_ent_alliance = {
+	title = decision_ent_alliance
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_elves_05.dds"
+	}
+
+	ai_check_interval = 24
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 0
+	}
+	selection_tooltip = decision_ent_alliance_tooltip
+	desc = decision_ent_alliance_desc
+	confirm_text = decision_ent_alliance_confirm
+
+	decision_group_type = realms_in_exile_minor
+
+	is_shown = {
+		any_sub_realm_county = {
+			OR = {
+				this = title:c_harglan_nimrodel
+				this = title:c_aduialand
+				this = title:c_norwold
+				this = title:c_neahwold
+				this = title:c_entwash_vale
+				this = title:c_westemnet
+				this = title:c_gapofrohan
+				this = title:c_isengard
+			}
+		}
+		faith_is_good = yes
+		NOT = {
+			has_character_flag = ent_alliance
+		}
+	}
+
+	is_valid = {
+		piety_level >= 4
+		custom_tooltip = decision_ent_alliance_valid
+		faith_is_good = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+	}
+	
+	
+
+	effect = {
+		custom_tooltip = decision_ent_alliance_effect
+		add_character_flag = ent_alliance
+	}
+}

@@ -1,0 +1,6 @@
+
+
+spelldiff = { #anything to increase magic capacity goes there
+	value = 0
+	
+}

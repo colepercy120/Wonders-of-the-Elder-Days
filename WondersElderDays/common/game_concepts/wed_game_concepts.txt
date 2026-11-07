@@ -1,0 +1,37 @@
+﻿
+magic = {
+	alias = { magical }
+	parent = conceptmajorloreidea
+	texture = "gfx\interface\icons\traits\magic.dds"
+}
+
+mage = {
+	alias = { mages }
+	parent = men_at_arms
+}
+
+courtofardor = {
+	parent = elves
+	alias = { courtofaranore }
+}
+
+aranore = {
+	parent = conceptplace
+	alias = { ardor ildol }
+}
+
+
+atalantli = {
+	parent = elves
+	alias = { drow atalanti }
+}
+
+fuim = {
+	parent = fay
+	alias = { unseelie }
+}
+
+alyim = {
+	parent = fay
+	alias = { seelie }
+}

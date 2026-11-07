@@ -1,0 +1,257 @@
+namespace = ee_wed_shared
+
+ee_wed_shared.01 = {	# Reclaim Gondolin
+	content_source = realms_dlc
+	type = character_event
+	title = ee_wed_shared.01.t
+	desc = ee_wed_shared.01.desc
+	theme = stewardship_duty_focus
+	override_background = {
+		reference = eregion
+	}
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = ee_wed_shared.01.a
+	}
+}
+
+ee_wed_shared.02 = { # palintir fishing
+	content_source = realms_dlc
+	type = character_event
+	title = ee_wed_shared.02.t
+	desc = ee_wed_shared.02.desc
+	theme = sailing_activity
+	
+	override_background = {
+		reference = wilderness_arctic
+	}
+	
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	artifact = { # To display the artifact in the event-window
+		target = scope:artifact1
+		position = lower_center_portrait
+	}
+	artifact = { # To display the artifact in the event-window
+		target = scope:artifact2
+		position = lower_right_portrait
+	}
+	
+	immediate = {
+		create_artifact_palantir_annuminas_effect = { OWNER = this }
+		scope:newly_created_artifact = {
+			save_scope_as = artifact1
+		}
+		create_artifact_palantir_amonsul_effect = { OWNER = this }
+		scope:newly_created_artifact = {
+			save_scope_as = artifact2
+		}
+	}
+
+	option = {
+		name = ee_wed_shared.02.a
+		
+		add_prestige = 2000
+		dynasty = { add_dynasty_prestige = 1000 }
+		
+
+	}
+}
+
+ee_wed_shared.03 = { # palintir fishing 2
+	content_source = realms_dlc
+	type = character_event
+	title = ee_wed_shared.03.t
+	desc = ee_wed_shared.03.desc
+	theme = sailing_activity
+	
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	artifact = { # To display the artifact in the event-window
+		target = scope:artifact1
+		position = lower_center_portrait
+	}
+	
+	immediate = {
+		create_artifact_palantir_osgiliath_effect = { OWNER = this }
+		scope:newly_created_artifact = {
+			save_scope_as = artifact1
+		}
+		
+	}
+
+	option = {
+		name = ee_wed_shared.03.a
+		
+		add_prestige = 2000
+		dynasty = { add_dynasty_prestige = 1000 }
+		
+		
+
+	}
+}
+
+ee_wed_shared.04 = { # palintir fishing fail
+	content_source = realms_dlc
+	type = character_event
+	title = ee_wed_shared.04.t
+	desc = ee_wed_shared.04.desc
+	theme = sailing_activity
+	
+	right_portrait = {
+		character = root
+		animation = disapproval
+	}
+	
+	
+	override_background = {
+		reference = wilderness_arctic
+	}
+
+	option = {
+		name = ee_wed_shared.04.a
+		
+		add_gold = major_gold_loss
+		
+		hidden_effect = {
+			random_list = {
+				10 = {
+					trigger_event = {
+						id = ee_wed_shared.02
+						months = 6
+					}
+				}
+				5 = {
+					trigger_event = {
+						id = ee_wed_shared.05
+						months = 9
+					}
+				}
+				85 = {
+					trigger_event = {
+						id = ee_wed_shared.04
+						months = 6
+					}
+				}
+			}
+		}
+
+	}
+	option = {
+		name = ee_wed_shared.04.b
+		
+
+	}
+}
+
+ee_wed_shared.05 = { # boy in the ice
+	content_source = realms_dlc
+	type = character_event
+	title = ee_wed_shared.05.t
+	desc = ee_wed_shared.05.desc
+	theme = sailing_activity
+	
+	override_background = {
+		reference = wilderness_arctic
+	}
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	right_portrait = {
+		character = scope:iceboy
+		animation = shiver
+		triggered_outfit = {
+			outfit_tags = { beggar_rags }
+		}
+	}
+	
+	immediate = {
+		create_character = { 
+			age = 180
+			culture = culture:numenorean
+			faith = faith:faith_numenorean
+			gender = female
+			trait = born_on_numenor 
+			trait = blood_of_numenor_10
+			father = character:lineofelros27
+			dynasty = inherit
+			location = root.location
+			save_scope_as = iceboy_mom
+			after_creation = {
+				death = { death_reason = death_numenor_drowned }
+			}
+		}
+		
+		create_character = { 
+			age = 9
+			culture = culture:numenorean
+			faith = faith:faith_numenorean
+			gender = male
+			dynasty = inherit
+			mother = scope:iceboy_mom
+			location = root.location
+			trait = born_on_numenor 
+			trait = blood_of_numenor_10
+			trait = wounded_3
+			trait = stuttering
+			trait = intellect_good_2
+			
+			trait = shy
+			trait = craven
+			trait = curious
+			
+			random_traits = no
+			name = iceboy_name_2
+			
+			save_scope_as = iceboy
+			
+			diplomacy = { 5 15 }
+			martial = { 5 15 }
+			stewardship = { 7 17 }
+			intrigue = { 5 15 }
+			learning = { 7 17 }
+			prowess = { 0 5 }
+			after_creation = {
+				give_nickname = nick_iceborn
+				add_pressed_claim = title:e_numenor
+				copy_inheritable_appearance_from = character:ice_boy_dummy
+			}
+		}
+		
+	}
+
+	option = {
+		name = ee_wed_shared.05.a
+		
+		add_gold = 2000
+		create_artifact_numenorean_steelbow_effect = { OWNER = root }
+		
+		add_courtier = scope:iceboy
+		if = {
+			limit = {
+				num_of_relation_ward < 2
+			}
+			set_relation_ward = scope:iceboy
+		}
+		scope:iceboy = {
+		#	change_first_name = iceboy_name
+		}
+		trigger_event = {
+			id = ee_wed_shared.02
+			months = 6
+		}
+
+	}
+}

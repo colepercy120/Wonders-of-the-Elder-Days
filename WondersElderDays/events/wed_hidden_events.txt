@@ -1,0 +1,682 @@
+﻿namespace = wed
+
+wed.1 = { # integrate the southern provinces
+	hidden = yes
+ 	scope = none
+	
+	
+	immediate = {
+		
+		
+		### level 3 mages
+		character:lineofmelian =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineofosse =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineofuinen =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		
+		character:lineofsauron =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineoffinarfin5 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineofsaruman =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineofgandalf =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		character:lineofglorfindel =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 101
+			}
+		}
+		
+		### Level 2 Mages
+		
+		character:lineofradagast =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 50
+			}
+		}
+		character:lineofpallando =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 50
+			}
+		}
+		character:lineofalatar =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 50
+			}
+		}
+		character:lineofelrond1 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 51
+			}
+		}
+		character:lineoflanthir1 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 51
+			}
+		}
+		character:lineoforopher3 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 51
+			}
+		}
+		character:lineofmeglasul3 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 51
+			}
+		}
+		
+		character:lineoffeanor2 =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 11
+			}
+		}
+		
+		### Level 1 mages
+		
+		title:d_arien.holder =  { 
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+				trait = lifestyle_mage
+				value = 1
+			}
+		}
+		
+		### Convert sorcerer trait to mage trait
+		
+		every_ruler = {
+			every_courtier_or_guest = {
+				limit = {
+					has_trait = sorcerer_1
+				}
+				remove_trait = sorcerer_1
+				add_trait = lifestyle_mage
+			}
+		}
+		every_ruler = {
+			limit = {
+				has_trait = sorcerer_1
+			}
+			remove_trait = sorcerer_1
+			add_trait = lifestyle_mage
+		}
+		every_ruler = {
+			every_courtier_or_guest = {
+				limit = {
+					has_trait = sorcerer_2
+				}
+				remove_trait = sorcerer_2
+				add_trait = lifestyle_mage
+				add_trait_xp = {
+					trait = lifestyle_mage
+					value = 11
+				}
+			}
+		}
+		every_ruler = {
+			limit = {
+				has_trait = sorcerer_2
+			}
+			remove_trait = sorcerer_2
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+					trait = lifestyle_mage
+					value = 11
+				}
+		}
+		every_ruler = {
+			every_courtier_or_guest = {
+				limit = {
+					has_trait = sorcerer_3
+				}
+				remove_trait = sorcerer_3
+				add_trait = lifestyle_mage
+				add_trait_xp = {
+					trait = lifestyle_mage
+					value = 101
+				}
+			}
+		}
+		every_ruler = {
+			limit = {
+					has_trait = sorcerer_3
+				}
+			remove_trait = sorcerer_3
+			add_trait = lifestyle_mage
+			add_trait_xp = {
+					trait = lifestyle_mage
+					value = 101
+				}
+		}
+		
+		### Starting tech handout
+		
+		culture:maiar = {
+			add_innovation = innovation_mage_general
+			add_innovation = innovation_mage_crafting
+		}
+		culture:maiar_fallen = {
+			add_innovation = innovation_mage_general
+			add_innovation = innovation_mage_crafting
+		}
+		
+		every_culture_global = {
+			limit = {
+				has_same_culture_heritage = culture:noldor
+			}
+			add_innovation = innovation_mage_general
+			add_innovation = innovation_mage_crafting
+		}
+		
+		culture:galadhrim = {
+			add_innovation = innovation_mage_general
+			add_innovation = innovation_mage_crafting
+		}
+		culture:lasgalendrim = {
+			add_innovation = innovation_mage_crafting
+		}
+		every_culture_global = {
+			limit = {
+				has_same_culture_heritage = culture:khyan
+			}
+			add_innovation = innovation_mage_general
+		}
+		
+		culture:penni = {
+			add_innovation = innovation_mage_general
+		}
+		
+		every_culture_global = {
+			limit = {
+				has_same_culture_heritage = culture:gondorian
+			}
+			add_innovation = innovation_mage_crafting
+		}
+		every_culture_global = {
+			limit = {
+				has_same_culture_heritage = culture:longbeards
+			}
+			add_innovation = innovation_mage_crafting
+		}
+		
+		culture:firebeards = {
+			add_innovation = innovation_mage_crafting
+		}
+		culture:broadbeams = {
+			add_innovation = innovation_mage_crafting
+		}
+		
+		culture:seelie = {
+			get_all_innovations_from = culture:maiar
+		}
+		culture:unseelie = {
+			get_all_innovations_from = culture:maiar_fallen
+		}
+		culture:ardorhrim = {
+			get_all_innovations_from = culture:noldor
+		}
+		
+		### Age Fixing
+		
+		character:lineoftevildo = { # Osse
+			change_age = 14373 # not counting 33,537 years of the Lamps due it causing an overflow error
+		}
+		character:lineoffankil = { # Osse
+			change_age = 14373 # not counting 33,537 years of the Lamps due it causing an overflow error
+		}
+		
+		character:lineofdurinsbane = { # Osse
+			change_age = 14373 # not counting 33,537 years of the Lamps due it causing an overflow error
+		}
+		character:lineofardana1 = { # Fingolfin
+			change_age = 2968
+		}
+		
+		### Gondolin Spawn
+		
+		province:4335 = {
+			add_special_building = wonder_gondolin_01
+			barony = {
+				set_title_name = GONDOLIN
+			}
+			county = {
+				set_title_name = GONDOLIN
+			}
+			duchy = {
+				set_title_name = TOL_FUIN
+			}
+		}
+		
+		### Ardor spawn
+		
+		if = {
+			limit = {
+				NOT = { has_game_rule = ardor_disabled } 
+			}
+			character:lineofardana2 =  { 
+				trigger_event = wed.2
+			}
+		}
+		else = {
+			character:lineofardana2 =  { 
+				death = {
+					death_reason = death_vanished
+				}
+			}
+			character:lineofardana3 =  { 
+				death = {
+					death_reason = death_vanished
+				}
+			}
+			character:lineoffankil =  { 
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_game_rule = balrog_disabled
+			}
+			character:lineofdurinsbane =  { 
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = balrog_enabled_ruler
+			}
+			character:lineofdurinsbane =  { 
+				trigger_event = wed.3
+			}
+		}
+		
+		### Army Spawn
+		
+		character:lineofalatar = {
+			create_maa_regiment = {
+				type = noldor_swordsmen
+				check_can_recruit = no
+				size = 5
+			}
+		}
+		
+		### Decay Set up
+		
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = decay_enabled
+					has_game_rule = decay_enabled_buff
+				}
+			}
+			trigger_event = { 
+				on_action = wed_decay_pulse
+				
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = decay_enabled_buff
+			}
+			every_county = {
+				add_county_modifier = wed_decay_buff_modifier
+			}
+		}
+		
+		### Intro Events
+		
+		character:lineofardana2 =  { 
+			trigger_event = { 
+				id = wed_intro.01
+				days = 1
+			}
+		}
+		character:lineofardana3 =  { 
+			trigger_event = { 
+				id = wed_intro.02
+				days = 1
+			}
+		}
+		
+		character:lineofalatar =  { 
+			trigger_event = { 
+				id = wed_intro.03
+				days = 1
+			}
+		}
+		character:lineofpallando =  { 
+			trigger_event = { 
+				id = wed_intro.03
+				days = 1
+			}
+		}
+		
+		character:lineofnixni =  { 
+			trigger_event = { 
+				id = wed_intro.04
+				days = 1
+			}
+		}
+		
+		character:lineoftevildo =  { 
+			trigger_event = { 
+				id = wed_intro.05
+				days = 1
+			}
+		}
+	}
+}
+
+wed.2 = { # integrate the southern provinces
+	hidden = yes
+ 	
+	
+	
+	immediate = {
+		title:d_ardinak = {
+			every_de_jure_county = {
+				limit = {
+					any_county_province = {
+						has_holding_type = wastelands_holding
+					}
+				}
+				
+				change_development_level = 10
+				
+				save_temporary_scope_as = target_county
+						
+				ai_colonisation_effect = { WASTELANDS = scope:target_county ROOT_SCOPE = root }
+						
+				scope:target_county = {
+					if = {
+						limit = { root = { is_elf = yes } }
+						title_province = { set_holding_type = elven_holding }
+					} else_if = {
+						limit = { title_province = { terrain = halls } }
+						title_province = { set_holding_type = dwarven_holding }
+					} else_if = {
+						limit = { root = { is_hobbit = yes } }
+						title_province = { set_holding_type = city_holding }
+					} else = {
+						if = {
+							limit = { root = { has_government = tribal_government } }
+							title_province = { set_holding_type = tribal_holding }
+						} else = {
+							title_province = { set_holding_type = castle_holding }
+						}
+					}
+				}		
+
+				if = { #Fallback
+					limit = { faith = faith:faith_wastelands_pagan }
+					set_county_faith = root.faith
+				}
+				if = { #Fallback
+					limit = { culture = culture:wastelands }
+					set_county_culture = root.culture
+				}
+			}
+		}
+		change_government = elven_government
+		
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+		}
+		becomes_independent = {
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
+		
+		get_title = title:d_ardinak
+		get_title = title:e_ardor
+		add_gold = 5000	
+		add_legitimacy = 1000
+		
+		dynasty = {
+			add_dynasty_prestige = 3000
+		}
+		
+		every_sub_realm_county = {
+			remove_county_modifier = marauding_orc_dregs_modifier
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				add_random_economic_building_effect = yes
+				add_random_fortification_building_effect = yes
+				add_building = elven_settlement_05
+			}
+			add_county_modifier = elven_homeland_county_modifier
+		}
+		
+		title:c_amburak = {
+			title_province = {
+				add_special_building = wonder_mirerotto_01
+			}
+			add_county_modifier = elven_homeland_county_modifier
+		}
+		title:c_unnalgald = {
+			title_province = {
+				add_special_building = wonder_carchmenel_01
+			}
+		}
+		title:c_kikithan = {
+			title_province = {
+				add_special_building = wonder_lonlume_01
+			}
+			add_county_modifier = elven_homeland_county_modifier
+		}
+		
+		add_character_modifier = valar_ban_modifier
+		
+		father = {
+			set_employer = root
+			
+		}
+		
+		character:lineofardana3 =  {
+			set_relation_nemesis = root
+			add_pressed_claim = title:e_ardor
+			add_pressed_claim = title:d_ardinak
+			add_pressed_claim = title:c_ardinak
+			
+			create_maa_regiment = {
+				type = battle_mages_elf
+				check_can_recruit = no
+				size = 5
+			}
+			
+		}
+		
+		create_maa_regiment = {
+				type = battle_mages_elf
+				check_can_recruit = no
+				size = 5
+			}
+		create_maa_regiment = {
+				type = noldor_swordsmen
+				check_can_recruit = no
+				size = 5
+			}
+		create_maa_regiment = {
+				type = song_smiths
+				check_can_recruit = no
+				size = 5
+			}
+		
+	}
+	
+}
+
+wed.3 = { # integrate the southern provinces
+	hidden = yes
+ 	
+	
+	
+	immediate = {
+		title:k_khazad_dum = {
+			every_de_jure_county = {
+				limit = {
+					any_county_province = {
+						has_holding_type = wastelands_holding
+					}
+				}
+				
+				change_development_level = 3
+				
+				save_temporary_scope_as = target_county
+						
+				ai_colonisation_effect = { WASTELANDS = scope:target_county ROOT_SCOPE = root }
+						
+				scope:target_county = {
+					if = {
+						limit = { root = { is_elf = yes } }
+						title_province = { set_holding_type = elven_holding }
+					} else_if = {
+						limit = { title_province = { terrain = halls } }
+						title_province = { set_holding_type = dwarven_holding }
+					} else_if = {
+						limit = { root = { is_hobbit = yes } }
+						title_province = { set_holding_type = city_holding }
+					} else = {
+						if = {
+							limit = { root = { has_government = tribal_government } }
+							title_province = { set_holding_type = tribal_holding }
+						} else = {
+							title_province = { set_holding_type = castle_holding }
+						}
+					}
+				}		
+
+				if = { #Fallback
+					limit = { faith = faith:faith_wastelands_pagan }
+					set_county_faith = root.faith
+				}
+				if = { #Fallback
+					limit = { culture = culture:wastelands }
+					set_county_culture = root.culture
+				}
+			}
+		}
+		
+		
+		
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+		}
+		becomes_independent = {
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
+		
+		get_title = title:k_khazad_dum
+		
+		add_gold = 5000	
+		add_legitimacy = 1000
+		
+		dynasty = {
+			add_dynasty_prestige = 3000
+		}
+		
+		change_government = feudal_government
+		
+		title:k_khazad_dum = {
+			every_de_jure_county = {
+				limit = {
+					any_county_province = {
+						NOT = { has_holding_type = wastelands_holding } 
+					}
+					NOT = { holder = root }
+				}
+				holder.top_liege = {
+					create_title_and_vassal_change = {
+						type = swear_fealty
+						save_scope_as = change
+					}
+					change_liege = {
+						liege = character:lineofdurinsbane
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+					if = {
+						limit = {
+							has_government = tribal_government
+						}
+						change_government = feudal_government
+						every_sub_realm_county = {
+							limit = {
+								title_province = { has_holding_type = tribal_holding }
+							}
+							title_province = { set_holding_type = castle_holding }
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	
+}

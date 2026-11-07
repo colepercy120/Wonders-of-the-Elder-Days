@@ -1,0 +1,10 @@
+﻿
+
+middleearth_uttersouth_ardor = {
+	regions = {
+		middleearth_uttersouth_twinkingdoms_tumag
+		middleearth_uttersouth_usakan
+		middleearth_uttersouth_mumakan
+		
+	}
+}

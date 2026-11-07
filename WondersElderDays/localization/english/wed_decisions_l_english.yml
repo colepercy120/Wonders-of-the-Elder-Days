@@ -1,0 +1,28 @@
+﻿# LotR: This file needs to be kept in sync with the release version.
+#   Edited the dates
+#	Edited the loading screen text
+
+l_english:
+
+ decision_try_for_maiar_child_desc: "As one of the [maiargods|E], children aren't something I really think about. But children have a power all their own. It's the greatest joy of mortals and the greatest expression of love between partners, perhaps I should consider it."
+ decision_try_for_maiar_child_effect: "A child will be born in roughly 9 months."
+ 
+ decision_ent_alliance: "Forge an Alliance with the Ents."
+ decision_ent_alliance_desc: "The [ents|e] of Fangorn Forest are a mighty but meager race; they are not often roused from their duties tending the forest, but as the [darklord|e] rises in the east, we should seek to make an alliance with them against the darkness, lest the whole world, and their forest, fall."
+ decision_ent_alliance_tooltip: "Forge an Alliance with the Ents."
+ decision_ent_alliance_confirm: "Venture into Fangorn."
+ decision_ent_alliance_valid: "Your [realm|e] Borders Fangorn Forest"
+ decision_ent_alliance_effect: "Unlocks a very powerful [men_at_arms|e] [regiment|e] as long as you remain good [alignment|e]"
+ 
+ decision_rebuild_aranore: "Rebuild the Citadel of Aranórë."
+ decision_rebuild_aranore_desc: "The Citadel of Aranórë was destroyed in our last attempt to bring down [ariencharacter|e] and [tilioncharacter|E], and we were forced to let the husk of the fortress rot following the failure, but now that our power is again waxing, we can restore the fortress to its former glory."
+ decision_rebuild_aranore_tooltip: "Restore the capital of [aranore|E]."
+ decision_rebuild_aranore_confirm: "Raise the Dread Fortress."
+ ardinak_upgrade_holding: "The [elven_refuge|E] in [GetTitleByKey('b_ardinak').GetNameNoTier] will be upgraded by two levels. If it cannot be upgraded two levels, for every level it would otherwise have been upgraded [GetTitleByKey('c_ardinak').GetNameNoTier] will receive 10 [development|E]."
+ 
+ decision_solidfy_ardor: "Dominate Aranórë."
+ decision_solidfy_ardor_desc: "The time has come for us to solidify our rule of [GetGeographicalRegion('middleearth_uttersouth_ardor').GetName], the [kinnlai|e] have been defeated, Tandurak tamed, Koronande crushed, and Hathor brought under heel. With none left to oppose us, it's time to enforce our rule forevermore."
+ decision_solidfy_ardor_confirm: "Eternal Rule starts now."
+ decision_solidfy_ardor_tooltip: "Solidly rule of Aranórë."
+ decision_solidfy_ardor_effect_1: "[GetTitleByKey('e_ardor').GetName] becomes [de_jure|e] leige of every [kingdom|e] in [GetGeographicalRegion('middleearth_uttersouth_ardor').GetName]"
+ decision_solidfy_ardor_effect_2: "Every [county|e] in [GetGeographicalRegion('middleearth_uttersouth_ardor').GetName] gets [GetModifier('elven_homeland_county_modifier').GetNameWithTooltip]"

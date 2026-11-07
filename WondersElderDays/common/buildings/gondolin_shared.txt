@@ -1,0 +1,96 @@
+wonder_gondolin_01 = { 
+	type_icon = "icon_building_observatory.dds"
+	
+
+	construction_time = slow_construction_time
+	cost_gold = 1000
+	can_construct = {
+		scope:holder ?= {
+			is_elf = yes
+			
+		}
+		building_requirement_elven = yes
+	}
+
+	
+	province_modifier = {
+		
+		
+	}
+	
+	character_modifier = {
+		stress_gain_mult = 0.1
+		stress_loss_mult = -0.1
+	}
+	
+	county_modifier = {
+		defender_holding_advantage = good_building_fort_level_tier_1
+	}
+	province_modifier = {
+		travel_danger = 10
+	}
+
+	
+
+	is_enabled = { 
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	next_building = wonder_gondolin_02
+	
+	type = special
+	flag = travel_point_of_interest_religious
+}
+
+wonder_gondolin_02 = { 
+	type_icon = "icon_building_observatory.dds"
+	
+
+	construction_time = very_slow_construction_time
+	cost_gold = 5000
+	can_construct = {
+		scope:holder ?= {
+			is_elf = yes
+			
+		}
+		building_requirement_elven = yes
+		
+		has_building_or_higher = elven_settlement_06
+	}
+
+	
+	province_modifier = {
+		
+		
+	}
+	
+	character_modifier = {
+		stress_gain_mult = -0.25
+		stress_loss_mult = 0.25
+	}
+	levy = 3000
+	county_modifier = {
+		defender_holding_advantage = good_building_fort_level_tier_5
+		development_growth = 0.25
+	}
+	province_modifier = {
+		monthly_income = 10
+		fort_level = 12
+		supply_limit_mult = 1
+	}
+
+	
+
+	is_enabled = { 
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+	flag = travel_point_of_interest_religious
+}

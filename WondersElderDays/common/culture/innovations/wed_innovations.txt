@@ -1,0 +1,49 @@
+﻿
+
+innovation_mage_general = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = gfx/interface/icons/culture_innovations/innovation_magic.dds
+
+	potential = {
+		mage_innovation_trigger = yes
+	}
+	
+	character_modifier = {
+		men_at_arms_recruitment_cost = 0.25
+		maa_damage_mult = 0.1
+		maa_toughness_mult = 0.1
+		health = 0.25
+	}
+
+	custom = unlock_battle_mages
+	custom = unlock_mage_ritual
+
+	flag = global_maa
+}
+
+innovation_mage_crafting = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = gfx/interface/icons/culture_innovations/innovation_magic_crafting.dds
+
+	potential = {
+		craft_innovation_trigger = yes
+	}
+
+	custom = unlock_arcane_engineering
+	
+	character_modifier = {
+		men_at_arms_recruitment_cost = -0.1
+		men_at_arms_maintenance = -0.1
+		maa_damage_mult = 0.1
+		maa_toughness_mult = 0.1
+		
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+
+	flag = global_maa
+}

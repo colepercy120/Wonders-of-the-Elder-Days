@@ -1,0 +1,42 @@
+﻿namespace = wed_ardor
+
+wed_ardor.01 = {	# Solidfy Aranore
+	content_source = realms_dlc
+	type = character_event
+	title = wed_ardor.01.t
+	desc = wed_ardor.01.desc
+	theme = stewardship_duty_focus
+	override_background = {
+		reference = barrow
+	}
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = wed_ardor.01.a
+	}
+}
+
+wed_ardor.02 = {	# Rebiuld Ardinak
+	content_source = realms_dlc
+	type = character_event
+	title = wed_ardor.02.t
+	desc = wed_ardor.02.desc
+	theme = stewardship_duty_focus
+	override_background = {
+		reference = barrow
+	}
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = wed_ardor.02.a
+	}
+}
+

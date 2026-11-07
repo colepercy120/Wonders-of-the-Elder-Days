@@ -1,0 +1,89 @@
+﻿## Lotr Marriage triggers
+
+lotr_children_allowed = {
+	trigger_if = {
+		limit = { 
+			has_game_rule = maia_reproduction_enabled
+		}
+		OR = {
+			cannot_be_killed = no
+			is_maiar = yes
+		}
+	} 
+	trigger_else = {
+		cannot_be_killed = no
+	}
+	
+}
+
+lotr_children_with_allowed = { #example lotr_children_with_allowed = { TARGET = scope:lover }
+	lotr_marriage_allowed = yes
+	$TARGET$ = { lotr_marriage_allowed = yes }
+	OR = {
+		AND = {
+			has_game_rule = maia_reproduction_enabled
+			OR = {
+				same_race = { TARGET = $TARGET$ }
+				is_maiar = yes
+			}
+		}
+		AND = {
+			NOT = { has_game_rule = maia_reproduction_enabled }
+			same_race = { TARGET = $TARGET$ }
+		}
+		
+		OR = {
+			AND = {
+				this = character:lineisildur42
+				OR = {
+					AND = {
+						has_title = title:e_gondor
+						has_title = title:e_arnor
+					}
+					has_title = title:h_reunited_kingdom
+				}
+				$TARGET$ = character:lineofelrond4
+			}
+			AND = {
+				this = character:lineofelrond4
+				$TARGET$ = {
+					this = character:lineisildur42
+					OR = {
+						AND = {
+							has_title = title:e_gondor
+							has_title = title:e_arnor
+						}
+						has_title = title:h_reunited_kingdom
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+
+
+## Betrothal triggers
+
+is_nubile = {
+	age >= nubile_age
+	OR = { 
+		cannot_be_killed = no
+		AND = {
+			has_game_rule = maia_reproduction_enabled
+			is_maiar = yes
+		}
+	}
+}
+
+is_valinor_maiar_character = {
+	always = no
+	NAND = { 
+		this = character:lineofsaruman
+		this = character:lineofgandalf
+		this = character:lineofradagast
+	}
+	culture ?= { has_cultural_parameter = is_ainur_heritage }
+}
+

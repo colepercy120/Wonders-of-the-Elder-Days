@@ -1,0 +1,432 @@
+﻿
+spread_shadow_generate_new_holder_culture_and_faith = { #In Title Scope
+	title_capital_county = { # Effects fire in county scope
+		generate_new_evil_faith = yes
+		generate_new_evil_culture = yes
+	}
+	scope:new_faith = {
+		save_scope_as = holder_faith
+	}
+	scope:new_culture = {
+		save_scope_as = holder_culture
+	}
+}
+
+generate_new_evil_faith = { # Fires from county scope, generates scope:new_faith
+	if = {
+		limit = { exists = culture }
+		if = { #Leofrings convert to Fey Court
+			limit = {
+				OR = {
+					culture = culture:leofring 
+					culture = { any_parent_culture_or_above = { this = culture:leofring } }
+				}
+			}
+			faith:faith_withered_court = { save_scope_as = new_faith }
+		}
+		else_if = { #Framlings convert to Liffrea
+			limit = {
+				OR = {
+					culture = culture:framling 
+					culture = { any_parent_culture_or_above = { this = culture:framling } }
+				}
+			}
+			faith:faith_withered_court = { save_scope_as = new_faith }
+		}
+		
+		
+		else_if = { #Logath convert to Dasimayai
+			limit = {
+				OR = {
+					culture = culture:logath 
+					culture = { any_parent_culture_or_above = { this = culture:logath } }
+				}
+			}
+			faith:faith_kerkassk  = { save_scope_as = new_faith }
+		}
+		else_if = { #Mardrukan convert to Kolir
+			limit = {
+				OR = {
+					culture = culture:mardrukan 
+					culture = { any_parent_culture_or_above = { this = culture:mardrukan } }
+				}
+			}
+			faith:faith_kings_men_castamir  = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Honin convert to Onu
+			limit = {
+				OR = {
+					culture = culture:honnin 
+					culture = { any_parent_culture_or_above = { this = culture:honnin } }
+				}
+			}
+			faith:faith_vatra  = { save_scope_as = new_faith }
+		}
+		
+		
+		else_if = { #Jelut convert to Nade-Manye
+			limit = {
+				OR = {
+					culture = culture:jelut 
+					culture = { any_parent_culture_or_above = { this = culture:jelut } }
+				}
+			}
+			faith:faith_khandish_sauronic  = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Enedhwaithrim and Saralain convert to Mordhamoraire
+			limit = {
+				OR = {
+					culture = culture:enedhwaithrim 
+					culture = { any_parent_culture_or_above = { this = culture:enedhwaithrim } }
+				}
+			}
+			faith:faith_daen_sauron  = { save_scope_as = new_faith }
+		}
+		else_if = { #Lynerians and Danak convert to Markur
+			limit = {
+				OR = {
+					culture = culture:lynerian 
+					culture = { any_parent_culture_or_above = { this = culture:lynerian } }
+					culture = culture:danak 
+					culture = { any_parent_culture_or_above = { this = culture:danak } }
+				}
+			}
+			faith:faith_yom  = { save_scope_as = new_faith }
+		}
+		else_if = { #Usukani and Sederi conver to Ascuru Hudari
+			limit = {
+				OR = {
+					culture = culture:usakani
+					culture = {  any_parent_culture_or_above = { this = culture:usakani } }
+				}
+			}
+			faith:faith_indur = { save_scope_as = new_faith } 
+		}
+		
+		else_if = { #Northern Adunaic Heritage
+			limit = { 
+				culture = { has_cultural_pillar = heritage_northern_adunaic }
+			}
+			faith:faith_kings_men_castamir = { save_scope_as = new_faith }
+		}
+		else_if = { #Southern Adunaic Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+			}
+			faith:path_of_zigur  = { save_scope_as = new_faith }
+		}
+		else_if = { #Baradhrim Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_baradhrim }
+			}
+			faith:faith_westward_waves = { save_scope_as = new_faith }
+		}
+		else_if = { #Bellakari Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_bellakari }
+			}
+			faith:path_of_zigur` = { save_scope_as = new_faith }
+		}
+		else_if = { #Daen Lintis Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_daen_lintis }
+			}
+			faith:faith_daen_sauron = { save_scope_as = new_faith }
+		}
+		else_if = { #Daen Coentis Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_daen_coentis }
+			}
+			faith:faith_daen_sauron = { save_scope_as = new_faith }
+		}
+		
+		
+		else_if = { #Dunadain Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_dunedain }
+			}
+			faith:faith_kings_men_castamir = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Ioriag, Igath and North Khailuza Heritage
+			limit = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_ioriag }
+					culture = { has_cultural_pillar = heritage_igath } 
+					culture = { has_cultural_pillar = heritage_north_khailuza }
+				}
+			}
+			faith:faith_kerkassk  = { save_scope_as = new_faith }
+		}
+		else_if = { #Tedjin Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_tedjin }
+			}
+			faith:faith_kerkassk = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Bozishnarudi, Arani and Tulwangi Heritage
+			limit = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_middle_apysaic }
+					culture = { has_cultural_pillar = heritage_southern_apysaic }
+					culture = { has_cultural_pillar = heritage_tulwangi }
+				}
+			} 
+			faith:faith_khandish_sauronic  = { save_scope_as = new_faith }
+		}
+		else_if = { #Harwani Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_northern_apysaic }
+			}
+			faith:faith_khandish_sauronic = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Noi Trevan Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_hillmen }
+			}
+			faith:faith_angmar_evil  = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #Geshen Heritage
+			limit = {
+				culture = {  has_cultural_pillar = heritage_geshan  }
+			}
+			faith:faith_indur = { save_scope_as = new_faith } 
+		}
+		else_if = { #Mumakani, Kirani, Hathorim, and Shayn Heritage
+			limit = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_mumakani }
+					culture = { has_cultural_pillar = heritage_kirani }
+					culture = { has_cultural_pillar = heritage_shayn } # Really need to find closer
+					culture = { has_cultural_pillar = heritage_hathorim }
+					culture = { has_cultural_pillar = heritage_sare } # TEMP until Archipelago
+				}
+			}
+			faith:faith_indur = { save_scope_as = new_faith }
+		}
+		
+		else_if = { #South Khailuza Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_south_khailuza }
+			}
+			faith:faith_angrimayn  = { save_scope_as = new_faith }
+		}
+		else_if = { #Harshandatti Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_harshandatt }
+			}
+			faith:faith_sened = { save_scope_as = new_faith }
+		}
+		else_if = { #Siryani Heritage
+			limit = {
+				culture = { has_cultural_pillar = heritage_new_sirayni }
+			}
+			faith:faith_taimaraud = { save_scope_as = new_faith }
+		}
+		else_if = { #Mumakani, Kirani, Hathorim, and Shayn Heritage
+			limit = {
+				OR = {
+					culture = { is_elf_culture = yes}
+					
+				}
+			}
+			faith:faith_ring_cult = { save_scope_as = new_faith }
+		}
+		else = { #Fallback of the Fallback
+			faith:lidless_eye = { save_scope_as = new_faith }
+		}
+	}
+}
+
+generate_new_evil_culture = { # Fires from county scope, generates scope:new_culture
+	if = { # Non-orcs and non-immortals keep their culture. (Humans, Dwarves, Elves, etc)
+		limit = {
+			culture = {
+				NOT = {
+					
+					is_dwarf_culture = yes
+					is_wastelands_culture = yes
+				}
+			}
+		}
+		culture = { save_scope_as = new_culture }
+	}
+	# Underground
+	else_if = { # Misty, Iron and White Mountains
+		limit = { 
+			OR = {
+				empire = title:e_misty_mountains 
+				empire = title:e_iron_mountains
+				empire = title:e_white_mountains
+			}
+		}
+		culture:ghrazim  = { save_scope_as = new_culture }
+	}
+	# Assigned the Blue mountains by kingdom
+	else_if = { # Nogrod/Belegost
+		limit = { 
+			OR = {
+				kingdom = title:k_belegost
+				kingdom = title:k_nogrod 
+			}
+		}
+		culture:ghrazim  = { save_scope_as = new_culture }
+	}
+	else_if = { # Buzra-dum
+		limit = {
+			kingdom = title:k_buzra_dum
+		}
+		culture:ghrazim  = { save_scope_as = new_culture }
+	}
+	else_if = { # Yellow, Western Yellow
+		limit = { 
+			OR = {
+				empire = title:e_yellow_mountains
+				empire = title:e_western_yellow_mountains
+			}
+		}
+		culture:rukhashai  = { save_scope_as = new_culture }
+	}
+	else_if = { #Nurunkhizdin
+		limit = {
+			kingdom = title:k_nurunkizdin
+		}
+		culture:roofsleeper_goblin  = { save_scope_as = new_culture }
+	}
+	else_if = { #Underground fallback
+		limit = {
+			is_underground_county = yes
+		}
+		culture:ghrazim = { save_scope_as = new_culture }
+	}
+	else_if = { #Mordor Nurnoth assigned manually, otherwise it will generate Nurniags due to proximity
+		limit = {
+			empire = title:e_mordor
+		}
+		culture:morlughai = { save_scope_as = new_culture }
+	}
+	else_if = {
+		limit = {
+			culture = { is_elf_culture = yes }
+			OR = {
+				empire = title:e_uskan
+				empire = title:e_mumakan
+				empire = title:e_mag_tumag
+			}
+		}
+		culture:ardorhrim = { save_scope_as = new_culture }
+	}
+	# Assign local culture based on proximity
+	else_if = {
+		limit = {
+			any_neighboring_county = {
+				NOR = {
+					is_orc = yes
+					is_elf = yes
+					is_wastelands = yes
+				}
+			}
+		}
+		random_neighboring_county = {
+			limit = {
+				NOR = {
+					is_orc = yes
+					is_elf = yes
+					is_wastelands = yes
+				}
+			}
+			culture = { save_scope_as = new_culture }
+		}
+	}
+	else_if = { # Check de jure duchy
+		limit = {
+			duchy = {
+				any_de_jure_county = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+			}
+		}
+		duchy = {
+			ordered_de_jure_county = {
+				order_by = development_level
+				limit = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+				culture = { save_scope_as = new_culture }
+			}
+		}
+	}
+	else_if = { # Check de jure kingdom
+		limit = {
+			kingdom = {
+				any_de_jure_county = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+			}
+		}
+		kingdom = {
+			ordered_de_jure_county = {
+				order_by = development_level
+				limit = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+				culture = { save_scope_as = new_culture }
+			}
+		}
+	}
+	else_if = { # Check de jure empire
+		limit = {
+			empire = {
+				any_de_jure_county = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+			}
+		}
+		empire = {
+			ordered_de_jure_county = {
+				order_by = development_level
+				limit = {
+					NOR = {
+						is_orc = yes
+						is_elf = yes
+						is_wastelands = yes
+					}
+				}
+				culture = { save_scope_as = new_culture }
+			}
+		}
+	}
+	else = { #Fallback of the Fallback
+		culture:ghrazim = { save_scope_as = new_culture }
+	}
+}
+
+spread_shadow_convert_specific_county = { # Fires from county scope. Converts any non-holder cultured counties to their relevant faith
+	generate_new_evil_faith = yes
+	set_county_faith = scope:new_faith
+}

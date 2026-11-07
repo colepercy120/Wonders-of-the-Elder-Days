@@ -1,0 +1,403 @@
+﻿#Events for pregnancy on actions
+#LOTR: event pregnancy.8001 that checks racial compatibility and then calls all events that were in on_pregnancy_mother
+
+namespace = wed_pregnancy
+
+
+
+wed_pregnancy.01 = { #Birth - single baby
+	content_source = realms_dlc
+	type = character_event
+	title = elven_racial.0006.t
+	desc = elven_racial.0006.desc
+	theme = pregnancy
+
+	left_portrait = {
+		character = root
+		animation = newborn
+	}
+	right_portrait = {
+		character = primary_spouse
+		animation = happiness
+	}
+	lower_center_portrait = {
+		character = scope:child
+		animation = happiness
+	}
+
+	trigger = {
+		OR = {
+			is_married = yes
+			is_female = yes
+		}
+	}
+
+	immediate = {
+		#play_music_cue_once = { TRACK = mx_cue_birth }
+
+		scope:mother = {
+			remove_variable = year_became_pregnant
+		}
+		if = {
+			limit = { is_female = yes }
+			create_character = {
+				faith = root.faith
+				culture = root.culture
+				location = root.location
+				mother = root
+				father = root.primary_spouse
+				gender_female_chance = 50
+				age = 0
+				save_scope_as = child
+				after_creation = {
+					scope:child = { replace_unelven_traits = yes }
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { matrilinear_marriage = yes }
+					scope:child = { set_house = root.house }
+				}
+				else = { scope:child = { set_house = root.primary_spouse.house } }
+			}
+		}
+		else = {
+			create_character = {
+				faith = root.faith
+				culture = root.culture
+				location = root.location
+				mother = root.primary_spouse
+				father = root
+				gender_female_chance = 50
+				age = 0
+				save_scope_as = child
+				after_creation = {
+					scope:child = { replace_unelven_traits = yes }
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { matrilinear_marriage = yes }
+					scope:child = { set_house = root.primary_spouse.house }
+				}
+				else = { scope:child = { set_house = root.house } }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { exists = root.employer }
+				scope:child = {
+					set_employer = root.employer
+				}
+			}
+			else = {
+				scope:child = {
+					set_employer = root
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_trait = maiar
+			}
+			
+			hidden_effect = {
+				scope:child = {
+					random_list = {
+						2 = { add_diplomacy_skill = 1 }
+						14 = { add_diplomacy_skill = 2 }
+						34 = { add_diplomacy_skill = 3 }
+						34 = { add_diplomacy_skill = 4 }
+						14 = { add_diplomacy_skill = 5 }
+						2 = { add_diplomacy_skill = 6 }
+					}
+					random_list = {
+						2 = { add_martial_skill = 1 }
+						14 = { add_martial_skill = 2 }
+						34 = { add_martial_skill = 3 }
+						34 = { add_martial_skill = 4 }
+						14 = { add_martial_skill = 5 }
+						2 = { add_martial_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_stewardship_skill = 1 }
+						14 = { add_stewardship_skill = 2 }
+						34 = { add_stewardship_skill = 3 }
+						34 = { add_stewardship_skill = 4 }
+						14 = { add_stewardship_skill = 5 }
+						2 = { add_stewardship_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_intrigue_skill = 1 }
+						14 = { add_intrigue_skill = 2 }
+						34 = { add_intrigue_skill = 3 }
+						34 = { add_intrigue_skill = 4 }
+						14 = { add_intrigue_skill = 5 }
+						2 = { add_intrigue_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_learning_skill = 1 }
+						14 = { add_learning_skill = 2 }
+						34 = { add_learning_skill = 3 }
+						34 = { add_learning_skill = 4 }
+						14 = { add_learning_skill = 5 }
+						2 = { add_learning_skill = 6 }
+					
+					}
+					random_list = {
+						2 = { add_prowess_skill = 1 }
+						14 = { add_prowess_skill = 2 }
+						34 = { add_prowess_skill = 3 }
+						34 = { add_prowess_skill = 4 }
+						14 = { add_prowess_skill = 5 }
+						2 = { add_prowess_skill = 6 }
+						
+					}
+				}
+				remove_trait = elf_pregnant_2
+				primary_spouse = { remove_trait = elf_pregnant_2 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = fay
+			}
+			
+			hidden_effect = {
+				scope:child = {
+					random_list = {
+						2 = { add_diplomacy_skill = 1 }
+						14 = { add_diplomacy_skill = 2 }
+						34 = { add_diplomacy_skill = 3 }
+						34 = { add_diplomacy_skill = 4 }
+						14 = { add_diplomacy_skill = 5 }
+						2 = { add_diplomacy_skill = 6 }
+					}
+					random_list = {
+						2 = { add_martial_skill = 1 }
+						14 = { add_martial_skill = 2 }
+						34 = { add_martial_skill = 3 }
+						34 = { add_martial_skill = 4 }
+						14 = { add_martial_skill = 5 }
+						2 = { add_martial_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_stewardship_skill = 1 }
+						14 = { add_stewardship_skill = 2 }
+						34 = { add_stewardship_skill = 3 }
+						34 = { add_stewardship_skill = 4 }
+						14 = { add_stewardship_skill = 5 }
+						2 = { add_stewardship_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_intrigue_skill = 1 }
+						14 = { add_intrigue_skill = 2 }
+						34 = { add_intrigue_skill = 3 }
+						34 = { add_intrigue_skill = 4 }
+						14 = { add_intrigue_skill = 5 }
+						2 = { add_intrigue_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_learning_skill = 1 }
+						14 = { add_learning_skill = 2 }
+						34 = { add_learning_skill = 3 }
+						34 = { add_learning_skill = 4 }
+						14 = { add_learning_skill = 5 }
+						2 = { add_learning_skill = 6 }
+					
+					}
+					random_list = {
+						2 = { add_prowess_skill = 1 }
+						14 = { add_prowess_skill = 2 }
+						34 = { add_prowess_skill = 3 }
+						34 = { add_prowess_skill = 4 }
+						14 = { add_prowess_skill = 5 }
+						2 = { add_prowess_skill = 6 }
+						
+					}
+				}
+				remove_trait = elf_pregnant_3
+				primary_spouse = { remove_trait = elf_pregnant_3 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = valar
+			}
+			
+			hidden_effect = {
+				scope:child = {
+					random_list = {
+						2 = { add_diplomacy_skill = 1 }
+						14 = { add_diplomacy_skill = 2 }
+						34 = { add_diplomacy_skill = 3 }
+						34 = { add_diplomacy_skill = 4 }
+						14 = { add_diplomacy_skill = 5 }
+						2 = { add_diplomacy_skill = 6 }
+					}
+					random_list = {
+						2 = { add_martial_skill = 1 }
+						14 = { add_martial_skill = 2 }
+						34 = { add_martial_skill = 3 }
+						34 = { add_martial_skill = 4 }
+						14 = { add_martial_skill = 5 }
+						2 = { add_martial_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_stewardship_skill = 1 }
+						14 = { add_stewardship_skill = 2 }
+						34 = { add_stewardship_skill = 3 }
+						34 = { add_stewardship_skill = 4 }
+						14 = { add_stewardship_skill = 5 }
+						2 = { add_stewardship_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_intrigue_skill = 1 }
+						14 = { add_intrigue_skill = 2 }
+						34 = { add_intrigue_skill = 3 }
+						34 = { add_intrigue_skill = 4 }
+						14 = { add_intrigue_skill = 5 }
+						2 = { add_intrigue_skill = 6 }
+						
+					}
+					random_list = {
+						2 = { add_learning_skill = 1 }
+						14 = { add_learning_skill = 2 }
+						34 = { add_learning_skill = 3 }
+						34 = { add_learning_skill = 4 }
+						14 = { add_learning_skill = 5 }
+						2 = { add_learning_skill = 6 }
+					
+					}
+					random_list = {
+						2 = { add_prowess_skill = 1 }
+						14 = { add_prowess_skill = 2 }
+						34 = { add_prowess_skill = 3 }
+						34 = { add_prowess_skill = 4 }
+						14 = { add_prowess_skill = 5 }
+						2 = { add_prowess_skill = 6 }
+						
+					}
+				}
+				remove_trait = elf_pregnant_3
+				primary_spouse = { remove_trait = elf_pregnant_3 }
+			}
+		}
+		else = {
+			remove_trait = elf_pregnant_1
+			primary_spouse = { remove_trait = elf_pregnant_1 }
+		}
+		
+		scope:child = {
+			if = {
+				limit = {
+					culture = {
+						OR = {
+							has_cultural_pillar = heritage_ainur
+							has_cultural_pillar = heritage_fallen_ainur
+						}
+					}
+					
+				
+				}	
+				set_culture = root.location.culture
+			}
+			
+			remove_trait = maiar
+			remove_trait = fey
+			remove_trait = valar
+			add_trait = maiarindi
+			
+		}
+		if = {
+			limit = {
+				any_child = {
+					count = 1
+				}
+			}
+			create_character_memory = {
+				type = first_born
+				participants = {
+					child = scope:child
+				}
+			}
+		}
+		else = {
+			create_character_memory = {
+				type = child_born
+				participants = {
+					child = scope:child
+				}
+			}
+		}
+		primary_spouse = {
+			if = {
+				limit = {
+					any_child = {
+						count = 1
+					}
+				}
+				create_character_memory = {
+					type = first_born
+					participants = {
+						child = scope:child
+					}
+				}
+			}
+			else = {
+				create_character_memory = {
+					type = child_born
+					participants = {
+						child = scope:child
+					}
+				}
+			}
+		}
+		
+		primary_spouse = {
+			if = {
+				has_trait = wed_pregnant
+			}
+			remove_trait = wed_pregnant
+		}
+		if = {
+			has_trait = wed_pregnant
+			}
+		remove_trait = wed_pregnant
+	}
+
+	widgets = {
+		widget = {
+			is_shown = {
+				allow_naming_on_birth_of_child_trigger = { CHILD = scope:child }
+			}
+			gui = "event_window_widget_name_child"
+			container = "dynamic_birth_name"
+			controller = name_character
+			setup_scope = { scope:child = { save_scope_as = name_character_target } }
+		}
+	}
+
+	option = { # A baby!
+		name = elven_racial.0006.a
+		
+		if = {
+			limit = {
+				OR = {
+					dynasty = { has_dynasty_perk = lotr_elven_legacy_5 }
+					root.dynasty = { has_dynasty_perk = lotr_elven_legacy_5 }
+				}
+			}
+			custom_tooltip = current_fea
+		}
+		
+	}
+}
