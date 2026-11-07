@@ -1,7 +1,7 @@
 ﻿namespace = wed_decay
 
 wed_decay.01 = { # integrate the southern provinces
-	hidden = no	`
+	hidden = no
  	type = character_event
 	title = wed_decay.01.t
 	desc = wed_decay.01.desc
@@ -55,7 +55,8 @@ wed_decay.01 = { # integrate the southern provinces
 		name = wed_decay.01.c
 		trigger = {
 			any_sub_realm_county = {
-				development_level > 0
+				this != scope:decaytarget
+				development_level > 1
 			}
 		}
 		scope:decaytarget = {
@@ -63,6 +64,7 @@ wed_decay.01 = { # integrate the southern provinces
 		}
 		random_sub_realm_county = {
 			limit = {
+				this != scope:decaytarget
 				development_level > 1
 			}
 			change_development_level = -1
@@ -98,7 +100,6 @@ wed_decay.2 = { # integrate the southern provinces
 	
 	
 	immediate = {
-		name = wed_decay.2.a
 		trigger_event = { 
 			on_action = wed_decay_pulse
 			

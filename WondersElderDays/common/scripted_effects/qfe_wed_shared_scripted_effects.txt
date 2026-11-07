@@ -127,7 +127,7 @@ generate_new_evil_faith = { # Fires from county scope, generates scope:new_faith
 			limit = {
 				culture = { has_cultural_pillar = heritage_bellakari }
 			}
-			faith:path_of_zigur` = { save_scope_as = new_faith }
+			faith:path_of_zigur = { save_scope_as = new_faith }
 		}
 		else_if = { #Daen Lintis Heritage
 			limit = {
