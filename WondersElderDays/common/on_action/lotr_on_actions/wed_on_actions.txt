@@ -167,17 +167,21 @@ wed_yearly_pulse = {
 
 correct_alignment_modifier = {
 	effect = {
-		religion:fallen_elven_religion = {
-			every_faith = {
-				every_faith_character = {
-					remove_character_modifier = evil_racial_hatred
-					add_character_modifier = good_racial_hatred
-				}
+		every_living_character = {
+			limit = {
+				has_character_modifier = good_racial_hatred
+				faith_is_good = yes
 			}
+			remove_character_modifier = good_racial_hatred
 		}
-		
+		every_living_character = {
+			limit = {
+				has_character_modifier = evil_racial_hatred
+				faith_is_evil = yes
+			}
+			remove_character_modifier = evil_racial_hatred
+		}
 	}
-	
 }
 wed_decay_pulse = {
 	effect = {
