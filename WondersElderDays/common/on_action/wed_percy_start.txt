@@ -8,7 +8,7 @@ percival_game_start = {
 		
 	}
 	on_actions = {
-		wed_yearly_pulse
+		correct_alignment_modifier
 		
 	}
 	

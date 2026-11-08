@@ -138,6 +138,34 @@ yearly_global_pulse = {
 }
 
 wed_yearly_pulse = {
+	on_actions = {
+		correct_alignment_modifier
+		delay = { months = 1 }
+		correct_alignment_modifier
+		delay = { months = 2 }
+		correct_alignment_modifier
+		delay = { months = 3 }
+		correct_alignment_modifier
+		delay = { months = 4 }
+		correct_alignment_modifier
+		delay = { months = 5 }
+		correct_alignment_modifier
+		delay = { months = 6 }
+		correct_alignment_modifier
+		delay = { months = 7 }
+		correct_alignment_modifier
+		delay = { months = 8 }
+		correct_alignment_modifier
+		delay = { months = 9 }
+		correct_alignment_modifier
+		delay = { months = 10 }
+		correct_alignment_modifier
+		delay = { months = 11 }
+		correct_alignment_modifier
+	}
+}
+
+correct_alignment_modifier = {
 	effect = {
 		religion:fallen_elven_religion = {
 			every_faith = {
