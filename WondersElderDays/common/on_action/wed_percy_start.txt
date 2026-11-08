@@ -7,10 +7,6 @@ percival_game_start = {
 		wed.1
 		
 	}
-	on_actions = {
-		correct_alignment_modifier
-		
-	}
 	
 	
 }
