@@ -11,9 +11,9 @@ l_english:
  activity_magic_ritual: "Magic Ritual"
  activity_magic_ritual_desc: "A Ritual to attempt to cast a spell, effects include creating wonderous items, stat boosts, health and healing, summoning soldiers, and inflicting plague, along with much more."
  activity_magic_ritual_host_an_a: "a"
- activity_magic_ritual_host_desc: "- Character [modifiers|e] \n- Realm [modifiers|e] \n- [regiments|e] \n- Stat Boosts \n- Starting [epidemics|e] \n- Crafting [artifacts|e] \n- [health|e] boosts \n- [GetTrait('lifestyle_mage').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
+ activity_magic_ritual_host_desc: "- Character [modifiers|e] \n- Realm [modifiers|e] \n- [regiments|e] \n- Stat Boosts \n- Starting [epidemics|e] \n- Crafting [artifacts|e] \n- [health|e] boosts \n- [GetTrait('lifestyle_mage').GetName( GetNullCharacter )] [trait_level_track_xp|e]"
  activity_magic_ritual_conclusion_desc: "The Ritual has Concluded."
- activity_magic_ritual_selection_tooltip: "Cast a spell to affect the world. \n\n Anticipated Rewards: \n- Character [modifiers|e] \n- Realm [modifiers|e] \n- [regiments|e] \n- Stat Boosts \n- Starting [epidemics|e] \n- Crafting [artifacts|e] \n- [health|e] boosts \n- [GetTrait('lifestyle_mage').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
+ activity_magic_ritual_selection_tooltip: "Cast a spell to affect the world. \n\n Anticipated Rewards: \n- Character [modifiers|e] \n- Realm [modifiers|e] \n- [regiments|e] \n- Stat Boosts \n- Starting [epidemics|e] \n- Crafting [artifacts|e] \n- [health|e] boosts \n- [GetTrait('lifestyle_mage').GetName( GetNullCharacter )] [trait_level_track_xp|e]"
  
  spellcasting_intent: "Spellcasting"
  spellcasting_intent_desc: "I wish to use knowledge of the mystic arts to manipulate the world around me using a ritual."
@@ -51,7 +51,7 @@ l_english:
  trait_track_lifestyle_mage_desc: "A practitioner of [magic|e], Mages manipulate the world around them using secret knowledge of the arcane."
  
  trait_fey: "Fay"
- trait_fey_desc: "Those beautiful spirits which descended into [middleearth|E] to help shape the World. They were numerous, yet not many were named, and few took visible shapes.\n\n[fay|e] were the least of the [maiargods|e] and the most numerous, with literal untold numbers of them across [middleearth|E]"
+ trait_fey_desc: "Those beautiful spirits which descended into [middleearth|e] to help shape the World. They were numerous, yet not many were named, and few took visible shapes.\n\n[fay|e] were the least of the [maiargods|e] and the most numerous, with literal untold numbers of them across [middleearth|e]"
  
  trait_maiarindi: "Maiarindi"
  trait_maiarindi_desc: "A child of the [maiargods|e], while fully mortal they generally have improved health"
@@ -61,9 +61,9 @@ l_english:
  trait_wed_pregnant: "Pregnant"
  
  trait_wed_extended_lifespan: "Doom Deferred"
- trait_wed_extended_lifespan_desc: "This Character is using [magic|E] to extend their lifespan"
+ trait_wed_extended_lifespan_desc: "This Character is using [magic|e] to extend their lifespan"
  trait_track_wed_extended_lifespan: "Doom Deferred"
- trait_track_wed_extended_lifespan_desc: "This Character is using [magic|E] to extend their lifespan"
+ trait_track_wed_extended_lifespan_desc: "This Character is using [magic|e] to extend their lifespan"
  
  ### Modifiers
  
@@ -100,21 +100,21 @@ l_english:
  game_concept_courtofardor: "Court of Ardor"
  
  game_concept_courtofaranore: "Court of Aranórë"
- game_concept_courtofardor_desc: "Made up of [noldorelvesexiles|e] who fell to the influence of [morgothcharacter|e] in the [elderdays|e], the Court of Aranórë (or Ardor in [sindarin|e]) has worked to twist and corrupt the world since their master's destruction in the [warofwrath|e]. \n\nDuring the [secondage|E] they played a key roll in the corruption and later destruction of the [numenorean|E] colony of Tandurak, worked to inflame tensions amoung the [kinnlai|e] and struck an alliance with [fankil|e] and other fallen [maiagod|e]\n\nIn the mid [thirdage|e] the Court attempted to slay [ariencharacter|e] and [tilioncharacter|e] and destory the last fruits of the [twotrees|e] but were stopped by the [kinnlai|e], [alatarcharacter|e], and surprisingly [sauroncharacter|e] who didn't tolerate any rivals to his dominion. After the attempt failed, the court was left broken and shattered with little influence left in [arda|e]."
+ game_concept_courtofardor_desc: "Made up of [noldorelvesexiles|e] who fell to the influence of [morgothcharacter|e] in the [elderdays|e], the Court of Aranórë (or Ardor in [sindarin|e]) has worked to twist and corrupt the world since their master's destruction in the [warofwrath|e]. \n\nDuring the [secondage|e] they played a key roll in the corruption and later destruction of the [numenorean|e] colony of Tandurak, worked to inflame tensions amoung the [kinnlai|e] and struck an alliance with [fankil|e] and other fallen [maiagod|e]\n\nIn the mid [thirdage|e] the Court attempted to slay [ariencharacter|e] and [tilioncharacter|e] and destory the last fruits of the [twotrees|e] but were stopped by the [kinnlai|e], [alatarcharacter|e], and surprisingly [sauroncharacter|e] who didn't tolerate any rivals to his dominion. After the attempt failed, the court was left broken and shattered with little influence left in [arda|e]."
  
  game_concept_ardor: "Ardor"
  game_concept_ildol: "Ildol"
  game_concept_aranore: "Aranórë"
- game_concept_aranore_desc: "Also called [ardor|E] or [ildol|E], it means Exalted Land, or Desired Land. Aranórë describes the lands of the Utter South, historically inhabited by the [courtofaranore|E], the [kinnlai|e], the Uskani, and the [adunai|e] of Tandurak."
+ game_concept_aranore_desc: "Also called [ardor|e] or [ildol|e], it means Exalted Land, or Desired Land. Aranórë describes the lands of the Utter South, historically inhabited by the [courtofaranore|e], the [kinnlai|e], the Uskani, and the [adunai|e] of Tandurak."
  
  game_concept_atalantli: "Atalanti"
  game_concept_atalanti: "Atalanti"
  game_concept_drow: "Drow"
- game_concept_atalantli_desc: "The Downfallen, also known as Drow, were [elves|E] who have fallen to the shadow, whether they were corrupted by [morgothcharacter|e], [sauroncharacter|e], or fell to their own devices. The Atalantli share a few things in common. Unlike other elves, they tend to be cruel, manipulative, and bellicose. However, aligning against their nature tends to shorten their lives, accelerating fading, burning through their life force faster than their kin, though this is only noticeable on the truly grand scale."
+ game_concept_atalantli_desc: "The Downfallen, also known as Drow, were [elves|e] who have fallen to the shadow, whether they were corrupted by [morgothcharacter|e], [sauroncharacter|e], or fell to their own devices. The Atalantli share a few things in common. Unlike other elves, they tend to be cruel, manipulative, and bellicose. However, aligning against their nature tends to shorten their lives, accelerating fading, burning through their life force faster than their kin, though this is only noticeable on the truly grand scale."
  
  game_concept_fuim: "Fuim"
  game_concept_unseelie: "Unseelie"
- game_concept_fuim_desc: "The Fuim, also known as the Unseelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who were corrupted by [morgothcharacter|e], most of them were unhoused or taken to [valinor|E] after the [warofwrath|e] but those who remain tend to be the craftiest and most malevolent"
+ game_concept_fuim_desc: "The Fuim, also known as the Unseelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who were corrupted by [morgothcharacter|e], most of them were unhoused or taken to [valinor|e] after the [warofwrath|e] but those who remain tend to be the craftiest and most malevolent"
  
  ### MAA
  
@@ -132,7 +132,7 @@ l_english:
  fellbeasts: "Fell Beast Riders"
  fellbeasts_flavor: "Riders of the Great Fell Beasts of the east of middle earth, they fire arrows, drop large objects, and just charge foes, while totally ignoring fixed defenses"
  eagles_maa: "Great Eagles"
- eagles_maa_flavor: "The Eagles of [manwecharacter|E], lesser [maiargods|e] who work to destory the darkness in the world. unmatched in the air and the only thing to rival [dragons|e]"
+ eagles_maa_flavor: "The Eagles of [manwecharacter|e], lesser [maiargods|e] who work to destory the darkness in the world. unmatched in the air and the only thing to rival [dragons|e]"
  ents: "Ents"
  ents_flavor: "[ents|e] of Fangorn forest, allied to the local ruler, they are tough in all situations, excellent in combat, and especially powerful against fortifications."
  
@@ -148,11 +148,11 @@ l_english:
  innovation_mage_general: "Knowledge of the Unseen"
  innovation_mage_general_desc: "Encompassing the myriad secret knowledge and lore of the world, knowledge of the unseen represents a culture's knowledge of [magic|e] and [sorcery|e] along with the ability to use it on a mass scale."
  unlock_battle_mages: "Can recruit [mages|e] of your race as [men_at_arms|e]"
- unlock_mage_ritual: "Unlocks the Magic Ritual [activity|E]."
+ unlock_mage_ritual: "Unlocks the Magic Ritual [activity|e]."
  
  innovation_mage_crafting: "Wonderous Engineering"
  innovation_mage_crafting_desc: "Methods to apply [magic|e] and arcane lore in engineering and construction, such as concrete, gunpowder, and clockwork."
- unlock_arcane_engineering: "Unlocks a species-specific line of [buildings|E]."
+ unlock_arcane_engineering: "Unlocks a species-specific line of [buildings|e]."
  
  ### Titles
  
@@ -183,13 +183,13 @@ l_english:
  nick_bane_of_palisor_desc: "Fankil led [morgothcharacter|e]s forces during the [battleofpalisor|e] during the [warofwrath|e], his body was slain in the battle, but he managed to reembody in the early [thirdage|e]"
  
  nick_the_astronomer: "the Astrologer"
- nick_the_astronomer_desc: "Ardana was the greatest [mage|e] amoung the [elves|E] [morgothcharacter|e] twisted to his will, she lead a group of [noldorelves|e] to the Utter South and attempted to destroy the Sun and Moon in the early [thirdage|e], falling to her son in the process."
+ nick_the_astronomer_desc: "Ardana was the greatest [mage|e] amoung the [elves|e] [morgothcharacter|e] twisted to his will, she lead a group of [noldorelves|e] to the Utter South and attempted to destroy the Sun and Moon in the early [thirdage|e], falling to her son in the process."
  
  nick_black_wanderer: "The Wanderer in Black"
- nick_black_wanderer_desc: "Origionally thought to be still born, Morrana was abanoned shortly after birth, only to be discoverd by the wizards [pallandocharacter|e] and [alatarcharacter|e], Raised by them in the ways of the [valargods|E] Morrana lead the efforts against the [courtofaranore|E] in southern middle earth, eventually allying with his adoptive father and the [kinnlai|e] to organize a revolt amoung the courts slaves and stop the courts ritual, in the end he personally slew his mother and shattered the Citadel of Aranórë. Since then, he's worked against all servants of the shadow in southern Middle-earth, usually clad in black."
+ nick_black_wanderer_desc: "Origionally thought to be still born, Morrana was abanoned shortly after birth, only to be discoverd by the wizards [pallandocharacter|e] and [alatarcharacter|e], Raised by them in the ways of the [valargods|e] Morrana lead the efforts against the [courtofaranore|e] in southern middle earth, eventually allying with his adoptive father and the [kinnlai|e] to organize a revolt amoung the courts slaves and stop the courts ritual, in the end he personally slew his mother and shattered the Citadel of Aranórë. Since then, he's worked against all servants of the shadow in southern Middle-earth, usually clad in black."
  
  nick_daughter_of_darkness: "Daughter of Darkness"
- nick_daughter_of_darkness_desc: "Despite her mother's claims to the contrary, Morelene was not truly the daughter of [morgothcharacter|e], however her true father, the [maiagod|e] [fankil|e], still provided her with a stronger soul than most [eldar|e]. Following the death of her mother during the ritual, Morelene rallied the remaining members of the [courtofaranore|E] and has been biding her time ever since."
+ nick_daughter_of_darkness_desc: "Despite her mother's claims to the contrary, Morelene was not truly the daughter of [morgothcharacter|e], however her true father, the [maiagod|e] [fankil|e], still provided her with a stronger soul than most [eldar|e]. Following the death of her mother during the ritual, Morelene rallied the remaining members of the [courtofaranore|e] and has been biding her time ever since."
  
 #  nick_queen_air_dark: "Queen of Air and Darkness"
 #  nick_queen_air_dark_desc: "Nixní, the Queen of Air and Darkness was one of [melkorcharacter|e]s cheif luitentents during the [elderdays|e], while not a match for [sauroncharacter|e] or even [fankil|e], she was known to be cold, callus, and incapable of telling a direct lie. \n\nKnown for her Bargins, she only served the shadow due to a deal she made with [melkorcharacter|e]. in later days [sauroncharacter|e] would turn to her to beckon in the Long Winter and later Fell Winter"
@@ -244,11 +244,11 @@ l_english:
  setting_experimental_enabled: "Enabled"
  setting_experimental_enabled_desc: "Experimental Features are enabled"
  
- rule_wed_ardor_rule: "#attacker_color WED:#! [courtofardor|E]"
+ rule_wed_ardor_rule: "#attacker_color WED:#! [courtofardor|e]"
  setting_ardor_enabled: "Enabled"
- setting_ardor_enabled_desc: "The [courtofaranore|E] is enabled"
+ setting_ardor_enabled_desc: "The [courtofaranore|e] is enabled"
  setting_ardor_disabled: "Disabled"
- setting_ardor_disabled_desc: "The [courtofaranore|E] is disabled"
+ setting_ardor_disabled_desc: "The [courtofaranore|e] is disabled"
  setting_ardor_triumphant: "Ardor Triumphant"
  setting_ardor_triumphant_desc: "Ardor starts in full control of the region"
  
@@ -265,38 +265,38 @@ l_english:
  seelie: "Alyim"
  seelie_prefix: "Fey"
  seelie_collective_noun: "Faerie"
- seelie_history_loc: "The [fay|E] who entered into [eaworld|E] and sided with the [valargods|E]"
- seelie_desc: "the Alyim, also known as the Seelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who remained in [middleearth|E] after the arrival of [morgothcharacter|e] without falling to his influence, they are generally mischiveious but good natured and most are hard to distinguish from [elves|E]"
+ seelie_history_loc: "The [fay|e] who entered into [eaworld|e] and sided with the [valargods|e]"
+ seelie_desc: "the Alyim, also known as the Seelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who remained in [middleearth|e] after the arrival of [morgothcharacter|e] without falling to his influence, they are generally mischiveious but good natured and most are hard to distinguish from [elves|e]"
  
  unseelie: "Fuim"
  unseelie_prefix: "Fey"
  unseelie_collective_noun: "Faerie"
- unseelie_history_loc: "The [fay|E] who entered into [eaworld|E] and sided with [morgothcharacter|e|E]"
- unseelie_desc: "The Fuim, also known as the Unseelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who were corrupted by [morgothcharacter|e], most of them were unhoused or taken to [valinor|E] after the [warofwrath|e] but those who remain tend to be the craftiest and most malevolent"
+ unseelie_history_loc: "The [fay|e] who entered into [eaworld|e] and sided with [morgothcharacter|e]"
+ unseelie_desc: "The Fuim, also known as the Unseelie Fey in [rohan|e] and the [shire|e] are the [fay|e] who were corrupted by [morgothcharacter|e], most of them were unhoused or taken to [valinor|e] after the [warofwrath|e] but those who remain tend to be the craftiest and most malevolent"
  
  ardorhrim: "Aranórim"
  ardorhrim_prefix: "Aranórim"
  ardorhrim_collective_noun: "Aranórim"
- ardorhrim_history_loc: "the [atalanti|E] and [noldorelvesexiles|e] who settled in the Utter South after the [warofwrath|e]"
+ ardorhrim_history_loc: "the [atalanti|e] and [noldorelvesexiles|e] who settled in the Utter South after the [warofwrath|e]"
  ardorhrim_desc: "Temp"
  
  ### Faiths
  
  fallen_elven_religion: "Atalantli"
  fallen_elven_religion_adj: "Atalantli"
- fallen_elven_religion_desc: "The [atalanti|E], or the Downfallen, [elves|e] who have abandoned the light of the [valargods|E] and embraced [morgothcharacter|e] and later [sauroncharacter|e], they denounce [eru|e] and seek to dominate those around them."
+ fallen_elven_religion_desc: "The [atalanti|e], or the Downfallen, [elves|e] who have abandoned the light of the [valargods|e] and embraced [morgothcharacter|e] and later [sauroncharacter|e], they denounce [eru|e] and seek to dominate those around them."
  
  faith_ring_cult: "Annatari" # Faith of the Eldar
  faith_ring_cult_adj: "Annatari" # Faith of the Eldar
  faith_ring_cult_adherent: "Elda"
  faith_ring_cult_adherent_plural: "Eldar"
- faith_ring_cult_desc: "The people of [annatarcharacter|e], the Annatari are the [elves|E] who treat the [ringsofpower|e] as the ultimate gift, allowing them to hold off the flow of time and achieve [valinor|E] on earth. They see their subservience to [sauroncharacter|e] as a fair price, after all, the dark lord is the King of Men, not elves."
+ faith_ring_cult_desc: "The people of [annatarcharacter|e], the Annatari are the [elves|e] who treat the [ringsofpower|e] as the ultimate gift, allowing them to hold off the flow of time and achieve [valinor|e] on earth. They see their subservience to [sauroncharacter|e] as a fair price, after all, the dark lord is the King of Men, not elves."
  
  faith_court_of_ardor: "Court of Ardor" # Faith of the Eldar
  faith_court_of_ardor_adj: "Ardorian" # Faith of the Eldar
  faith_court_of_ardor_adherent: "Ardorian"
  faith_court_of_ardor_adherent_plural: "Ardorians"
- faith_court_of_ardor_desc: "Shortly after the [noldorelvesexiles|e], [morgothcharacter|e] approached a group of [eldar|e] who he had corrupted in [valinor|E], he tasked them with destroying the Sun and Moon. those who survived the [warofwrath|e] regrouped in [ardor|E] and established the Court of Ardor to coordinate their efforts and maintain peace between their realms."
+ faith_court_of_ardor_desc: "Shortly after the [noldorelvesexiles|e], [morgothcharacter|e] approached a group of [eldar|e] who he had corrupted in [valinor|e], he tasked them with destroying the Sun and Moon. those who survived the [warofwrath|e] regrouped in [ardor|e] and established the Court of Ardor to coordinate their efforts and maintain peace between their realms."
  
  ### MISC
  

@@ -15,7 +15,7 @@ l_english:
  building_artificers_04: "Alchemical Lab"
  building_artificers_04_desc: "There are numerous wondrous substances across Middle-earth. If we can understand and utilize them, we can improve our materials and understanding of science."
  building_artificers_05: "Engineering School"
- building_artificers_05_desc: "A campus teaching the ancient ways of mathematics and construction. students here learn how to make structures rivaling those of [numenor|e} at its height."
+ building_artificers_05_desc: "A campus teaching the ancient ways of mathematics and construction. students here learn how to make structures rivaling those of [numenor|e] at its height."
  building_artificers_06: "Gunpowder production"
  building_artificers_06_desc: "By combining sulfur, charcoal, and saltpeter, we can create an explosive powder that can be used for destroying troublesome hills, fortresses, and even mountains."
  building_artificers_07: "Speaking Chamber"
@@ -42,7 +42,7 @@ l_english:
  building_dwarven_magic_08: "Autonoma"
  building_dwarven_magic_08_desc: "The highest expression of clockwork and precise hydrolics we can create extremely life-like creatures capable of movement."
  building_dwarven_magic_09: "Stone Shapers Guild"
- building_dwarven_magic_09_desc: "While dwarven enchantment is the most well-known [magical|E] art, we also have great skill with transmutation, with dwarven mages reshaping the stone halls to our will."
+ building_dwarven_magic_09_desc: "While dwarven enchantment is the most well-known [magical|e] art, we also have great skill with transmutation, with dwarven mages reshaping the stone halls to our will."
  building_dwarven_magic_10: "Sunlit Halls"
  building_dwarven_magic_10_desc: "By using specially designed concave mirrors and lenses, we have achieved the impossible. Our halls are now lit by sunlight."
  
@@ -71,7 +71,7 @@ l_english:
  
  building_type_wonder_mirerotto_01: "Mírërotto"
  building_wonder_mirerotto_01: "Mines of Mírërotto"
- building_wonder_mirerotto_01_desc: "Built into the caldera of a collasped volcanic island Mírërotto served as one of the primary mines of the [courtofaranore|e], providing them with many of the rare minerals they needed to preform their [sorcery|E], since the courts fall it has fallen under the sway of Koronande and later the [darklord|E], providing great wealth to its new masters"
+ building_wonder_mirerotto_01_desc: "Built into the caldera of a collasped volcanic island Mírërotto served as one of the primary mines of the [courtofaranore|e], providing them with many of the rare minerals they needed to preform their [sorcery|e], since the courts fall it has fallen under the sway of Koronande and later the [darklord|e], providing great wealth to its new masters"
  
  building_type_wonder_lonlume_01: "Lonlume"
  building_wonder_lonlume_01: "Citadel of Lonlume"
