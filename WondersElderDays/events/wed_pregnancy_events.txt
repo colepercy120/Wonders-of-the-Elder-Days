@@ -163,7 +163,7 @@ wed_pregnancy.01 = { #Birth - single baby
 		}
 		else_if = {
 			limit = {
-				has_trait = fay
+				has_trait = fey
 			}
 			
 			hidden_effect = {
@@ -364,14 +364,14 @@ wed_pregnancy.01 = { #Birth - single baby
 		
 		primary_spouse = {
 			if = {
-				has_trait = wed_pregnant
+				limit = { has_trait = wed_pregnant }
+				remove_trait = wed_pregnant
 			}
-			remove_trait = wed_pregnant
 		}
 		if = {
-			has_trait = wed_pregnant
-			}
-		remove_trait = wed_pregnant
+			limit = { has_trait = wed_pregnant }
+			remove_trait = wed_pregnant
+		}
 	}
 
 	widgets = {
