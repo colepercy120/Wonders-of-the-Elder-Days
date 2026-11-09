@@ -5,6 +5,7 @@
  ### Edited the loading screen text
  
 l_english:
+ activity_magic_ritual_guest_desc: "TODO: Description for guests participating in a magic ritual."
  game_concept_alyim: "Alyim"
  game_concept_alyim_desc: "TODO: Description of the Alyim, the Seelie fae."
  game_concept_seelie: "Seelie"
