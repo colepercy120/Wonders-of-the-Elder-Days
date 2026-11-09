@@ -84,7 +84,7 @@ wed_decay.01 = { # integrate the southern provinces
 		custom_tooltip = locallorddecide
 		scope:decaytarget.holder = {
 			trigger_event = {
-                    id = wed_decay.1
+                    id = wed_decay.01
                     days = 0
 				}
 		}
