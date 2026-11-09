@@ -11,33 +11,21 @@ yearly_global_pulse = {
 }
 
 percival_yearly_pulse = {
-	on_actions = {
-		correct_alignment_modifier
-		delay = { months = 1 }
-		correct_alignment_modifier
-		delay = { months = 2 }
-		correct_alignment_modifier
-		delay = { months = 3 }
-		correct_alignment_modifier
-		delay = { months = 4 }
-		correct_alignment_modifier
-		delay = { months = 5 }
-		correct_alignment_modifier
-		delay = { months = 6 }
-		correct_alignment_modifier
-		delay = { months = 7 }
-		correct_alignment_modifier
-		delay = { months = 8 }
-		correct_alignment_modifier
-		delay = { months = 9 }
-		correct_alignment_modifier
-		delay = { months = 10 }
-		correct_alignment_modifier
-		delay = { months = 11 }
-		correct_alignment_modifier
+	effect = {
+		trigger_event = { on_action = correct_alignment_modifier }
+		trigger_event = { on_action = correct_alignment_modifier months = 1 }
+		trigger_event = { on_action = correct_alignment_modifier months = 2 }
+		trigger_event = { on_action = correct_alignment_modifier months = 3 }
+		trigger_event = { on_action = correct_alignment_modifier months = 4 }
+		trigger_event = { on_action = correct_alignment_modifier months = 5 }
+		trigger_event = { on_action = correct_alignment_modifier months = 6 }
+		trigger_event = { on_action = correct_alignment_modifier months = 7 }
+		trigger_event = { on_action = correct_alignment_modifier months = 8 }
+		trigger_event = { on_action = correct_alignment_modifier months = 9 }
+		trigger_event = { on_action = correct_alignment_modifier months = 10 }
+		trigger_event = { on_action = correct_alignment_modifier months = 11 }
 	}
 }
-
 correct_alignment_modifier = {
 	effect = {
 		every_living_character = {
