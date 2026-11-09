@@ -5,6 +5,10 @@
  ### Edited the loading screen text
  
 l_english:
+ game_concept_alyim: "Alyim"
+ game_concept_alyim_desc: "TODO: Description of the Alyim, the Seelie fae."
+ game_concept_seelie: "Seelie"
+ game_concept_seelie_desc: "TODO: Description of the Seelie fae."
 
  hope_5_or_higher_tt: "Requires the highest level of Hope."
 
