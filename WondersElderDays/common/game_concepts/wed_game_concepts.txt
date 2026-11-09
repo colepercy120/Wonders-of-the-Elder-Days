@@ -2,7 +2,7 @@
 magic = {
 	alias = { magical }
 	parent = conceptmajorloreidea
-	texture = "gfx\interface\icons\traits\magic.dds"
+	texture = "gfx/interface/icons/traits/magic.dds"
 }
 
 mage = {
