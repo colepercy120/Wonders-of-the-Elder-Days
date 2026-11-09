@@ -144,7 +144,7 @@ wed_decay_pulse = {
 			save_scope_as = decaytarget
 			holder.top_liege = {
 				trigger_event = {
-                    id = wed_decay.1
+                    id = wed_decay.01
                     days = 0
 				}
 			}
