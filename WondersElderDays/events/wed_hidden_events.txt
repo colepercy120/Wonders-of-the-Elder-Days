@@ -443,7 +443,13 @@ wed.2 = { # integrate the southern provinces
 				scope:target_county = {
 					if = {
 						limit = { root = { is_elf = yes } }
-						title_province = { set_holding_type = elven_holding }
+						if = {
+							limit = { title_province = { terrain = halls } }
+							title_province = { set_holding_type = elven_hall_holding }
+						}
+						else = {
+							title_province = { set_holding_type = elven_holding }
+						}
 					} else_if = {
 						limit = { title_province = { terrain = halls } }
 						title_province = { set_holding_type = dwarven_holding }
@@ -586,7 +592,13 @@ wed.3 = { # integrate the southern provinces
 				scope:target_county = {
 					if = {
 						limit = { root = { is_elf = yes } }
-						title_province = { set_holding_type = elven_holding }
+						if = {
+							limit = { title_province = { terrain = halls } }
+							title_province = { set_holding_type = elven_hall_holding }
+						}
+						else = {
+							title_province = { set_holding_type = elven_holding }
+						}
 					} else_if = {
 						limit = { title_province = { terrain = halls } }
 						title_province = { set_holding_type = dwarven_holding }
