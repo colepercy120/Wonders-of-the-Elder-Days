@@ -31,6 +31,9 @@ elven_hall_holding = {
 		hall_of_lords_01
 		elven_armament_01
 
+		# WED Elven Magic Buildings
+		elven_magic_01
+
 		# Crafting Resource Mines
 		iron_mines_01
 		tin_mines_01
