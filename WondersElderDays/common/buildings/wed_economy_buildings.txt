@@ -929,7 +929,10 @@ elven_magic_01 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_01
+		OR = {
+			has_building_or_higher = elven_settlement_01
+			has_building_or_higher = elven_hall_01
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -980,7 +983,10 @@ elven_magic_02 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_02
+		OR = {
+			has_building_or_higher = elven_settlement_02
+			has_building_or_higher = elven_hall_02
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -1027,7 +1033,10 @@ elven_magic_03 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_03
+		OR = {
+			has_building_or_higher = elven_settlement_03
+			has_building_or_higher = elven_hall_03
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -1074,7 +1083,10 @@ elven_magic_04 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_04
+		OR = {
+			has_building_or_higher = elven_settlement_04
+			has_building_or_higher = elven_hall_04
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -1122,7 +1134,10 @@ elven_magic_05 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_05
+		OR = {
+			has_building_or_higher = elven_settlement_05
+			has_building_or_higher = elven_hall_05
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -1170,7 +1185,10 @@ elven_magic_06 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_06
+		OR = {
+			has_building_or_higher = elven_settlement_06
+			has_building_or_higher = elven_hall_06
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
@@ -1218,7 +1236,10 @@ elven_magic_07 = {
 
 	can_construct = {
 		scope:holder = { is_elf = yes }
-		has_building_or_higher = elven_settlement_07
+		OR = {
+			has_building_or_higher = elven_settlement_07
+			has_building_or_higher = elven_hall_07
+		}
 		culture = { # Standard unlock from inovation (High medieval)
 			has_innovation = innovation_mage_crafting
 		}
